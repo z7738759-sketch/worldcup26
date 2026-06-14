@@ -155,32 +155,34 @@
     "kickoff": "2026-06-14T17:00:00Z",
     "predictionA": "德国 4-0",
     "predictionB": "德国 5-0",
-    "actualScore": "3-1",
-    "directionCorrect": true,
-    "exactHit": false,
-    "totalGoalsDirectionCorrect": true,
+    "actualScore": null,
+    "directionCorrect": null,
+    "exactHit": null,
+    "totalGoalsDirectionCorrect": null,
     "bettingValues": [
       {
         "stars": 2,
-        "name": "Over 4.5进球",
-        "odds": "-150",
-        "hit": false
+        "name": "Over 3.5进球",
+        "odds": "-170",
+        "hit": null
       }
     ],
     "mRulesTriggered": [
-      "M4"
+      "M4",
+      "M6"
     ],
     "teamNews": [
       "🟡 诺伊尔(门将,40岁)：赛季末小腿伤愈，纳格尔斯曼确认首发——高龄复出存在微小风险但无影响预测",
       "✅ 穆西亚拉+哈弗茨：双双百分百出战",
       "❌ 莱纳特·卡尔(后卫)：训练受伤，奥耶德拉戈替补入队",
-      "✅ 库拉索：首届世界杯，全员可用，历史首秀斗志高昂"
+      "✅ 库拉索：首届世界杯，全员可用，历史首秀斗志高昂",
+      "⚽ v10模型：首届参赛队lambdaAway底线0.55，库拉索进球概率从17%升至38%"
     ],
-    "notes": "M4大球规律；诺伊尔(40岁)赛季末小腿伤愈复出，仍首发但高龄须关注。穆西亚拉/哈弗茨百分百出战，整体实力压制库拉索首届参赛激情",
-    "predictionC": "德国 3-0",
-    "probabilityA": 35,
-    "probabilityB": 33,
-    "probabilityC": 32,
+    "notes": "v10模型：ELO差364但库拉索进球概率≈38%（底线保护）。预测C纳入库拉索进球场景。德国进攻强劲(λ≈4.5)，总进球4-5球范围。",
+    "predictionC": "德国 3-1",
+    "probabilityA": 34,
+    "probabilityB": 30,
+    "probabilityC": 26,
     "winDrawLoss": "home"
   },
   {
@@ -329,13 +331,20 @@
     "actualScore": null,
     "directionCorrect": null,
     "exactHit": null,
-    "bettingValues": [],
-    "mRulesTriggered": [],
-    "notes": "西班牙零封概率94%，佛得角防守体系难抵传控压迫",
-    "predictionC": "西班牙 3-3",
+    "bettingValues": [
+      {
+        "stars": 2,
+        "name": "Over 3.5进球",
+        "odds": "-200",
+        "hit": null
+      }
+    ],
+    "mRulesTriggered": ["M6"],
+    "notes": "v10模型：佛得角首届参赛λaway底线0.55，进球概率≈39%（高于直觉）。西班牙进攻传控压制(λ≈4.5)，但C预测纳入佛得角进球场景。ELO差440，西班牙胜概率极高。",
+    "predictionC": "西班牙 4-1",
     "probabilityA": 36,
-    "probabilityB": 36,
-    "probabilityC": 28,
+    "probabilityB": 32,
+    "probabilityC": 27,
     "winDrawLoss": "home"
   },
   {
@@ -499,7 +508,7 @@
     "group": "K组",
     "kickoff": "2026-06-17T17:00:00Z",
     "predictionA": "葡萄牙 3-0",
-    "predictionB": "葡萄牙 3-1",
+    "predictionB": "葡萄牙 4-1",
     "actualScore": null,
     "directionCorrect": null,
     "exactHit": null,
@@ -511,12 +520,12 @@
         "hit": null
       }
     ],
-    "mRulesTriggered": [],
-    "notes": "葡萄牙胜82%",
-    "predictionC": "葡萄牙 3-3",
-    "probabilityA": 35,
-    "probabilityB": 33,
-    "probabilityC": 32,
+    "mRulesTriggered": ["M6"],
+    "notes": "v10模型：刚果DR首届参赛λaway底线0.55，进球概率≈37%。葡萄牙进攻强劲(λ≈4.5)，但B/C预测纳入刚果DR进球。ELO差306，葡萄牙胜概率82%。",
+    "predictionC": "葡萄牙 3-1",
+    "probabilityA": 33,
+    "probabilityB": 30,
+    "probabilityC": 27,
     "winDrawLoss": "home"
   },
   {
