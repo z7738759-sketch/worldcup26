@@ -12,7 +12,12 @@
     "exactHit": true,
     "bettingValues": [],
     "mRulesTriggered": [],
-    "notes": "无异动，-250大热门，信任主流"
+    "notes": "无异动，-250大热门，信任主流",
+    "predictionC": "墨西哥 3-0",
+    "probabilityA": 35,
+    "probabilityB": 33,
+    "probabilityC": 32,
+    "winDrawLoss": "home"
   },
   {
     "matchId": 1002,
@@ -26,8 +31,15 @@
     "directionCorrect": true,
     "exactHit": false,
     "bettingValues": [],
-    "mRulesTriggered": ["ASIA"],
-    "notes": "双方势均力敌，亚洲球队逆境中展现韧性"
+    "mRulesTriggered": [
+      "ASIA"
+    ],
+    "notes": "双方势均力敌，亚洲球队逆境中展现韧性",
+    "predictionC": "韩国 1-1",
+    "probabilityA": 39,
+    "probabilityB": 31,
+    "probabilityC": 30,
+    "winDrawLoss": "home"
   },
   {
     "matchId": 1003,
@@ -42,7 +54,12 @@
     "exactHit": false,
     "bettingValues": [],
     "mRulesTriggered": [],
-    "notes": "亚盘仅-0.5且两边对等→平局信号被忽视（M6前身教训）"
+    "notes": "亚盘仅-0.5且两边对等→平局信号被忽视（M6前身教训）",
+    "predictionC": "加拿大 1-1",
+    "probabilityA": 38,
+    "probabilityB": 32,
+    "probabilityC": 30,
+    "winDrawLoss": "home"
   },
   {
     "matchId": 1004,
@@ -56,8 +73,15 @@
     "directionCorrect": true,
     "exactHit": false,
     "bettingValues": [],
-    "mRulesTriggered": ["M1"],
-    "notes": "资金信号指向大球被忽视，实际进球远超预期"
+    "mRulesTriggered": [
+      "M1"
+    ],
+    "notes": "资金信号指向大球被忽视，实际进球远超预期",
+    "predictionC": "美国 3-1",
+    "probabilityA": 37,
+    "probabilityB": 32,
+    "probabilityC": 31,
+    "winDrawLoss": "home"
   },
   {
     "matchId": 1005,
@@ -65,14 +89,21 @@
     "awayTeam": "瑞士",
     "group": "B组",
     "kickoff": "2026-06-13T20:00:00Z",
-    "predictionA": "0-2 瑞士",
-    "predictionB": "1-2 瑞士",
+    "predictionA": "卡塔尔 0-2",
+    "predictionB": "卡塔尔 1-2",
     "actualScore": "1-1",
     "directionCorrect": false,
     "exactHit": false,
     "bettingValues": [],
-    "mRulesTriggered": ["M5"],
-    "notes": "M6教训：庄家差40%+首次参赛→平局必须进预测B"
+    "mRulesTriggered": [
+      "M5"
+    ],
+    "notes": "M6教训：庄家差40%+首次参赛→平局必须进预测B",
+    "predictionC": "卡塔尔 0-0",
+    "probabilityA": 37,
+    "probabilityB": 34,
+    "probabilityC": 29,
+    "winDrawLoss": "away"
   },
   {
     "matchId": 1006,
@@ -80,14 +111,21 @@
     "awayTeam": "摩洛哥",
     "group": "C组",
     "kickoff": "2026-06-13T23:00:00Z",
-    "predictionA": "平局 1-1",
+    "predictionA": "巴西 1-1",
     "predictionB": "巴西 1-0",
     "actualScore": "1-1",
     "directionCorrect": true,
     "exactHit": true,
     "bettingValues": [],
-    "mRulesTriggered": ["M2"],
-    "notes": "M2正确触发，摩洛哥低防验证，预测A完全命中"
+    "mRulesTriggered": [
+      "M2"
+    ],
+    "notes": "M2正确触发，摩洛哥低防验证，预测A完全命中",
+    "predictionC": "巴西 2-1",
+    "probabilityA": 37,
+    "probabilityB": 35,
+    "probabilityC": 27,
+    "winDrawLoss": "draw"
   },
   {
     "matchId": 1007,
@@ -102,7 +140,12 @@
     "exactHit": true,
     "bettingValues": [],
     "mRulesTriggered": [],
-    "notes": "双方进攻效率均偏低→低进球数，预测B完全命中"
+    "notes": "双方进攻效率均偏低→低进球数，预测B完全命中",
+    "predictionC": "苏格兰 1-1",
+    "probabilityA": 37,
+    "probabilityB": 35,
+    "probabilityC": 29,
+    "winDrawLoss": "home"
   },
   {
     "matchId": 1008,
@@ -115,15 +158,30 @@
     "actualScore": null,
     "directionCorrect": null,
     "exactHit": null,
-    "bettingValues": [{"stars": 2, "name": "Over 4.5进球", "odds": "-150", "hit": null}],
-    "mRulesTriggered": ["M4"],
+    "totalGoalsDirectionCorrect": null,
+    "bettingValues": [
+      {
+        "stars": 2,
+        "name": "Over 4.5进球",
+        "odds": "-150",
+        "hit": null
+      }
+    ],
+    "mRulesTriggered": [
+      "M4"
+    ],
     "teamNews": [
       "🟡 诺伊尔(门将,40岁)：赛季末小腿伤愈，纳格尔斯曼确认首发——高龄复出存在微小风险但无影响预测",
       "✅ 穆西亚拉+哈弗茨：双双百分百出战",
       "❌ 莱纳特·卡尔(后卫)：训练受伤，奥耶德拉戈替补入队",
       "✅ 库拉索：首届世界杯，全员可用，历史首秀斗志高昂"
     ],
-    "notes": "M4大球规律；诺伊尔(40岁)赛季末小腿伤愈复出，仍首发但高龄须关注。穆西亚拉/哈弗茨百分百出战，整体实力压制库拉索首届参赛激情"
+    "notes": "M4大球规律；诺伊尔(40岁)赛季末小腿伤愈复出，仍首发但高龄须关注。穆西亚拉/哈弗茨百分百出战，整体实力压制库拉索首届参赛激情",
+    "predictionC": "德国 3-0",
+    "probabilityA": 35,
+    "probabilityB": 33,
+    "probabilityC": 32,
+    "winDrawLoss": "home"
   },
   {
     "matchId": 1009,
@@ -132,12 +190,22 @@
     "group": "F组",
     "kickoff": "2026-06-14T20:00:00Z",
     "predictionA": "荷兰 2-1",
-    "predictionB": "平局 1-1",
+    "predictionB": "荷兰 1-1",
     "actualScore": null,
     "directionCorrect": null,
     "exactHit": null,
-    "bettingValues": [{"stars": 2, "name": "荷兰获胜", "odds": "-150", "hit": null}],
-    "mRulesTriggered": ["ASIA", "M3"],
+    "bettingValues": [
+      {
+        "stars": 2,
+        "name": "荷兰获胜",
+        "odds": "-150",
+        "hit": null
+      }
+    ],
+    "mRulesTriggered": [
+      "ASIA",
+      "M3"
+    ],
     "teamNews": [
       "❌ 日本远藤航(队长/核心后腰)：脚伤后宣布退出国家队！日本失去战术大脑和领袖",
       "❌ 日本三笘薰(最佳前锋)：伤缺本届世界杯，失去最具威胁的边路突破",
@@ -147,7 +215,12 @@
       "🟡 荷兰德佩(前锋)：腿筋旧患，本届大打折扣",
       "✅ 荷兰加克波+马伦：均可出战，攻击线仍具威胁"
     ],
-    "notes": "重大伤情更新→预测从平局改为荷兰胜。日本双核缺席（远藤退役+三笘伤缺）破坏战术体系。荷兰虽有伤病(Timber/德里赫特/Schouten)但深度更好。亚洲逆境力系数下调，日本爆冷概率从+10%降至+5%"
+    "notes": "重大伤情更新→预测从平局改为荷兰胜。日本双核缺席（远藤退役+三笘伤缺）破坏战术体系。荷兰虽有伤病(Timber/德里赫特/Schouten)但深度更好。亚洲逆境力系数下调，日本爆冷概率从+10%降至+5%",
+    "predictionC": "荷兰 3-1",
+    "probabilityA": 36,
+    "probabilityB": 32,
+    "probabilityC": 32,
+    "winDrawLoss": "home"
   },
   {
     "matchId": 1010,
@@ -155,13 +228,23 @@
     "awayTeam": "厄瓜多尔",
     "group": "E组",
     "kickoff": "2026-06-14T23:00:00Z",
-    "predictionA": "平局 1-1",
-    "predictionB": "0-1 厄瓜多尔",
+    "predictionA": "科特迪瓦 1-1",
+    "predictionB": "科特迪瓦 0-1",
     "actualScore": null,
     "directionCorrect": null,
     "exactHit": null,
-    "bettingValues": [{"stars": 3, "name": "平局", "odds": "+180", "hit": null}],
-    "mRulesTriggered": ["M2", "M6"],
+    "bettingValues": [
+      {
+        "stars": 3,
+        "name": "平局",
+        "odds": "+180",
+        "hit": null
+      }
+    ],
+    "mRulesTriggered": [
+      "M2",
+      "M6"
+    ],
     "teamNews": [
       "❌ 科特迪瓦哈勒(核心前锋)：未入26人大名单！进球威胁大幅下降",
       "❌ 科特迪瓦Ndicka(中卫)：大腿伤缺，错过首场",
@@ -170,7 +253,12 @@
       "🟡 厄瓜多尔瓦伦西亚(队长/前锋)：小伤存疑但预期可上场",
       "✅ 厄瓜多尔：2年不败，防守体系成熟稳健"
     ],
-    "notes": "哈勒未入大名单是本场最大变量——主前锋缺席降低科特迪瓦临门一脚威胁。厄瓜多尔瓦伦西亚预计出战，2年不败防守稳健。平局仍是首选但predB改为厄瓜多尔客胜（哈勒缺席使科特迪瓦难以进球）"
+    "notes": "哈勒未入大名单是本场最大变量——主前锋缺席降低科特迪瓦临门一脚威胁。厄瓜多尔瓦伦西亚预计出战，2年不败防守稳健。平局仍是首选但predB改为厄瓜多尔客胜（哈勒缺席使科特迪瓦难以进球）",
+    "predictionC": "科特迪瓦 1-0",
+    "probabilityA": 35,
+    "probabilityB": 33,
+    "probabilityC": 32,
+    "winDrawLoss": "draw"
   },
   {
     "matchId": 1011,
@@ -179,12 +267,21 @@
     "group": "F组",
     "kickoff": "2026-06-15T02:00:00Z",
     "predictionA": "瑞典 1-0",
-    "predictionB": "平局 0-0",
+    "predictionB": "瑞典 0-0",
     "actualScore": null,
     "directionCorrect": null,
     "exactHit": null,
-    "bettingValues": [{"stars": 2, "name": "Under 1.5进球", "odds": "-110", "hit": null}],
-    "mRulesTriggered": ["M2"],
+    "bettingValues": [
+      {
+        "stars": 2,
+        "name": "Under 1.5进球",
+        "odds": "-110",
+        "hit": null
+      }
+    ],
+    "mRulesTriggered": [
+      "M2"
+    ],
     "teamNews": [
       "✅ 瑞典许克里斯(Gyökeres,Arsenal前锋)：刚夺英超冠军，状态顶峰，确认首发",
       "✅ 瑞典伊萨克(Isak,Liverpool前锋)：客场赛季有些微伤，但确认参赛",
@@ -194,7 +291,12 @@
       "✅ 突尼斯：换帅后主打低位防守，防线基本完整",
       "💡 教练：Graham Potter(新任瑞典主帅)首次出战；突尼斯新帅首场世界杯"
     ],
-    "notes": "许克里斯+伊萨克双前锋是瑞典最大武器，进攻火力足以突破突尼斯防线。库卢塞夫斯基缺阵削弱创造力但双前锋补偿。突尼斯汉尼巴尔存疑→进攻威胁下降。预测从平局改为瑞典胜1-0"
+    "notes": "许克里斯+伊萨克双前锋是瑞典最大武器，进攻火力足以突破突尼斯防线。库卢塞夫斯基缺阵削弱创造力但双前锋补偿。突尼斯汉尼巴尔存疑→进攻威胁下降。预测从平局改为瑞典胜1-0",
+    "predictionC": "瑞典 0-1",
+    "probabilityA": 35,
+    "probabilityB": 33,
+    "probabilityC": 32,
+    "winDrawLoss": "home"
   },
   {
     "matchId": 1012,
@@ -202,14 +304,19 @@
     "awayTeam": "土耳其",
     "group": "D组",
     "kickoff": "2026-06-14T05:00:00Z",
-    "predictionA": "1-2 土耳其",
-    "predictionB": "平局 1-1",
+    "predictionA": "澳大利亚 1-2",
+    "predictionB": "澳大利亚 1-1",
     "actualScore": "2-0",
     "directionCorrect": false,
     "exactHit": false,
     "bettingValues": [],
     "mRulesTriggered": [],
-    "notes": "爆冷！澳大利亚2-0横扫土耳其，Irankunda最年轻Socceroos世界杯进球。土耳其24年后重返世杯反而发挥失常。模型方向完全错误，澳大利亚实力被严重低估"
+    "notes": "爆冷！澳大利亚2-0横扫土耳其，Irankunda最年轻Socceroos世界杯进球。土耳其24年后重返世杯反而发挥失常。模型方向完全错误，澳大利亚实力被严重低估",
+    "predictionC": "澳大利亚 2-1",
+    "probabilityA": 36,
+    "probabilityB": 35,
+    "probabilityC": 30,
+    "winDrawLoss": "away"
   },
   {
     "matchId": 1013,
@@ -224,7 +331,12 @@
     "exactHit": null,
     "bettingValues": [],
     "mRulesTriggered": [],
-    "notes": "西班牙零封概率94%，佛得角防守体系难抵传控压迫"
+    "notes": "西班牙零封概率94%，佛得角防守体系难抵传控压迫",
+    "predictionC": "西班牙 3-3",
+    "probabilityA": 36,
+    "probabilityB": 36,
+    "probabilityC": 28,
+    "winDrawLoss": "home"
   },
   {
     "matchId": 1014,
@@ -239,7 +351,12 @@
     "exactHit": null,
     "bettingValues": [],
     "mRulesTriggered": [],
-    "notes": "比利时胜64%，黄金一代末期但阵容仍强，埃及防守为主"
+    "notes": "比利时胜64%，黄金一代末期但阵容仍强，埃及防守为主",
+    "predictionC": "比利时 1-1",
+    "probabilityA": 38,
+    "probabilityB": 32,
+    "probabilityC": 31,
+    "winDrawLoss": "home"
   },
   {
     "matchId": 1015,
@@ -247,14 +364,28 @@
     "awayTeam": "乌拉圭",
     "group": "H组",
     "kickoff": "2026-06-16T02:00:00Z",
-    "predictionA": "0-1 乌拉圭",
-    "predictionB": "1-2 乌拉圭",
+    "predictionA": "沙特 0-1",
+    "predictionB": "沙特 1-2",
     "actualScore": null,
     "directionCorrect": null,
     "exactHit": null,
-    "bettingValues": [{"stars": 3, "name": "Under 2.5进球", "odds": "-115", "hit": null}],
-    "mRulesTriggered": ["M2"],
-    "notes": "乌拉圭占优，双方低位防守→进球偏少"
+    "bettingValues": [
+      {
+        "stars": 3,
+        "name": "Under 2.5进球",
+        "odds": "-115",
+        "hit": null
+      }
+    ],
+    "mRulesTriggered": [
+      "M2"
+    ],
+    "notes": "乌拉圭占优，双方低位防守→进球偏少",
+    "predictionC": "沙特 1-1",
+    "probabilityA": 40,
+    "probabilityB": 31,
+    "probabilityC": 29,
+    "winDrawLoss": "away"
   },
   {
     "matchId": 1016,
@@ -267,9 +398,23 @@
     "actualScore": null,
     "directionCorrect": null,
     "exactHit": null,
-    "bettingValues": [{"stars": 3, "name": "Over 2.5进球", "odds": "-130", "hit": null}],
-    "mRulesTriggered": ["M4"],
-    "notes": "法国占优，双方均有进球能力，预计进球偏多"
+    "bettingValues": [
+      {
+        "stars": 3,
+        "name": "Over 2.5进球",
+        "odds": "-130",
+        "hit": null
+      }
+    ],
+    "mRulesTriggered": [
+      "M4"
+    ],
+    "notes": "法国占优，双方均有进球能力，预计进球偏多",
+    "predictionC": "法国 3-3",
+    "probabilityA": 35,
+    "probabilityB": 34,
+    "probabilityC": 31,
+    "winDrawLoss": "home"
   },
   {
     "matchId": 1017,
@@ -278,13 +423,27 @@
     "group": "L组",
     "kickoff": "2026-06-16T20:00:00Z",
     "predictionA": "英格兰 2-1",
-    "predictionB": "平局 1-1",
+    "predictionB": "英格兰 1-1",
     "actualScore": null,
     "directionCorrect": null,
     "exactHit": null,
-    "bettingValues": [{"stars": 3, "name": "平局", "odds": "+270", "hit": null}],
-    "mRulesTriggered": ["M2"],
-    "notes": "平局+270有价值：巴尔干低位防守+英格兰首场保守规律"
+    "bettingValues": [
+      {
+        "stars": 3,
+        "name": "平局",
+        "odds": "+270",
+        "hit": null
+      }
+    ],
+    "mRulesTriggered": [
+      "M2"
+    ],
+    "notes": "平局+270有价值：巴尔干低位防守+英格兰首场保守规律",
+    "predictionC": "英格兰 1-2",
+    "probabilityA": 37,
+    "probabilityB": 36,
+    "probabilityC": 27,
+    "winDrawLoss": "home"
   },
   {
     "matchId": 1018,
@@ -299,7 +458,12 @@
     "exactHit": null,
     "bettingValues": [],
     "mRulesTriggered": [],
-    "notes": "伊朗占优，实力差距虽小但方向明确"
+    "notes": "伊朗占优，实力差距虽小但方向明确",
+    "predictionC": "伊朗 1-1",
+    "probabilityA": 38,
+    "probabilityB": 37,
+    "probabilityC": 25,
+    "winDrawLoss": "home"
   },
   {
     "matchId": 1019,
@@ -312,9 +476,21 @@
     "actualScore": null,
     "directionCorrect": null,
     "exactHit": null,
-    "bettingValues": [{"stars": 2, "name": "比分市场2-0", "odds": "+700", "hit": null}],
+    "bettingValues": [
+      {
+        "stars": 2,
+        "name": "比分市场2-0",
+        "odds": "+700",
+        "hit": null
+      }
+    ],
     "mRulesTriggered": [],
-    "notes": "阿根廷胜72%，-239是散户陷阱，2-0比分市场（+700）更有性价比"
+    "notes": "阿根廷胜72%，-239是散户陷阱，2-0比分市场（+700）更有性价比",
+    "predictionC": "阿根廷 2-2",
+    "probabilityA": 37,
+    "probabilityB": 32,
+    "probabilityC": 31,
+    "winDrawLoss": "home"
   },
   {
     "matchId": 1020,
@@ -327,9 +503,21 @@
     "actualScore": null,
     "directionCorrect": null,
     "exactHit": null,
-    "bettingValues": [{"stars": 2, "name": "比分市场3-0", "odds": "+500", "hit": null}],
+    "bettingValues": [
+      {
+        "stars": 2,
+        "name": "比分市场3-0",
+        "odds": "+500",
+        "hit": null
+      }
+    ],
     "mRulesTriggered": [],
-    "notes": "葡萄牙胜82%"
+    "notes": "葡萄牙胜82%",
+    "predictionC": "葡萄牙 3-3",
+    "probabilityA": 35,
+    "probabilityB": 33,
+    "probabilityC": 32,
+    "winDrawLoss": "home"
   },
   {
     "matchId": 1021,
@@ -345,7 +533,12 @@
     "bettingValues": [],
     "mRulesTriggered": [],
     "teamNews": [],
-    "notes": "待赛前深度分析"
+    "notes": "待赛前深度分析",
+    "predictionC": "挪威 1-1",
+    "probabilityA": 34,
+    "probabilityB": 33,
+    "probabilityC": 32,
+    "winDrawLoss": "home"
   },
   {
     "matchId": 1022,
@@ -361,7 +554,12 @@
     "bettingValues": [],
     "mRulesTriggered": [],
     "teamNews": [],
-    "notes": "待赛前深度分析"
+    "notes": "待赛前深度分析",
+    "predictionC": "奥地利 2-2",
+    "probabilityA": 38,
+    "probabilityB": 36,
+    "probabilityC": 26,
+    "winDrawLoss": "home"
   },
   {
     "matchId": 1023,
@@ -377,7 +575,12 @@
     "bettingValues": [],
     "mRulesTriggered": [],
     "teamNews": [],
-    "notes": "待赛前深度分析"
+    "notes": "待赛前深度分析",
+    "predictionC": "哥伦比亚 2-2",
+    "probabilityA": 35,
+    "probabilityB": 35,
+    "probabilityC": 30,
+    "winDrawLoss": "home"
   },
   {
     "matchId": 1024,
@@ -386,13 +589,18 @@
     "group": "L组",
     "kickoff": "2026-06-20T23:00:00Z",
     "predictionA": "加纳 1-0",
-    "predictionB": "平局 1-1",
+    "predictionB": "加纳 1-1",
     "actualScore": null,
     "directionCorrect": null,
     "exactHit": null,
     "bettingValues": [],
     "mRulesTriggered": [],
     "teamNews": [],
-    "notes": "待赛前深度分析"
+    "notes": "待赛前深度分析",
+    "predictionC": "加纳 2-1",
+    "probabilityA": 35,
+    "probabilityB": 34,
+    "probabilityC": 31,
+    "winDrawLoss": "home"
   }
 ]

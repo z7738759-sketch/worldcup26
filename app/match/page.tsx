@@ -96,19 +96,23 @@ export default function MatchListPage() {
                       </div>
                     </div>
 
-                    {/* 预测 + 总进球 */}
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10, marginBottom: 16 }}>
-                      <div style={{ background: '#070f1a', borderRadius: 14, padding: '14px 10px', textAlign: 'center' }}>
-                        <div style={{ fontSize: 11, color: '#6b7f96', marginBottom: 6 }}>预测 A</div>
-                        <div style={{ color: '#f5a623', fontWeight: 900, fontSize: 15 }}>{p.predictionA}</div>
+                    {/* 3预测 + 总进球 */}
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8, marginBottom: 16 }}>
+                      <div style={{ background: '#070f1a', border: '1px solid #f5a62330', borderRadius: 14, padding: '12px 8px', textAlign: 'center' }}>
+                        <div style={{ fontSize: 10, color: '#f5a623', marginBottom: 4, fontWeight: 700 }}>A · {p.probabilityA}%</div>
+                        <div style={{ color: '#f5a623', fontWeight: 900, fontSize: 14 }}>{p.predictionA}</div>
                       </div>
-                      <div style={{ background: '#070f1a', borderRadius: 14, padding: '14px 10px', textAlign: 'center' }}>
-                        <div style={{ fontSize: 11, color: '#6b7f96', marginBottom: 6 }}>预测 B</div>
-                        <div style={{ color: '#60a5fa', fontWeight: 900, fontSize: 15 }}>{p.predictionB}</div>
+                      <div style={{ background: '#070f1a', border: '1px solid #60a5fa30', borderRadius: 14, padding: '12px 8px', textAlign: 'center' }}>
+                        <div style={{ fontSize: 10, color: '#60a5fa', marginBottom: 4, fontWeight: 700 }}>B · {p.probabilityB}%</div>
+                        <div style={{ color: '#60a5fa', fontWeight: 900, fontSize: 14 }}>{p.predictionB}</div>
                       </div>
-                      <div style={{ background: '#070f1a', borderRadius: 14, padding: '14px 10px', textAlign: 'center' }}>
-                        <div style={{ fontSize: 11, color: '#6b7f96', marginBottom: 6 }}>总进球</div>
-                        <div style={{ color: '#cdd9e5', fontWeight: 900, fontSize: 15 }}>{model.totalGoalsA}~{model.totalGoalsB}球</div>
+                      <div style={{ background: '#070f1a', border: '1px solid #a78bfa30', borderRadius: 14, padding: '12px 8px', textAlign: 'center' }}>
+                        <div style={{ fontSize: 10, color: '#a78bfa', marginBottom: 4, fontWeight: 700 }}>C · {p.probabilityC}%</div>
+                        <div style={{ color: '#a78bfa', fontWeight: 900, fontSize: 14 }}>{p.predictionC}</div>
+                      </div>
+                      <div style={{ background: '#070f1a', border: '1px solid #1a2d45', borderRadius: 14, padding: '12px 8px', textAlign: 'center' }}>
+                        <div style={{ fontSize: 10, color: '#6b7f96', marginBottom: 4, fontWeight: 700 }}>总进球</div>
+                        <div style={{ color: '#cdd9e5', fontWeight: 900, fontSize: 14 }}>{model.totalGoalsA}~{model.totalGoalsB}球</div>
                       </div>
                     </div>
 

@@ -56,38 +56,62 @@ export function getAccuracyStats() {
   const finished = predictionsData.filter(p => p.actualScore !== null)
   const total = finished.length
 
-  // 比分类：方向+精确
-  const scoreDirectionHits = finished.filter(p => p.directionCorrect).length
-  const scoreExactHits = finished.filter(p => p.exactHit).length
+  // 胜平负方向命中：基于显式 winDrawLoss，不靠3个预测覆盖不同结果
+  const scoreDirectionHits = finished.filter(p => {
+    if (!p.actualScore || !p.winDrawLoss) return false
+    const [hg, ag] = p.actualScore.split('-').map(Number)
+    const actual = hg > ag ? 'home' : ag > hg ? 'away' : 'draw'
+    return p.winDrawLoss === actual
+  }).length
 
-  // 总进球类：独立核算
-  // 从实际比分计算总进球数，判断是否在模型预测范围内
+  // 比分类：精确命中 — A/B/C任一完全匹配实际比分
+  const scoreExactHits = finished.filter(p => {
+    if (!p.actualScore) return false
+    const preds = [p.predictionA, p.predictionB, p.predictionC]
+    return preds.some(pred => {
+      if (!pred) return false
+      const m = pred.match(/(\d+)\s*[-–—]\s*(\d+)/)
+      if (!m) return false
+      return `${m[1]}-${m[2]}` === p.actualScore
+    })
+  }).length
+
+  // 总进球类：独立核算（总进球独立泊松运算，不依赖预测比分）
   const totalGoalsHits = finished.filter(p => {
     const tg = (p as unknown as Record<string, unknown>).totalGoalsDirectionCorrect
     if (tg === true || tg === false) return tg
-    // 如果没设置，从实际比分反算
     if (!p.actualScore) return false
     const [hg, ag] = p.actualScore.split('-').map(Number)
     const actualTotal = hg + ag
-    // 需要模型输出来获取预测范围——这里用近似：predictionA/B中解析
-    const goalsA = parseGoalsFromPredictionText(p.predictionA)
-    const goalsB = parseGoalsFromPredictionText(p.predictionB)
-    if (goalsA === null || goalsB === null) return false
-    const lo = Math.min(goalsA, goalsB)
-    const hi = Math.max(goalsA, goalsB)
+    // 从A/B/C中解析所有可能的总进球范围
+    const preds = [p.predictionA, p.predictionB, p.predictionC]
+    const goalCounts = preds.map(t => parseGoalsFromPredictionText(t)).filter((g): g is number => g !== null)
+    if (goalCounts.length === 0) return false
+    const lo = Math.min(...goalCounts)
+    const hi = Math.max(...goalCounts)
     return actualTotal >= lo && actualTotal <= hi
   }).length
 
   return {
     total,
-    // 比分模块
     scoreDirectionHits,
     scoreExactHits,
     scoreDirectionRate: total ? Math.round((scoreDirectionHits / total) * 100) : 0,
     scoreExactRate: total ? Math.round((scoreExactHits / total) * 100) : 0,
-    // 总进球模块
     totalGoalsHits,
     totalGoalsRate: total ? Math.round((totalGoalsHits / total) * 100) : 0,
+  }
+}
+
+// 从预测文本解析方向和比分
+function parseScoreAndDirection(pred: string, homeTeam: string, awayTeam: string): { direction: 'home' | 'away' | 'draw'; score: string } | null {
+  const m = pred.match(/(\d+)\s*[-–—]\s*(\d+)/)
+  if (!m) return null
+  const h = parseInt(m[1]), a = parseInt(m[2])
+  // 比分总是主队在前（H-A格式）
+  return {
+    direction: h > a ? 'home' : a > h ? 'away' : 'draw',
+    score: `${h}-${a}`
   }
 }
 

@@ -158,21 +158,16 @@ export default function HomePage() {
                       </div>
                     </div>
 
-                    {/* 预测对比 */}
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 'clamp(8px, 2vw, 16px)', flexWrap: 'wrap', fontSize: 'clamp(11px, 1.5vw, 13px)' }}>
-                      <span style={{ color: '#6b7f96' }}>预测A</span>
-                      <span style={{
-                        fontWeight: 700,
-                        color: p.predictionA === p.actualScore ? '#4ade80' : '#8899aa',
-                        textDecoration: p.predictionA === p.actualScore ? 'none' : 'line-through',
-                      }}>{p.predictionA}</span>
+                    {/* 3预测对比 */}
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 'clamp(6px, 1.5vw, 12px)', flexWrap: 'wrap', fontSize: 'clamp(10px, 1.3vw, 12px)' }}>
+                      <span style={{ color: '#f5a623', fontWeight: 600 }}>A {p.probabilityA}%</span>
+                      <span style={{ fontWeight: 700, color: p.predictionA === p.actualScore ? '#4ade80' : '#8899aa', textDecoration: p.predictionA === p.actualScore ? 'none' : 'line-through' }}>{p.predictionA}</span>
                       <span style={{ color: '#3d5470' }}>|</span>
-                      <span style={{ color: '#6b7f96' }}>预测B</span>
-                      <span style={{
-                        fontWeight: 700,
-                        color: p.predictionB === p.actualScore ? '#4ade80' : '#8899aa',
-                        textDecoration: p.predictionB === p.actualScore ? 'none' : 'line-through',
-                      }}>{p.predictionB}</span>
+                      <span style={{ color: '#60a5fa', fontWeight: 600 }}>B {p.probabilityB}%</span>
+                      <span style={{ fontWeight: 700, color: p.predictionB === p.actualScore ? '#4ade80' : '#8899aa', textDecoration: p.predictionB === p.actualScore ? 'none' : 'line-through' }}>{p.predictionB}</span>
+                      <span style={{ color: '#3d5470' }}>|</span>
+                      <span style={{ color: '#a78bfa', fontWeight: 600 }}>C {p.probabilityC}%</span>
+                      <span style={{ fontWeight: 700, color: p.predictionC === p.actualScore ? '#4ade80' : '#8899aa', textDecoration: p.predictionC === p.actualScore ? 'none' : 'line-through' }}>{p.predictionC}</span>
                     </div>
 
                     {/* 总结 */}

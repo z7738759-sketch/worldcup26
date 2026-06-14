@@ -157,19 +157,23 @@ export default function PreviewPage() {
                     </div>
                   </div>
 
-                  {/* 预测结果 + 总进球 */}
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 12, marginBottom: 22 }}>
-                    <div style={{ background: '#070f1a', border: '1px solid #1a2d45', borderRadius: 14, padding: '14px 10px', textAlign: 'center' }}>
-                      <div style={{ fontSize: 11, color: '#6b7f96', marginBottom: 6, letterSpacing: '1px' }}>我们预测 A</div>
-                      <div style={{ color: '#f5a623', fontWeight: 900, fontSize: 16 }}>{p.predictionA}</div>
+                  {/* 3预测 + 概率 */}
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 10, marginBottom: 22 }}>
+                    <div style={{ background: '#070f1a', border: '1px solid #f5a62340', borderRadius: 14, padding: '14px 10px', textAlign: 'center' }}>
+                      <div style={{ fontSize: 10, color: '#f5a623', marginBottom: 6, letterSpacing: '1px', fontWeight: 700 }}>预测 A {p.probabilityA}%</div>
+                      <div style={{ color: '#f5a623', fontWeight: 900, fontSize: 'clamp(13px, 1.5vw, 15px)' }}>{p.predictionA}</div>
+                    </div>
+                    <div style={{ background: '#070f1a', border: '1px solid #60a5fa40', borderRadius: 14, padding: '14px 10px', textAlign: 'center' }}>
+                      <div style={{ fontSize: 10, color: '#60a5fa', marginBottom: 6, letterSpacing: '1px', fontWeight: 700 }}>预测 B {p.probabilityB}%</div>
+                      <div style={{ color: '#60a5fa', fontWeight: 900, fontSize: 'clamp(13px, 1.5vw, 15px)' }}>{p.predictionB}</div>
+                    </div>
+                    <div style={{ background: '#070f1a', border: '1px solid #a78bfa40', borderRadius: 14, padding: '14px 10px', textAlign: 'center' }}>
+                      <div style={{ fontSize: 10, color: '#a78bfa', marginBottom: 6, letterSpacing: '1px', fontWeight: 700 }}>预测 C {p.probabilityC}%</div>
+                      <div style={{ color: '#a78bfa', fontWeight: 900, fontSize: 'clamp(13px, 1.5vw, 15px)' }}>{p.predictionC}</div>
                     </div>
                     <div style={{ background: '#070f1a', border: '1px solid #1a2d45', borderRadius: 14, padding: '14px 10px', textAlign: 'center' }}>
-                      <div style={{ fontSize: 11, color: '#6b7f96', marginBottom: 6, letterSpacing: '1px' }}>我们预测 B</div>
-                      <div style={{ color: '#60a5fa', fontWeight: 900, fontSize: 16 }}>{p.predictionB}</div>
-                    </div>
-                    <div style={{ background: '#070f1a', border: '1px solid #1a2d45', borderRadius: 14, padding: '14px 10px', textAlign: 'center' }}>
-                      <div style={{ fontSize: 11, color: '#6b7f96', marginBottom: 6, letterSpacing: '1px' }}>总进球预测</div>
-                      <div style={{ color: '#cdd9e5', fontWeight: 900, fontSize: 16 }}>{model.totalGoalsA}~{model.totalGoalsB} 球</div>
+                      <div style={{ fontSize: 10, color: '#6b7f96', marginBottom: 6, letterSpacing: '1px' }}>总进球</div>
+                      <div style={{ color: '#cdd9e5', fontWeight: 900, fontSize: 'clamp(13px, 1.5vw, 15px)' }}>{model.totalGoalsA}~{model.totalGoalsB}球</div>
                     </div>
                   </div>
 
@@ -252,24 +256,6 @@ export default function PreviewPage() {
                     </div>
                   )}
 
-                  {/* 底部数据 */}
-                  <div style={{ paddingTop: 14, borderTop: '1px solid #1a2d45', display: 'flex', gap: 24, flexWrap: 'wrap', fontSize: 13 }}>
-                    <span style={{ color: '#6b7f96' }}>实力 <span style={{ color: '#cdd9e5' }}>{model.eloHome} vs {model.eloAway}分</span></span>
-                    <span style={{ color: '#6b7f96' }}>预期进球 <span style={{ color: '#cdd9e5' }}>{model.expectedGoalsHome} vs {model.expectedGoalsAway}</span></span>
-                    <span style={{ color: '#6b7f96' }}>实力差距 <span style={{ color: Math.abs(eloDiff) > 200 ? '#f5a623' : '#cdd9e5', fontWeight: 700 }}>{Math.abs(eloDiff) > 200 ? '悬殊' : Math.abs(eloDiff) > 100 ? '明显' : '接近'}</span></span>
-                  </div>
-
-                  {/* 查看详情链接 */}
-                  <div style={{ marginTop: 16, textAlign: 'center' }}>
-                    <Link href={`/match/${p.matchId}`}
-                      style={{
-                        color: '#f5a623', fontSize: 14, fontWeight: 600, textDecoration: 'none',
-                        background: '#1a2d45', padding: '8px 24px', borderRadius: 9999,
-                        display: 'inline-block',
-                      }}>
-                      查看完整分析 →
-                    </Link>
-                  </div>
                 </div>
               </div>
             )

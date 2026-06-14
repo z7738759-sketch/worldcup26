@@ -64,7 +64,12 @@ export interface Prediction {
   kickoff: string
   predictionA: string
   predictionB: string
+  predictionC: string
+  probabilityA: number
+  probabilityB: number
+  probabilityC: number
   actualScore: string | null
+  winDrawLoss: 'home' | 'away' | 'draw' | null  // 显式胜平负预测，不依赖比分解析
   directionCorrect: boolean | null
   exactHit: boolean | null
   totalGoalsDirectionCorrect: boolean | null  // 总进球方向：实际总进球是否在预测范围内

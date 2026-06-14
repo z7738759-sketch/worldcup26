@@ -13,6 +13,7 @@ export interface ModelOutput {
   totalGoalsB: number   // 次可能总进球数
   mostLikelyScore: string
   confidence: 'high' | 'medium' | 'low'
+  topScores: Array<{ score: string; prob: number }>  // 概率最高的3个比分
 }
 
 interface TeamStats {
@@ -146,15 +147,29 @@ function poissonProb(lambda: number, k: number): number {
 }
 
 function getMostLikelyScore(lambdaHome: number, lambdaAway: number): string {
-  let bestProb = 0
-  let bestScore = '1-1'
+  const top = getTopScores(lambdaHome, lambdaAway, 1)
+  return top[0]?.score ?? '1-1'
+}
+
+// 计算概率最高的3个比分（泊松分布枚举）
+function getTopScores(lambdaHome: number, lambdaAway: number, count: number): Array<{ score: string; prob: number }> {
+  const scores: Array<{ score: string; prob: number }> = []
   for (let h = 0; h <= 7; h++) {
     for (let a = 0; a <= 7; a++) {
       const p = poissonProb(lambdaHome, h) * poissonProb(lambdaAway, a)
-      if (p > bestProb) { bestProb = p; bestScore = `${h}-${a}` }
+      scores.push({ score: `${h}-${a}`, prob: p })
     }
   }
-  return bestScore
+  scores.sort((a, b) => b.prob - a.prob)
+  return scores.slice(0, count).map(s => ({ ...s, prob: Math.round(s.prob * 10000) / 100 }))
+}
+
+// 比分转中文格式：2-1 → "主队 2-1"
+function scoreToChinese(homeTeam: string, awayTeam: string, score: string, eloDiff: number): string {
+  const [h, a] = score.split('-').map(Number)
+  if (h === a) return `平局 ${score}`
+  if (h > a) return `${homeTeam} ${score}`
+  return `${score} ${awayTeam}`
 }
 
 function computeTotalGoals(lambdaHome: number, lambdaAway: number): [number, number] {
@@ -230,9 +245,25 @@ export function computeModelOutput(
     awayInjuries?: number
     calibratedEloHome?: number
     calibratedEloAway?: number
-    // 预测文本（用于确保总进球与预测比分一致；预测一旦发布不可修改）
     predictionA?: string
     predictionB?: string
+    // v8: 市场资本信号（赔率动向）— 权重与ELO并列
+    marketSignals?: {
+      sharpDirection?: 'home' | 'away' | 'draw'  // 专业资金方向
+      publicDirection?: 'home' | 'away' | 'draw' // 公众资金方向
+      bookmakerGap?: number  // 不同庄家赔率差距（如0.40=40%）
+      asianHandicap?: number // 亚盘让球数（如-0.75）
+      oddsEvenness?: number  // 三方赔率均衡度（<0.10=高度均衡）
+    }
+    // v8: 球队情报量化
+    teamNewsImpact?: {
+      homeKeyOut: number    // 主队核心缺阵人数（❌）
+      awayKeyOut: number    // 客队核心缺阵人数（❌）
+      homeDoubtful: number  // 主队存疑人数（🟡）
+      awayDoubtful: number  // 客队存疑人数（🟡）
+      homeCoachNew?: boolean // 主队新教练首秀
+      awayCoachNew?: boolean // 客队新教练首秀
+    }
   }
 ): ModelOutput {
   const eloHome = extraContext?.calibratedEloHome ?? getElo(homeTeam)
@@ -256,11 +287,12 @@ export function computeModelOutput(
 
   const injuryAdj = ((extraContext?.awayInjuries ?? 0) - (extraContext?.homeInjuries ?? 0)) * 0.02
 
-  // 赛前热身赛状态因子（v6新增）
-  // 热身赛表现与世界杯首场高度相关（加拿大平→平，土耳其险胜弱队→输）
+  // 赛前热身赛状态因子（v9加强）
+  // 热身赛与世界杯首场相关性极强：3/3方向错误都有热身赛警告信号
+  // 加拿大热身平→正赛平、土耳其热身险胜弱队→正赛输、卡塔尔热身稳定→爆冷平
   const friendlyFormHome = PRE_TOURNAMENT_FORM[homeTeam] ?? 0
   const friendlyFormAway = PRE_TOURNAMENT_FORM[awayTeam] ?? 0
-  const friendlyAdj = friendlyFormHome - friendlyFormAway
+  const friendlyAdj = (friendlyFormHome - friendlyFormAway) * 2  // v9: 权重翻倍
 
   // M7: 长期缺席（>15年）→ 该队首场爆冷风险+15%
   // 修正（v5）：增至-8%，土耳其0-2验证原-5%不足以反映真实影响
@@ -268,8 +300,57 @@ export function computeModelOutput(
   if (LONG_ABSENCE.has(homeTeam)) longAbsenceAdj -= 0.08
   if (LONG_ABSENCE.has(awayTeam)) longAbsenceAdj += 0.08
 
+  // v8: 市场资本信号（赔率动向）— 专业资金方向权重与ELO并列
+  const ms = extraContext?.marketSignals
+  let marketAdj = 0
+  let marketDrawBoost = 0
+  if (ms) {
+    // M1: 专业资金与公众反向 → 跟Sharp走（权重最高，已验证）
+    if (ms.sharpDirection && ms.publicDirection && ms.sharpDirection !== ms.publicDirection) {
+      if (ms.sharpDirection === 'home') marketAdj += 0.06
+      else if (ms.sharpDirection === 'away') marketAdj -= 0.06
+      else marketDrawBoost += 0.04  // Sharp押平局
+    }
+    // M5+M6: 庄家赔率差距>30% → 不确定性大增
+    if (ms.bookmakerGap && ms.bookmakerGap > 0.30) {
+      marketDrawBoost += 0.03  // 差距大=市场分歧=平局概率升
+      // 如果弱队是首次参赛 → 进一步增强
+      if (FIRST_TIMERS.has(homeTeam) || FIRST_TIMERS.has(awayTeam)) {
+        marketDrawBoost += 0.04  // M6: 庄家差+首次参赛=最强平局信号
+      }
+    }
+    // M2: 亚盘让球≤0.75且差距<15% → 平局升级
+    if (ms.asianHandicap !== undefined && Math.abs(ms.asianHandicap) <= 0.75 && ms.bookmakerGap && ms.bookmakerGap < 0.15) {
+      marketDrawBoost += 0.04
+    }
+    // M3: 三方赔率均衡 → 市场有效定价，小幅平局提升（v9: 5%→2%）
+    if (ms.oddsEvenness !== undefined && ms.oddsEvenness < 0.10) {
+      marketDrawBoost += 0.02
+      marketAdj *= 0.7  // 均衡时适度压低方向（v9: 0.5→0.7，不过度）
+    }
+  }
+
+  // v8: 球队情报量化 — 伤病+教练变化
+  const ni = extraContext?.teamNewsImpact
+  let newsAdj = 0
+  let newsDrawBoost = 0
+  if (ni) {
+    // 核心缺阵：每人-3%胜率（影响力大于普通伤病）
+    newsAdj -= (ni.homeKeyOut ?? 0) * 0.03
+    newsAdj += (ni.awayKeyOut ?? 0) * 0.03
+    // 存疑球员：每人-1.5%
+    newsAdj -= (ni.homeDoubtful ?? 0) * 0.015
+    newsAdj += (ni.awayDoubtful ?? 0) * 0.015
+    // 新教练首秀：不确定性+2%平局
+    if (ni.homeCoachNew) newsDrawBoost += 0.02
+    if (ni.awayCoachNew) newsDrawBoost += 0.02
+    // 双方都有重大缺阵 → 比赛走向更不确定
+    if ((ni.homeKeyOut + ni.awayKeyOut) >= 3) newsDrawBoost += 0.03
+  }
+
+  // v9: 五行移除出胜率计算（缺乏足球数据统计依据，仅保留为Claude分析上下文）
   const adjustedHomeWin = Math.max(0.05, Math.min(0.88,
-    baseHomeWin + wuxingBoost + formAdj + injuryAdj + longAbsenceAdj + friendlyAdj
+    baseHomeWin + formAdj + injuryAdj + longAbsenceAdj + friendlyAdj + marketAdj + newsAdj
   ))
 
   // === 平局概率 ===
@@ -304,6 +385,11 @@ export function computeModelOutput(
 
   // 弱队主场：ELO差-150到-350时，主队会死守平局（卡塔尔1-1验证）
   if (eloDiff < -150 && eloDiff > -350) drawBase += 0.04
+
+  // v8: 市场信号 + 情报因子影响平局
+  // v9: 所有额外平局加成总和上限12%（防堆叠失控）
+  const extraDrawBoost = Math.min(0.12, marketDrawBoost + newsDrawBoost)
+  drawBase += extraDrawBoost
 
   // 差距悬殊时平局概率下降
   if (absDiff > 300) drawBase = Math.max(0.10, drawBase - 0.10)
@@ -376,6 +462,7 @@ export function computeModelOutput(
   const [totalGoalsA, totalGoalsB] = computeTotalGoals(lambdaHome, lambdaAway)
 
   const confidence: 'high' | 'medium' | 'low' = absDiff > 250 ? 'high' : absDiff > 100 ? 'medium' : 'low'
+  const topScores = getTopScores(lambdaHome, lambdaAway, 3)
 
   return {
     homeWinPct: Math.round(homeWinProb * 100),
@@ -389,5 +476,6 @@ export function computeModelOutput(
     totalGoalsA,
     totalGoalsB,
     confidence,
+    topScores,
   }
 }

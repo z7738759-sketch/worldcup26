@@ -74,10 +74,11 @@ export default async function MatchDetailPage({ params }: { params: Promise<{ id
         </div>
 
         <div style={{ display: 'flex', gap: 10, justifyContent: 'center', flexWrap: 'wrap' }}>
-          <PredChip label="预测 A" value={p.predictionA} color="#f5a623" />
-          <PredChip label="预测 B" value={p.predictionB} color="#60a5fa" />
-          <PredChip label="总进球(独立)" value={`${model.totalGoalsA}~${model.totalGoalsB}球`} color="#cdd9e5" />
-          {p.actualScore && <PredChip label="⚡ 实际结果" value={p.actualScore} color="#4ade80" />}
+          <PredChip label={`A · ${p.probabilityA}%`} value={p.predictionA} color="#f5a623" border />
+          <PredChip label={`B · ${p.probabilityB}%`} value={p.predictionB} color="#60a5fa" />
+          <PredChip label={`C · ${p.probabilityC}%`} value={p.predictionC} color="#a78bfa" />
+          <PredChip label="总进球" value={`${model.totalGoalsA}~${model.totalGoalsB}球`} color="#cdd9e5" />
+          {p.actualScore && <PredChip label="实际结果" value={p.actualScore} color="#4ade80" />}
         </div>
       </div>
 
@@ -214,10 +215,10 @@ export default async function MatchDetailPage({ params }: { params: Promise<{ id
   )
 }
 
-function PredChip({ label, value, color }: { label: string; value: string; color: string }) {
+function PredChip({ label, value, color, border }: { label: string; value: string; color: string; border?: boolean }) {
   return (
-    <div style={{ background: '#070f1a', border: '1px solid #1a2d45' }} className="rounded-xl px-4 sm:px-6 py-2.5 sm:py-3.5 text-center">
-      <div style={{ fontSize: 10, color: '#6b7f96', letterSpacing: '1px', marginBottom: 4 }}>{label}</div>
+    <div style={{ background: '#070f1a', border: border ? `1px solid ${color}40` : '1px solid #1a2d45' }} className="rounded-xl px-4 sm:px-6 py-2.5 sm:py-3.5 text-center">
+      <div style={{ fontSize: 10, color, letterSpacing: '1px', marginBottom: 4, fontWeight: 600 }}>{label}</div>
       <div style={{ fontSize: 'clamp(14px, 2vw, 17px)', color, fontWeight: 900 }}>{value}</div>
     </div>
   )
