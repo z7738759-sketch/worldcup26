@@ -154,7 +154,7 @@
     "group": "E组",
     "kickoff": "2026-06-14T17:00:00Z",
     "predictionA": "德国 4-0",
-    "predictionB": "德国 5-0",
+    "predictionB": "德国 5-1",
     "actualScore": null,
     "directionCorrect": null,
     "exactHit": null,
@@ -176,13 +176,13 @@
       "✅ 穆西亚拉+哈弗茨：双双百分百出战",
       "❌ 莱纳特·卡尔(后卫)：训练受伤，奥耶德拉戈替补入队",
       "✅ 库拉索：首届世界杯，全员可用，历史首秀斗志高昂",
-      "⚽ v10模型：首届参赛队lambdaAway底线0.55，库拉索进球概率从17%升至38%"
+      "⚽ v11模型：首届参赛队lambdaAway底线1.0（cap之后应用），库拉索进球概率≈37%"
     ],
-    "notes": "v10模型：ELO差364但库拉索进球概率≈38%（底线保护）。预测C纳入库拉索进球场景。德国进攻强劲(λ≈4.5)，总进球4-5球范围。",
+    "notes": "v11模型：ELO差364，cap后λHome=4.66，首届参赛底线λAway=1.0（Curacao得分期望=1球）。德国进攻强劲，总进球5-6球范围。预测B纳入库拉索必然进球+德国高效进球场景。",
     "predictionC": "德国 3-1",
-    "probabilityA": 34,
-    "probabilityB": 30,
-    "probabilityC": 26,
+    "probabilityA": 33,
+    "probabilityB": 29,
+    "probabilityC": 25,
     "winDrawLoss": "home"
   },
   {

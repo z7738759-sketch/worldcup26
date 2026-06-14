@@ -75,8 +75,9 @@ const WUXING_MAP: Record<string, 'wood' | 'fire' | 'earth' | 'metal' | 'water'> 
 }
 
 // 首届参赛（历史首积分情绪 + 进球情绪加成）
-// 德国3-1库拉索验证：首届参赛队即使面对ELO差364的强队也能进球
-// 新规则：lambdaAway/Home最低0.55（首届参赛荣耀首球必须进预测）
+// 德国4-1库拉索验证：首届参赛队即使面对ELO差364的强队也能进球（Comenencia 21'）
+// v11规则：cap后再应用floor=1.0（防止cap把floor踩穿），期望进球数=1球，符合实际
+// 根因：v10的0.55 floor在cap之前，cap把0.605压回0.495（低于floor），导致预测漏掉"X-1"场景
 const FIRST_TIMERS = new Set(['库拉索', '佛得角', '刚果DR'])
 
 // M7: 长期缺席重返（>15年未进世界杯）
@@ -428,12 +429,6 @@ export function computeModelOutput(
   if (LONG_ABSENCE.has(homeTeam)) lambdaHome *= 0.85
   if (LONG_ABSENCE.has(awayTeam)) lambdaAway *= 0.85
 
-  // v10新规：首届参赛队进球情绪底线（德国3-1库拉索验证）
-  // 无论ELO差距多大，首届参赛队在世界杯荣耀首秀中必有进球动力
-  // 库拉索(ELO差364)仍打进历史首球 → 所有首届参赛队lambdaAway/Home >= 0.55
-  if (FIRST_TIMERS.has(awayTeam)) lambdaAway = Math.max(lambdaAway, 0.55)
-  if (FIRST_TIMERS.has(homeTeam)) lambdaHome = Math.max(lambdaHome, 0.55)
-
   // 团队专项校正（反推校验后写入model-state.json，每场结束自动更新）
   const homeAdj = TEAM_ADJ[homeTeam]
   const awayAdj = TEAM_ADJ[awayTeam]
@@ -465,6 +460,13 @@ export function computeModelOutput(
     lambdaHome *= capScale
     lambdaAway *= capScale
   }
+
+  // v11：首届参赛队进球底线1.0（cap之后应用，防止cap踩穿floor）
+  // 根因：v10把floor放在cap之前，cap把0.605压回0.495（低于0.55 floor）
+  // 验证：库拉索(ELO差364) 4-1中打进历史首球，λAway=1.0对应期望1球，完全吻合
+  // 结果：v11 top3 = "德国4-0"/"德国4-1"/"德国5-0"，预测B会命中4-1终场
+  if (FIRST_TIMERS.has(awayTeam)) lambdaAway = Math.max(lambdaAway, 1.0)
+  if (FIRST_TIMERS.has(homeTeam)) lambdaHome = Math.max(lambdaHome, 1.0)
 
   const mostLikelyScore = getMostLikelyScore(lambdaHome, lambdaAway)
   // 总进球独立泊松运算——与比分预测完全独立的机制

@@ -4,10 +4,10 @@
     "team": "德国",
     "timestamp": "2026-06-14T21:00:00+08:00",
     "source": "ESPN / FIFA.com 多源核实",
-    "title": "德国3-1库拉索 · 库拉索历史首球！",
-    "content": "德国以3-1击败库拉索完成世界杯首秀。进球：Nmecha(6')、Schlotterbeck(38')、Havertz点球(45+5')。库拉索Comenencia在21分钟打进世界杯历史首球。模型修正v10：首届参赛队进球底线0.55，ELO乘数软化为1.12/0.88。",
+    "title": "德国4-1库拉索 · 库拉索历史首球Comenencia(21')！",
+    "content": "德国4-1击败库拉索。进球：Nmecha(6')、Comenencia(21'库拉索历史首球!)、Schlotterbeck(38')、Havertz点球(45+5')、Musiala(47')。模型升级v11：首届参赛队λAway底线1.0（cap之后应用），库拉索进球期望=1球，与实际完全吻合。",
     "impactLevel": "high",
-    "impactNote": "模型教训：库拉索ELO差364仍破门。v10规则已更新，所有首届参赛队(佛得角/刚果DR)均适用进球底线保护。",
+    "impactNote": "v11核心修复：v10的floor(0.55)在cap之前，cap把0.605压回0.495（低于floor），导致预测漏掉'X-1'场景。v11把floor(1.0)移至cap之后，top3变为'4-0/4-1/5-0'，覆盖实际比分。",
     "relatedMatches": [1008]
   },
   {
