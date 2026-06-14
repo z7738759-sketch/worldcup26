@@ -194,7 +194,7 @@ export default function MatchListClient({ predictions }: { predictions: Predicti
                     </div>
 
                     {/* 预测摘要 */}
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8 }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8, marginBottom: 8 }}>
                       {[
                         { label: `A ${p.probabilityA}%`, value: p.predictionA, color: '#f5a623' },
                         { label: `B ${p.probabilityB}%`, value: p.predictionB, color: '#60a5fa' },
@@ -205,6 +205,9 @@ export default function MatchListClient({ predictions }: { predictions: Predicti
                           <div style={{ color, fontWeight: 900, fontSize: 12 }}>{value}</div>
                         </div>
                       ))}
+                    </div>
+                    <div style={{ textAlign: 'center', fontSize: 11, color: '#3d5470' }}>
+                      ⚽ 总进球预测：<span style={{ color: '#6b7f96', fontWeight: 700 }}>{p.totalGoalsA}球</span> / <span style={{ color: '#6b7f96', fontWeight: 700 }}>{p.totalGoalsB}球</span>
                     </div>
                   </div>
                 </Link>
@@ -246,7 +249,7 @@ export default function MatchListClient({ predictions }: { predictions: Predicti
                       <FlagImg team={p.awayTeam} size={36} />
                     </div>
                   </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8, marginBottom: 16 }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8, marginBottom: 10 }}>
                     {[
                       { label: `A · ${p.probabilityA}%`, value: p.predictionA, color: '#f5a623', border: '#f5a62330' },
                       { label: `B · ${p.probabilityB}%`, value: p.predictionB, color: '#60a5fa', border: '#60a5fa30' },
@@ -257,6 +260,9 @@ export default function MatchListClient({ predictions }: { predictions: Predicti
                         <div style={{ color, fontWeight: 900, fontSize: 14 }}>{value}</div>
                       </div>
                     ))}
+                  </div>
+                  <div style={{ textAlign: 'center', fontSize: 12, color: '#3d5470', marginBottom: 14 }}>
+                    ⚽ 总进球预测：<span style={{ color: '#8899aa', fontWeight: 700 }}>{p.totalGoalsA}球</span> / <span style={{ color: '#8899aa', fontWeight: 700 }}>{p.totalGoalsB}球</span>
                   </div>
                   <div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, marginBottom: 6, fontWeight: 600 }}>
