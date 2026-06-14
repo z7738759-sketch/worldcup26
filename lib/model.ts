@@ -74,7 +74,9 @@ const WUXING_MAP: Record<string, 'wood' | 'fire' | 'earth' | 'metal' | 'water'> 
   '塞内加尔': 'earth', '克罗地亚': 'water',
 }
 
-// 首届参赛（历史首积分情绪）
+// 首届参赛（历史首积分情绪 + 进球情绪加成）
+// 德国3-1库拉索验证：首届参赛队即使面对ELO差364的强队也能进球
+// 新规则：lambdaAway/Home最低0.55（首届参赛荣耀首球必须进预测）
 const FIRST_TIMERS = new Set(['库拉索', '佛得角', '刚果DR'])
 
 // M7: 长期缺席重返（>15年未进世界杯）
@@ -406,15 +408,17 @@ export function computeModelOutput(
   let lambdaHome = hsStats.attackRate * (asStats.defendRate / 1.0) * attackScaleHome
   let lambdaAway = asStats.attackRate * (hsStats.defendRate / 1.0) * attackScaleAway
 
-  // ELO差距进球调整（修复：增加80-150区间，补全负数区间）
-  // 正向（主队更强）
-  if (eloDiff > 250)      { lambdaHome *= 1.20; lambdaAway *= 0.80 }
-  else if (eloDiff > 150) { lambdaHome *= 1.10; lambdaAway *= 0.90 }
-  else if (eloDiff > 80)  { lambdaHome *= 1.05; lambdaAway *= 0.95 }
-  // 负向（客队更强）—— 原代码缺少-150和-80两个层级，导致客队优势被低估
-  else if (eloDiff < -250) { lambdaAway *= 1.20; lambdaHome *= 0.80 }
-  else if (eloDiff < -150) { lambdaAway *= 1.10; lambdaHome *= 0.90 }
-  else if (eloDiff < -80)  { lambdaAway *= 1.05; lambdaHome *= 0.95 }
+  // ELO差距进球调整（v10修正：软化极端乘数，德国3-1库拉索教训）
+  // 原1.20/0.80过激 → 改为1.12/0.88，保留方向但不过度压缩弱队进球
+  if (eloDiff > 350)      { lambdaHome *= 1.15; lambdaAway *= 0.85 }
+  else if (eloDiff > 250) { lambdaHome *= 1.12; lambdaAway *= 0.88 }
+  else if (eloDiff > 150) { lambdaHome *= 1.08; lambdaAway *= 0.93 }
+  else if (eloDiff > 80)  { lambdaHome *= 1.04; lambdaAway *= 0.96 }
+  // 负向（客队更强）
+  else if (eloDiff < -350) { lambdaAway *= 1.15; lambdaHome *= 0.85 }
+  else if (eloDiff < -250) { lambdaAway *= 1.12; lambdaHome *= 0.88 }
+  else if (eloDiff < -150) { lambdaAway *= 1.08; lambdaHome *= 0.93 }
+  else if (eloDiff < -80)  { lambdaAway *= 1.04; lambdaHome *= 0.96 }
 
   // 防守体系压低进球
   if (DEFENSIVE_TEAMS.has(homeTeam)) lambdaAway *= 0.85
@@ -423,6 +427,12 @@ export function computeModelOutput(
   // M7: 长期缺席球队首场进攻效率大幅降低（土耳其0-2→修正v5：0.90→0.85）
   if (LONG_ABSENCE.has(homeTeam)) lambdaHome *= 0.85
   if (LONG_ABSENCE.has(awayTeam)) lambdaAway *= 0.85
+
+  // v10新规：首届参赛队进球情绪底线（德国3-1库拉索验证）
+  // 无论ELO差距多大，首届参赛队在世界杯荣耀首秀中必有进球动力
+  // 库拉索(ELO差364)仍打进历史首球 → 所有首届参赛队lambdaAway/Home >= 0.55
+  if (FIRST_TIMERS.has(awayTeam)) lambdaAway = Math.max(lambdaAway, 0.55)
+  if (FIRST_TIMERS.has(homeTeam)) lambdaHome = Math.max(lambdaHome, 0.55)
 
   // 团队专项校正（反推校验后写入model-state.json，每场结束自动更新）
   const homeAdj = TEAM_ADJ[homeTeam]

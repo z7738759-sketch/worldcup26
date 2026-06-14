@@ -155,16 +155,16 @@
     "kickoff": "2026-06-14T17:00:00Z",
     "predictionA": "德国 4-0",
     "predictionB": "德国 5-0",
-    "actualScore": null,
-    "directionCorrect": null,
-    "exactHit": null,
-    "totalGoalsDirectionCorrect": null,
+    "actualScore": "3-1",
+    "directionCorrect": true,
+    "exactHit": false,
+    "totalGoalsDirectionCorrect": true,
     "bettingValues": [
       {
         "stars": 2,
         "name": "Over 4.5进球",
         "odds": "-150",
-        "hit": null
+        "hit": false
       }
     ],
     "mRulesTriggered": [

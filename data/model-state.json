@@ -77,11 +77,11 @@
   },
 
   "globalStats": {
-    "directionAccuracy": 0.625,
-    "exactHitRate": 0.375,
-    "totalCompleted": 8,
-    "overPredictionBias": 0.25,
-    "note": "方向准确率62.5%（5/8），精确比分37.5%（3/8）。8场已完成：墨西哥✓、韩国✓、加拿大✗、美国✓、卡塔尔✗、巴西✓、苏格兰✓、澳大利亚✗。主要盲点：ELO差距<100的场次爆冷/平局概率严重低估（3/3失误）"
+    "directionAccuracy": 0.667,
+    "exactHitRate": 0.333,
+    "totalCompleted": 9,
+    "overPredictionBias": 0.30,
+    "note": "方向准确率66.7%（6/9），精确比分33.3%（3/9）。9场已完成：墨西哥✓、韩国✓、加拿大✗、美国✓、卡塔尔✗、巴西✓、苏格兰✓、澳大利亚✗、德国✓。德国教训：ELO差364但库拉索仍打进首球，lambdaAway最低底线0.55(v10)"
   },
 
   "teamSpecificAdjustments": {
@@ -90,10 +90,20 @@
     "摩洛哥": { "defenseBoost": 0.1, "reason": "低防体系比ELO显示更难攻破" },
     "日本": { "tacticalBonus": 0.08, "reason": "战术纪律性+逆境力持续高于ELO预期" },
     "澳大利亚": { "attackBoost": 0.12, "formBonus": 0.08, "reason": "2-0横扫土耳其（ELO轻微热门），Irankunda新生代战力被严重低估，实际进攻和组织超过ELO预期" },
-    "土耳其": { "formBonus": -0.05, "reason": "24年后重返世界杯，心理准备不足（与FIRST_TIMERS相反的长期缺席效应），0-2完败表现低于ELO" }
+    "土耳其": { "formBonus": -0.05, "reason": "24年后重返世界杯，心理准备不足（与FIRST_TIMERS相反的长期缺席效应），0-2完败表现低于ELO" },
+    "库拉索": { "attackBoost": 0.10, "reason": "首届参赛荣耀首球(Comenencia 21'对德国)，进攻情绪超ELO预期；v10首届参赛队进球底线0.55已内置" }
   },
 
   "calibrationHistory": [
+    {
+      "matchId": 1008,
+      "date": "2026-06-14",
+      "match": "德国 vs 库拉索 3-1",
+      "prediction": "德国4-0（预测A），德国5-0（预测B），德国3-0（预测C）",
+      "lesson": "① lambdaAway被ELO差364(1.20×)压到约0.35，严重低估首届参赛队进球情绪；② 新规v10：FIRST_TIMERS lambdaAway最低底线0.55；③ ELO差>250的乘数从1.20/0.80改为1.12/0.88，避免极端进球差；④ Over4.5未命中（实际4球=3+1），进球上限判断仍有偏差",
+      "eloAdjustments": { "德国": 14, "库拉索": -14 },
+      "ruleUpdates": "v10：① FIRST_TIMERS lambdaAway/Home >= 0.55；② ELO乘数软化：>250时1.12/0.88（原1.20/0.80）；③ 库拉索attackBoost+10%专项调整"
+    },
     {
       "matchId": 1003,
       "date": "2026-06-12",
