@@ -231,31 +231,6 @@ export default function PreviewPage() {
                     </div>
                   </div>
 
-                  {/* 球队情报 */}
-                  {p.teamNews && p.teamNews.length > 0 && (
-                    <div style={{ marginBottom: 18, paddingTop: 14, borderTop: '1px solid #1a2d45' }}>
-                      <div style={{ fontSize: 12, color: '#60a5fa', fontWeight: 700, letterSpacing: '2px', marginBottom: 10 }}>
-                        📋 实时情报（已验证）
-                      </div>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
-                        {p.teamNews.map((news, i) => {
-                          const emoji = news.slice(0, 2)
-                          let color = '#8899aa'
-                          if (emoji.includes('❌')) color = '#ef4444'
-                          else if (emoji.includes('✅')) color = '#22c55e'
-                          else if (emoji.includes('🟡')) color = '#f5a623'
-                          else if (emoji.includes('💡')) color = '#60a5fa'
-                          return (
-                            <div key={i} style={{ display: 'flex', gap: 8, lineHeight: 1.6 }}>
-                              <span style={{ color, fontSize: 13, flexShrink: 0 }}>{news.slice(0, 2)}</span>
-                              <span style={{ color: '#9db0c8', fontSize: 13 }}>{news.slice(2).trim()}</span>
-                            </div>
-                          )
-                        })}
-                      </div>
-                    </div>
-                  )}
-
                 </div>
               </div>
             )

@@ -23,6 +23,15 @@ export default function MatchListPage() {
     })
     .sort((a, b) => new Date(a.kickoff).getTime() - new Date(b.kickoff).getTime())
 
+  // 已开赛但结果待核实——不要删除，保留可见
+  const inProgress = predictions
+    .filter(p => {
+      if (p.actualScore !== null) return false
+      const kickoff = new Date(p.kickoff)
+      return kickoff <= now  // 已开赛
+    })
+    .sort((a, b) => new Date(b.kickoff).getTime() - new Date(a.kickoff).getTime())
+
   const finished = predictions
     .filter(p => p.actualScore !== null)
     .sort((a, b) => new Date(b.kickoff).getTime() - new Date(a.kickoff).getTime())
@@ -148,6 +157,36 @@ export default function MatchListPage() {
           </div>
         )}
       </section>
+
+      {/* 已开赛 · 结果待核实 */}
+      {inProgress.length > 0 && (
+        <section className="mb-12">
+          <h2 style={{ fontSize: 14, color: '#f59e0b', letterSpacing: '2px' }} className="font-bold uppercase mb-5 flex items-center gap-2">
+            <span style={{ width: 6, height: 6, borderRadius: 3, background: '#f59e0b', display: 'inline-block' }} />
+            ⏳ 已开赛 · 结果待核实
+          </h2>
+          <div className="space-y-3">
+            {inProgress.map(p => {
+              const model = computeModelOutput(p.homeTeam, p.awayTeam, p.kickoff, { predictionA: p.predictionA, predictionB: p.predictionB })
+              return (
+                <Link key={p.matchId} href={`/match/${p.matchId}`}
+                  style={{ background: '#0d1b2a', border: '1px solid #f59e0b40', display: 'block', textDecoration: 'none' }}
+                  className="rounded-xl p-4 hover:border-yellow-600/50 transition-all">
+                  <div className="flex items-center gap-3 flex-wrap">
+                    <span style={{ fontSize: 11, color: '#f59e0b', fontWeight: 700, background: '#1a2d45', padding: '3px 10px', borderRadius: 6 }}>
+                      {p.group}
+                    </span>
+                    <span style={{ color: 'white', fontSize: 14, fontWeight: 600 }}>{p.homeTeam}</span>
+                    <span style={{ color: '#f5a623', fontWeight: 700, fontSize: 13 }}>VS</span>
+                    <span style={{ color: 'white', fontSize: 14, fontWeight: 600 }}>{p.awayTeam}</span>
+                    <span style={{ marginLeft: 'auto', fontSize: 12, color: '#f59e0b' }}>等待结果核实</span>
+                  </div>
+                </Link>
+              )
+            })}
+          </div>
+        </section>
+      )}
 
       {/* 已完成比赛 - 简洁列表 */}
       {finished.length > 0 && (
