@@ -3,6 +3,14 @@ import Image from 'next/image'
 import { getAllPredictions } from '@/lib/predictions'
 import { computeModelOutput } from '@/lib/model'
 import { getFlagUrl } from '@/lib/match-utils'
+import liveNewsData from '@/data/live-news.json'
+
+export const revalidate = 60
+
+const liveNews = liveNewsData as Array<{
+  id: number; team: string; timestamp: string; title: string;
+  impactLevel: string; impactNote: string; relatedMatches?: number[];
+}>
 
 function FlagImg({ team, size = 32 }: { team: string; size?: number }) {
   const url = getFlagUrl(team, '64x48')
@@ -51,6 +59,88 @@ export default function MatchListPage() {
         </p>
       </div>
 
+      {/* 已开赛 · 实时追踪 — 放在最上面 */}
+      {inProgress.length > 0 && (
+        <section className="mb-12">
+          <h2 style={{ fontSize: 14, color: '#ef4444', letterSpacing: '2px' }} className="font-bold uppercase mb-5 flex items-center gap-2">
+            <span style={{ width: 8, height: 8, borderRadius: 4, background: '#ef4444', display: 'inline-block', animation: 'pulse 2s infinite' }} />
+            🔴 已开赛 · 实时追踪
+          </h2>
+          <div className="space-y-4">
+            {inProgress.map(p => {
+              const model = computeModelOutput(p.homeTeam, p.awayTeam, p.kickoff, { predictionA: p.predictionA, predictionB: p.predictionB })
+              const kickoffBeijing = new Date(p.kickoff).toLocaleString('zh-CN', {
+                month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Shanghai'
+              })
+              // 关联的实时消息
+              const relatedNews = liveNews.filter(n => n.relatedMatches?.includes(p.matchId))
+              return (
+                <Link key={p.matchId} href={`/match/${p.matchId}`}
+                  style={{ background: 'linear-gradient(135deg, #0d1b2a, #1a0f0f)', border: '1px solid #ef444440', display: 'block', textDecoration: 'none' }}
+                  className="rounded-2xl hover:border-red-500/50 transition-all overflow-hidden">
+
+                  <div className="p-5 sm:p-6">
+                    <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
+                      <div className="flex items-center gap-3">
+                        <span style={{ fontSize: 12, color: '#ef4444', fontWeight: 700, letterSpacing: '2px', background: '#3d1f1f', padding: '3px 10px', borderRadius: 6 }}>
+                          {p.group}
+                        </span>
+                        <span style={{ fontSize: 13, color: '#ef4444' }}>🔴 进行中</span>
+                      </div>
+                      <span style={{ fontSize: 12, color: '#6b7f96' }}>🕐 {kickoffBeijing} 开赛</span>
+                    </div>
+
+                    <div className="flex items-center justify-between mb-5">
+                      <div className="flex items-center gap-3">
+                        <FlagImg team={p.homeTeam} size={36} />
+                        <span style={{ color: 'white', fontWeight: 800, fontSize: 18 }}>{p.homeTeam}</span>
+                      </div>
+                      <span style={{ color: '#ef4444', fontSize: 14, fontWeight: 700 }}>VS</span>
+                      <div className="flex items-center gap-3">
+                        <span style={{ color: 'white', fontWeight: 800, fontSize: 18 }}>{p.awayTeam}</span>
+                        <FlagImg team={p.awayTeam} size={36} />
+                      </div>
+                    </div>
+
+                    {/* 预测摘要 */}
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8, marginBottom: relatedNews.length > 0 ? 14 : 0 }}>
+                      <div style={{ background: '#070f1a', borderRadius: 12, padding: '10px 6px', textAlign: 'center' }}>
+                        <div style={{ fontSize: 9, color: '#f5a623', marginBottom: 2, fontWeight: 700 }}>A {p.probabilityA}%</div>
+                        <div style={{ color: '#f5a623', fontWeight: 900, fontSize: 13 }}>{p.predictionA}</div>
+                      </div>
+                      <div style={{ background: '#070f1a', borderRadius: 12, padding: '10px 6px', textAlign: 'center' }}>
+                        <div style={{ fontSize: 9, color: '#60a5fa', marginBottom: 2, fontWeight: 700 }}>B {p.probabilityB}%</div>
+                        <div style={{ color: '#60a5fa', fontWeight: 900, fontSize: 13 }}>{p.predictionB}</div>
+                      </div>
+                      <div style={{ background: '#070f1a', borderRadius: 12, padding: '10px 6px', textAlign: 'center' }}>
+                        <div style={{ fontSize: 9, color: '#a78bfa', marginBottom: 2, fontWeight: 700 }}>C {p.probabilityC}%</div>
+                        <div style={{ color: '#a78bfa', fontWeight: 900, fontSize: 13 }}>{p.predictionC}</div>
+                      </div>
+                      <div style={{ background: '#070f1a', borderRadius: 12, padding: '10px 6px', textAlign: 'center' }}>
+                        <div style={{ fontSize: 9, color: '#6b7f96', marginBottom: 2 }}>总进球</div>
+                        <div style={{ color: '#cdd9e5', fontWeight: 900, fontSize: 13 }}>{model.totalGoalsA}~{model.totalGoalsB}球</div>
+                      </div>
+                    </div>
+
+                    {/* 实时情报 */}
+                    {relatedNews.length > 0 && (
+                      <div style={{ paddingTop: 12, borderTop: '1px solid #1a2d45' }}>
+                        {relatedNews.slice(0, 2).map((n, i) => (
+                          <div key={i} style={{ fontSize: 11, color: '#8899aa', lineHeight: 1.6, marginBottom: 4 }}>
+                            <span style={{ color: '#f59e0b', fontWeight: 600 }}>📡 {n.title}</span>
+                            <span style={{ color: '#6b7f96' }}> · {n.timestamp.slice(11, 16)}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </Link>
+              )
+            })}
+          </div>
+        </section>
+      )}
+
       {/* 24h内待开赛 */}
       <section className="mb-12">
         <h2 style={{ fontSize: 14, color: '#f5a623', letterSpacing: '2px' }} className="font-bold uppercase mb-5 flex items-center gap-2">
@@ -80,7 +170,6 @@ export default function MatchListPage() {
                   className="rounded-2xl hover:border-yellow-600/50 transition-all overflow-hidden">
 
                   <div className="p-5 sm:p-6">
-                    {/* 顶行 */}
                     <div className="flex items-center justify-between mb-5">
                       <div className="flex items-center gap-3">
                         <span style={{ fontSize: 12, color: '#f5a623', fontWeight: 700, letterSpacing: '2px', background: '#1a2d45', padding: '3px 10px', borderRadius: 6 }}>
@@ -92,7 +181,6 @@ export default function MatchListPage() {
                       </div>
                     </div>
 
-                    {/* 两队 */}
                     <div className="flex items-center justify-between mb-5">
                       <div className="flex items-center gap-3">
                         <FlagImg team={p.homeTeam} size={36} />
@@ -105,7 +193,6 @@ export default function MatchListPage() {
                       </div>
                     </div>
 
-                    {/* 3预测 + 总进球 */}
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8, marginBottom: 16 }}>
                       <div style={{ background: '#070f1a', border: '1px solid #f5a62330', borderRadius: 14, padding: '12px 8px', textAlign: 'center' }}>
                         <div style={{ fontSize: 10, color: '#f5a623', marginBottom: 4, fontWeight: 700 }}>A · {p.probabilityA}%</div>
@@ -125,7 +212,6 @@ export default function MatchListPage() {
                       </div>
                     </div>
 
-                    {/* 胜平负概率条 */}
                     <div>
                       <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, marginBottom: 6, fontWeight: 600 }}>
                         <span style={{ color: '#4ade80' }}>{p.homeTeam} {model.homeWinPct}%</span>
@@ -138,18 +224,6 @@ export default function MatchListPage() {
                         <div style={{ width: `${model.awayWinPct}%`, background: 'linear-gradient(90deg,#1d4ed8,#60a5fa)' }} />
                       </div>
                     </div>
-
-                    {/* teamNews */}
-                    {p.teamNews && p.teamNews.length > 0 && (
-                      <div style={{ marginTop: 14, paddingTop: 14, borderTop: '1px solid #1a2d45' }}>
-                        {p.teamNews.slice(0, 3).map((news, i) => (
-                          <div key={i} style={{ fontSize: 12, color: '#8899aa', lineHeight: 1.7 }}>{news}</div>
-                        ))}
-                        {p.teamNews.length > 3 && (
-                          <div style={{ fontSize: 11, color: '#6b7f96', marginTop: 4 }}>+{p.teamNews.length - 3} 条更多情报</div>
-                        )}
-                      </div>
-                    )}
                   </div>
                 </Link>
               )
@@ -157,36 +231,6 @@ export default function MatchListPage() {
           </div>
         )}
       </section>
-
-      {/* 已开赛 · 结果待核实 */}
-      {inProgress.length > 0 && (
-        <section className="mb-12">
-          <h2 style={{ fontSize: 14, color: '#f59e0b', letterSpacing: '2px' }} className="font-bold uppercase mb-5 flex items-center gap-2">
-            <span style={{ width: 6, height: 6, borderRadius: 3, background: '#f59e0b', display: 'inline-block' }} />
-            ⏳ 已开赛 · 结果待核实
-          </h2>
-          <div className="space-y-3">
-            {inProgress.map(p => {
-              const model = computeModelOutput(p.homeTeam, p.awayTeam, p.kickoff, { predictionA: p.predictionA, predictionB: p.predictionB })
-              return (
-                <Link key={p.matchId} href={`/match/${p.matchId}`}
-                  style={{ background: '#0d1b2a', border: '1px solid #f59e0b40', display: 'block', textDecoration: 'none' }}
-                  className="rounded-xl p-4 hover:border-yellow-600/50 transition-all">
-                  <div className="flex items-center gap-3 flex-wrap">
-                    <span style={{ fontSize: 11, color: '#f59e0b', fontWeight: 700, background: '#1a2d45', padding: '3px 10px', borderRadius: 6 }}>
-                      {p.group}
-                    </span>
-                    <span style={{ color: 'white', fontSize: 14, fontWeight: 600 }}>{p.homeTeam}</span>
-                    <span style={{ color: '#f5a623', fontWeight: 700, fontSize: 13 }}>VS</span>
-                    <span style={{ color: 'white', fontSize: 14, fontWeight: 600 }}>{p.awayTeam}</span>
-                    <span style={{ marginLeft: 'auto', fontSize: 12, color: '#f59e0b' }}>等待结果核实</span>
-                  </div>
-                </Link>
-              )
-            })}
-          </div>
-        </section>
-      )}
 
       {/* 已完成比赛 - 简洁列表 */}
       {finished.length > 0 && (
