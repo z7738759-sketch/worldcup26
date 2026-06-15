@@ -266,7 +266,7 @@
   },
   "突尼斯": {
     "attackRate": 1.3,
-    "defendRate": 0.5,
+    "defendRate": 0.80,
     "form": 10,
     "recentResults": ["W","D","D","L","W","D"],
     "worldCupBest": "group",

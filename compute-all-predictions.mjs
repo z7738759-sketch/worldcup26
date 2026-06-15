@@ -29,7 +29,8 @@ const TEAM_ELO_BASE = {
 }
 
 const CONF_STRENGTH  = { UEFA:1.00, CONMEBOL:0.97, CONCACAF:0.92, CAF:0.90, AFC:0.88, OFC:0.82 }
-const DEFENSIVE_TEAMS = new Set(['摩洛哥','突尼斯','埃及','伊朗','乌拉圭','克罗地亚','波黑','苏格兰','海地','厄瓜多尔'])
+// 乌拉圭 defendRate=0.6 已在 team-stats 中体现，不再叠加 DEFENSIVE 惩罚
+const DEFENSIVE_TEAMS = new Set(['摩洛哥','突尼斯','埃及','伊朗','克罗地亚','波黑','苏格兰','海地','厄瓜多尔'])
 const FIRST_TIMERS    = new Set(['库拉索','佛得角','刚果DR'])
 
 function getElo(team)   { return CALIBRATED_ELO[team] ?? TEAM_ELO_BASE[team] ?? 1750 }
@@ -149,52 +150,33 @@ function fmtPred(homeTeam, h, a) {
   return `${homeTeam} ${h}-${a}`
 }
 
+/** 从预测文本推导方向（H-A格式，主队分数在前） */
+function dirFromPred(predText) {
+  const m = predText && predText.match(/(\d+)-(\d+)/)
+  if (!m) return 'draw'
+  const h = parseInt(m[1]), a = parseInt(m[2])
+  return h > a ? 'home' : h < a ? 'away' : 'draw'
+}
+
 // ─── 主循环 ───────────────────────────────────────────────
 let dirHits = 0, exactHits = 0, goalsHits = 0, finished = 0
 
 for (const p of predictions) {
-  const [lH, lA] = computeLambdas(p.homeTeam, p.awayTeam)
-  const eloDiff  = getElo(p.homeTeam) - getElo(p.awayTeam)
-
-  // 1. 联合概率前3比分
-  const top3 = topScores(lH, lA, 3)
-  const sumP  = top3.reduce((s, t) => s + t.p, 0)
-
-  p.predictionA = fmtPred(p.homeTeam, top3[0].h, top3[0].a)
-  p.predictionB = fmtPred(p.homeTeam, top3[1].h, top3[1].a)
-  p.predictionC = fmtPred(p.homeTeam, top3[2].h, top3[2].a)
-
-  const pA = Math.round(top3[0].p / sumP * 100)
-  const pB = Math.round(top3[1].p / sumP * 100)
-  p.probabilityA = pA
-  p.probabilityB = pB
-  p.probabilityC = 100 - pA - pB   // 确保 A+B+C = 100
-
-  // 2. 胜平负方向（加M8a平局底线）
-  const dirs = applyM8a(dirProbs(lH, lA), eloDiff)
-  p.winDrawLoss = dirs.home >= dirs.draw && dirs.home >= dirs.away ? 'home'
-    : dirs.away >= dirs.draw ? 'away'
-    : 'draw'
-
-  // 3. Lambda + 总进球预测（取predictionA的进球数，与比赛前预测一致）
-  p.lambdaHome = lH
-  p.lambdaAway = lA
-  const mA = p.predictionA.match(/(\d+)-(\d+)/)
-  const predATotal = mA ? parseInt(mA[1]) + parseInt(mA[2]) : Math.round(lH + lA)
-  p.totalGoalsPrediction = `${predATotal}球`
-
-  // 4. 已完成赛事：重算三项对错
   if (p.actualScore) {
+    // ── 已完成比赛：predA/B/C 永久锁定，只更新 winDrawLoss 和对错字段 ──
     const [hg, ag] = p.actualScore.split('-').map(Number)
     const actual = hg > ag ? 'home' : ag > hg ? 'away' : 'draw'
 
+    // winDrawLoss = predA 方向
+    p.winDrawLoss = dirFromPred(p.predictionA)
+
     p.directionCorrect = p.winDrawLoss === actual
     p.exactHit = [p.predictionA, p.predictionB, p.predictionC].some(pred => {
-      const m = pred.match(/(\d+)-(\d+)/)
+      const m = pred && pred.match(/(\d+)-(\d+)/)
       return m && `${m[1]}-${m[2]}` === p.actualScore
     })
-    // 总进球精确匹配：实际进球数 === 预测进球数
-    p.totalGoalsDirectionCorrect = (hg + ag) === predATotal
+    const predNum = p.totalGoalsPrediction ? parseInt(p.totalGoalsPrediction) : null
+    p.totalGoalsDirectionCorrect = predNum !== null ? (hg + ag) === predNum : false
 
     finished++
     if (p.directionCorrect) dirHits++
@@ -203,9 +185,34 @@ for (const p of predictions) {
 
     const d = p.directionCorrect ? '✅' : '❌'
     const e = p.exactHit ? ' 🎯' : ''
-    console.log(`${p.homeTeam} vs ${p.awayTeam} [${p.winDrawLoss}]${d}${e}  A=${p.predictionA}  B=${p.predictionB}  C=${p.predictionC}  实际=${p.actualScore}`)
+    console.log(`${p.homeTeam} vs ${p.awayTeam} [${p.winDrawLoss}]${d}${e}  A=${p.predictionA}  实际=${p.actualScore}`)
   } else {
-    console.log(`${p.homeTeam} vs ${p.awayTeam} [${p.winDrawLoss}]  A=${p.predictionA}  B=${p.predictionB}  C=${p.predictionC}`)
+    // ── 未开踢比赛：用更新后的模型重新生成全部预测 ──
+    const [lH, lA] = computeLambdas(p.homeTeam, p.awayTeam)
+
+    const top3 = topScores(lH, lA, 3)
+    const sumP  = top3.reduce((s, t) => s + t.p, 0)
+
+    p.predictionA = fmtPred(p.homeTeam, top3[0].h, top3[0].a)
+    p.predictionB = fmtPred(p.homeTeam, top3[1].h, top3[1].a)
+    p.predictionC = fmtPred(p.homeTeam, top3[2].h, top3[2].a)
+
+    const pA = Math.round(top3[0].p / sumP * 100)
+    const pB = Math.round(top3[1].p / sumP * 100)
+    p.probabilityA = pA
+    p.probabilityB = pB
+    p.probabilityC = 100 - pA - pB
+
+    // winDrawLoss = predA 方向（与展示一致）
+    p.winDrawLoss = dirFromPred(p.predictionA)
+
+    p.lambdaHome = lH
+    p.lambdaAway = lA
+    const mA = p.predictionA.match(/(\d+)-(\d+)/)
+    const predATotal = mA ? parseInt(mA[1]) + parseInt(mA[2]) : Math.round(lH + lA)
+    p.totalGoalsPrediction = `${predATotal}球`
+
+    console.log(`${p.homeTeam} vs ${p.awayTeam} [${p.winDrawLoss}]  A=${p.predictionA}  B=${p.predictionB}  C=${p.predictionC}  λH=${lH} λA=${lA}`)
   }
 }
 
