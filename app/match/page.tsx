@@ -34,7 +34,6 @@ export default function MatchListPage() {
       drawPct: model.drawPct,
       awayWinPct: model.awayWinPct,
       totalGoalsA: model.totalGoalsA,
-      totalGoalsB: model.totalGoalsB,
     }
   })
 

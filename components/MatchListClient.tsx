@@ -24,7 +24,6 @@ interface Prediction {
   drawPct: number
   awayWinPct: number
   totalGoalsA: number
-  totalGoalsB: number
 }
 
 interface LiveScore {
@@ -312,7 +311,7 @@ export default function MatchListClient({ predictions }: { predictions: Predicti
                     ))}
                   </div>
                   <div style={{ textAlign: 'center', fontSize: 12, color: '#3d5470', marginBottom: 10 }}>
-                    ⚽ 总进球预测：<span style={{ color: '#8899aa', fontWeight: 700 }}>{p.totalGoalsA}球</span> / <span style={{ color: '#8899aa', fontWeight: 700 }}>{p.totalGoalsB}球</span>
+                    ⚽ 预测进球：<span style={{ color: '#f5a623', fontWeight: 700 }}>{p.totalGoalsA}球</span>
                   </div>
                   {(() => {
                     const dl = dirLabel(p.winDrawLoss, p.homeTeam, p.awayTeam)
