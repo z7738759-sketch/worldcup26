@@ -176,11 +176,12 @@ for (const p of predictions) {
     : dirs.away >= dirs.draw ? 'away'
     : 'draw'
 
-  // 3. Lambda + 总进球区间
+  // 3. Lambda + 总进球预测（取predictionA的进球数，与比赛前预测一致）
   p.lambdaHome = lH
   p.lambdaAway = lA
-  const { lo, hi } = goalsInterval(lH + lA)
-  p.totalGoalsPrediction = `${lo}-${hi}球`
+  const mA = p.predictionA.match(/(\d+)-(\d+)/)
+  const predATotal = mA ? parseInt(mA[1]) + parseInt(mA[2]) : Math.round(lH + lA)
+  p.totalGoalsPrediction = `${predATotal}球`
 
   // 4. 已完成赛事：重算三项对错
   if (p.actualScore) {
@@ -192,7 +193,8 @@ for (const p of predictions) {
       const m = pred.match(/(\d+)-(\d+)/)
       return m && `${m[1]}-${m[2]}` === p.actualScore
     })
-    p.totalGoalsDirectionCorrect = (hg + ag) >= lo && (hg + ag) <= hi
+    // 总进球精确匹配：实际进球数 === 预测进球数
+    p.totalGoalsDirectionCorrect = (hg + ag) === predATotal
 
     finished++
     if (p.directionCorrect) dirHits++

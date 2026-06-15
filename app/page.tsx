@@ -56,7 +56,7 @@ export default function HomePage() {
           AI 深度预测 <span style={{ color: '#f5a623' }}>赛后复盘</span>
         </h1>
         <p style={{ color: '#8899aa', fontSize: 'clamp(13px, 2vw, 15px)' }}>
-          比分与总进球双模块独立核算 · 模型持续自进化
+          胜平负 · 比分 · 总进球三项独立追踪
         </p>
       </div>
 
@@ -170,24 +170,23 @@ export default function HomePage() {
                       <span style={{ fontWeight: 700, color: p.predictionC === p.actualScore ? '#4ade80' : '#8899aa', textDecoration: p.predictionC === p.actualScore ? 'none' : 'line-through' }}>{p.predictionC}</span>
                     </div>
 
-                    {/* 总进球对比（独立泊松区间，与比分算法完全不同） */}
+                    {/* 总进球对比 */}
                     {(() => {
                       if (!p.actualScore) return null
                       const ext = p as unknown as Record<string, unknown>
-                      const range = ext.totalGoalsPrediction as string | undefined
-                      if (!range) return null
-                      const m = range.match(/(\d+)-(\d+)/)
-                      if (!m) return null
+                      const pred = ext.totalGoalsPrediction as string | undefined
+                      if (!pred) return null
+                      const predNum = parseInt(pred)
+                      if (isNaN(predNum)) return null
                       const [hg, ag] = p.actualScore.split('-').map(Number)
                       const actualTotal = hg + ag
-                      const lo = parseInt(m[1]), hi = parseInt(m[2])
-                      const inRange = actualTotal >= lo && actualTotal <= hi
+                      const hit = actualTotal === predNum
                       return (
                         <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap', fontSize: 'clamp(10px, 1.3vw, 12px)', marginTop: 8, paddingTop: 8, borderTop: '1px dashed #1e3a5f' }}>
-                          <span style={{ color: '#6b7f96' }}>⚽ 泊松区间</span>
-                          <span style={{ color: '#f5a623', fontWeight: 700 }}>{range}</span>
+                          <span style={{ color: '#6b7f96' }}>⚽ 总进球</span>
+                          <span style={{ color: '#f5a623', fontWeight: 700 }}>预测{pred}</span>
                           <span style={{ color: '#3d5470' }}>→ 实际</span>
-                          <strong style={{ color: inRange ? '#4ade80' : '#ef4444' }}>{actualTotal}球 {inRange ? '✅' : '❌'}</strong>
+                          <strong style={{ color: hit ? '#4ade80' : '#ef4444' }}>{actualTotal}球 {hit ? '✅' : '❌'}</strong>
                         </div>
                       )
                     })()}
