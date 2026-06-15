@@ -1,8 +1,8 @@
 {
-  "version": 4,
-  "lastUpdated": "2026-06-14",
-  "matchesAnalyzed": 8,
-  "note": "此文件由系统自动维护，每场比赛结束后自动更新，请勿手动编辑",
+  "version": 5,
+  "lastUpdated": "2026-06-15",
+  "matchesAnalyzed": 11,
+  "note": "v13模型（2026-06-15）：新增M8a平局底线+M8b创造者缺席+M8c射手缺席+厄瓜多尔入DEFENSIVE_TEAMS。11场完成，方向准确率72.7%(8/11)，比分27.3%(3/11)",
 
   "elo": {
     "巴西": 2075,
@@ -58,7 +58,10 @@
     "M5": { "baseWeight": 1.0, "adjustedWeight": 0.85, "note": "庄家差单独不够，需配合M6才有价值" },
     "M6": { "baseWeight": 1.0, "adjustedWeight": 1.3, "note": "卡塔尔1-1证明首届参赛队平局信号最强，大幅上调" },
     "ASIA": { "baseWeight": 1.0, "adjustedWeight": 1.1, "note": "韩国2-1验证亚洲逆境力" },
-    "M7": { "baseWeight": 1.0, "adjustedWeight": 1.15, "note": "长期缺席效应（>15年未参加世界杯）→首场爆冷风险+15%。土耳其24年后重返0-2完败于澳大利亚验证" }
+    "M7": { "baseWeight": 1.0, "adjustedWeight": 1.15, "note": "长期缺席效应（>15年未参加世界杯）→首场爆冷风险+15%。土耳其24年后重返0-2完败于澳大利亚验证" },
+    "M8a": { "baseWeight": 1.0, "adjustedWeight": 1.0, "note": "新规则2026-06-15：接近比赛平局强制底线。ELO<50→33%，ELO<100→31%，ELO<150→29%。验证：荷兰(65差)2-2日本，加拿大(31差)1-1波黑，均在此区间平局被低估" },
+    "M8b": { "baseWeight": 1.0, "adjustedWeight": 1.0, "note": "新规则2026-06-15：核心创造者缺席→平局+6-8%。验证：荷兰德容+西蒙斯双缺→2次领先2次被追，2-2平局" },
+    "M8c": { "baseWeight": 1.0, "adjustedWeight": 1.0, "note": "新规则2026-06-15：明星射手缺席→FIRST_TIMERS底线从1.0降至0.6，非首届队λ×0.80。验证：科特迪瓦哈勒缺席→0-0，1.0底线过高" }
   },
 
   "wuxingStats": {
@@ -81,7 +84,7 @@
     "exactHitRate": 0.273,
     "totalCompleted": 11,
     "overPredictionBias": 0.10,
-    "note": "方向准确率72.7%（8/11），精确比分27.3%（3/11）。11场已完成：墨西哥✓、韩国✓、加拿大✗、美国✓、卡塔尔✗、巴西✓、苏格兰✓、澳大利亚✗、德国✓(7-1)、荷兰✗(2-2日本)、科特迪瓦✓(0-0厄瓜多尔平局)。科特迪瓦0-0验证：M2非洲低防体系+哈勒缺席=进球率0，平局命中+180博彩价值。荷兰2-2教训：中场双核缺席(德容+西蒙斯)效果被低估，日本ASIA逆境力持续有效"
+    "note": "v13（2026-06-15）：方向72.7%(8/11)，比分27.3%(3/11)。新增M8a平局底线+M8b/M8c+厄瓜多尔DEFENSIVE。11场：墨西哥✓、韩国✓、加拿大✗、美国✓、卡塔尔✗、巴西✓、苏格兰✓、澳大利亚✗、德国✓(7-1)、荷兰✗(2-2日本)、科特迪瓦✓(0-0厄瓜多尔)。未来4场（1011/1013/1014/1015）已用v13重新计算预测"
   },
 
   "teamSpecificAdjustments": {
@@ -91,7 +94,8 @@
     "日本": { "tacticalBonus": 0.08, "reason": "战术纪律性+逆境力持续高于ELO预期" },
     "澳大利亚": { "attackBoost": 0.12, "formBonus": 0.08, "reason": "2-0横扫土耳其（ELO轻微热门），Irankunda新生代战力被严重低估，实际进攻和组织超过ELO预期" },
     "土耳其": { "formBonus": -0.05, "reason": "24年后重返世界杯，心理准备不足（与FIRST_TIMERS相反的长期缺席效应），0-2完败表现低于ELO" },
-    "库拉索": { "reason": "v11：FIRST_TIMERS全局floor=1.0已内置(cap后)，attackBoost已移除，底线保护更精准" }
+    "库拉索": { "reason": "v11：FIRST_TIMERS全局floor=1.0已内置(cap后)，attackBoost已移除，底线保护更精准" },
+    "厄瓜多尔": { "defenseBoost": 0.08, "reason": "v13新增DEFENSIVE_TEAMS：0-0科特迪瓦，19场不败，13场零封，防守效率顶级（高于ELO1793预期）" }
   },
 
   "calibrationHistory": [

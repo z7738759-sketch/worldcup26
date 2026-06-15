@@ -112,8 +112,24 @@ const PRE_TOURNAMENT_FORM: Record<string, number> = {
 
 // 低位防守体系
 // 历史校验：海地、苏格兰实际防守效率超ELO预测，加入名单
+// 2026-06-15 新增厄瓜多尔：0-0科特迪瓦，19场不败，13场零封，防线验证顶级
 const DEFENSIVE_TEAMS = new Set([
-  '摩洛哥', '突尼斯', '埃及', '伊朗', '乌拉圭', '克罗地亚', '波黑', '苏格兰', '海地'
+  '摩洛哥', '突尼斯', '埃及', '伊朗', '乌拉圭', '克罗地亚', '波黑', '苏格兰', '海地', '厄瓜多尔'
+])
+
+// M8b: 核心创造者缺席（中场组织核心）→ 平局+6-8%（荷兰2-2日本验证：德容+西蒙斯双缺导致2次领先均被追平）
+// 填入规则：确认缺阵或基本确认（存疑≥70%时）填入，赛后清空
+const CREATOR_ABSENT_HOME = new Set<string>([
+  // 按场次填入，例：'荷兰'（德容+西蒙斯均无法出战）
+])
+const CREATOR_ABSENT_AWAY = new Set<string>([
+  // 按场次填入
+])
+
+// M8c: 明星射手缺席 → 首届参赛队底线从1.0降至0.6（科特迪瓦0-0验证：哈勒缺席→进球率为0）
+// 非首届参赛队：λ × 0.80
+const STRIKER_ABSENT = new Set<string>([
+  // 按场次填入，例：'科特迪瓦'（哈勒未入26人大名单）
 ])
 
 // 联赛强度系数（调整进球预期，修正预选赛数据虚高问题）
@@ -369,6 +385,18 @@ export function computeModelOutput(
     drawBase += 0.03  // 轻微差距：平局概率不应低于28%
   }
 
+  // M8a: 接近比赛平局强制底线（v13 2026-06-15新增，11场验证）
+  // 荷兰(ELO差65)2-2日本、加拿大(ELO差31)1-1波黑均在此区间被低估
+  // 世界杯ELO差<150的比赛平局率真实约29-33%，模型需要强制底线
+  // 注：与上方的+0.03/+0.05叠加使用，底线确保最终不低于该值
+  if (absDiff < 50)       drawBase = Math.max(drawBase, 0.33)
+  else if (absDiff < 100) drawBase = Math.max(drawBase, 0.31)
+  else if (absDiff < 150) drawBase = Math.max(drawBase, 0.29)
+
+  // M8b: 核心创造者缺席 → 平局加成（荷兰2-2：失去德容+西蒙斯→2次领先2次被追）
+  if (CREATOR_ABSENT_HOME.has(homeTeam)) drawBase += 0.08
+  if (CREATOR_ABSENT_AWAY.has(awayTeam)) drawBase += 0.06
+
   // 首届参赛队：历史首积分情绪加成
   // 修正：ELO差150-300时加成更大（卡塔尔1-1教训）
   if (FIRST_TIMERS.has(homeTeam) || FIRST_TIMERS.has(awayTeam)) {
@@ -465,12 +493,20 @@ export function computeModelOutput(
     lambdaAway *= capScale
   }
 
-  // v11：首届参赛队进球底线1.0（cap之后应用，防止cap踩穿floor）
-  // 根因：v10把floor放在cap之前，cap把0.605压回0.495（低于0.55 floor）
-  // 验证：库拉索(ELO差364) 4-1中打进历史首球，λAway=1.0对应期望1球，完全吻合
-  // 结果：v11 top3 = "德国4-0"/"德国4-1"/"德国5-0"，预测B会命中4-1终场
-  if (FIRST_TIMERS.has(awayTeam)) lambdaAway = Math.max(lambdaAway, 1.0)
-  if (FIRST_TIMERS.has(homeTeam)) lambdaHome = Math.max(lambdaHome, 1.0)
+  // v11：首届参赛队进球底线（cap之后应用，防止cap踩穿floor）
+  // 验证：库拉索(ELO差364) 7-1中打进历史首球，λAway底线对应期望1球，完全吻合
+  // M8c: 明星射手缺席时底线降至0.6（科特迪瓦0-0：哈勒缺席→1.0底线过高，实际进球0）
+  if (FIRST_TIMERS.has(awayTeam)) {
+    const awayFloor = STRIKER_ABSENT.has(awayTeam) ? 0.6 : 1.0
+    lambdaAway = Math.max(lambdaAway, awayFloor)
+  }
+  if (FIRST_TIMERS.has(homeTeam)) {
+    const homeFloor = STRIKER_ABSENT.has(homeTeam) ? 0.6 : 1.0
+    lambdaHome = Math.max(lambdaHome, homeFloor)
+  }
+  // M8c延伸：非首届参赛队，明星射手缺席→进球期望降低20%
+  if (STRIKER_ABSENT.has(awayTeam) && !FIRST_TIMERS.has(awayTeam)) lambdaAway *= 0.80
+  if (STRIKER_ABSENT.has(homeTeam) && !FIRST_TIMERS.has(homeTeam)) lambdaHome *= 0.80
 
   const mostLikelyScore = getMostLikelyScore(lambdaHome, lambdaAway)
   // 总进球独立泊松运算——与比分预测完全独立的机制

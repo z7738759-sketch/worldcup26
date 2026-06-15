@@ -271,7 +271,7 @@
     "group": "F组",
     "kickoff": "2026-06-15T02:00:00Z",
     "predictionA": "瑞典 1-0",
-    "predictionB": "瑞典 0-0",
+    "predictionB": "平局 0-0",
     "actualScore": null,
     "directionCorrect": null,
     "exactHit": null,
@@ -284,7 +284,7 @@
       }
     ],
     "mRulesTriggered": [
-      "M2"
+      "M8a"
     ],
     "teamNews": [
       "✅ 瑞典许克里斯(Gyökeres,Arsenal前锋)：刚夺英超冠军，状态顶峰，确认首发",
@@ -295,11 +295,11 @@
       "✅ 突尼斯：换帅后主打低位防守，防线基本完整",
       "💡 教练：Graham Potter(新任瑞典主帅)首次出战；突尼斯新帅首场世界杯"
     ],
-    "notes": "许克里斯+伊萨克双前锋是瑞典最大武器，进攻火力足以突破突尼斯防线。库卢塞夫斯基缺阵削弱创造力但双前锋补偿。突尼斯汉尼巴尔存疑→进攻威胁下降。预测从平局改为瑞典胜1-0",
-    "predictionC": "瑞典 0-1",
-    "probabilityA": 35,
+    "notes": "v13模型（M8a）：ELO差80，突尼斯低防体系→drawProb=33%，平局概率显著偏高。Poisson Top3：瑞典1-0(18%)、平局0-0(14%)、平局1-1(12%)。predA=瑞典1-0（主队胜最可能），predB=平局0-0（14%），predC=平局1-1（12%）。许克里斯+伊萨克双前锋有突破能力，但突尼斯新帅首场低防体系+汉尼巴尔存疑→防守优先战术",
+    "predictionC": "平局 1-1",
+    "probabilityA": 37,
     "probabilityB": 33,
-    "probabilityC": 32,
+    "probabilityC": 30,
     "winDrawLoss": "home"
   },
   {
@@ -329,7 +329,7 @@
     "group": "H组",
     "kickoff": "2026-06-15T20:00:00Z",
     "predictionA": "西班牙 4-0",
-    "predictionB": "西班牙 3-0",
+    "predictionB": "西班牙 4-1",
     "actualScore": null,
     "directionCorrect": null,
     "exactHit": null,
@@ -342,11 +342,11 @@
       }
     ],
     "mRulesTriggered": ["M6"],
-    "notes": "v10模型：佛得角首届参赛λaway底线0.55，进球概率≈39%（高于直觉）。西班牙进攻传控压制(λ≈4.5)，但C预测纳入佛得角进球场景。ELO差440，西班牙胜概率极高。",
-    "predictionC": "西班牙 4-1",
-    "probabilityA": 36,
-    "probabilityB": 32,
-    "probabilityC": 27,
+    "notes": "v13模型：ELO差350，佛得角FIRST_TIMERS λaway底线1.0（v11规则）。关键：λA=1.0时P(A=0)=P(A=1)=e^-1≈36.8%，因此4-0与4-1等概率(7.2%)均高于3-0(7.0%)。predB从3-0改为4-1（概率略高）。西班牙λH≈4.1，Yamal+Pedri进攻体系全力运转，胜率93%+",
+    "predictionC": "西班牙 3-0",
+    "probabilityA": 35,
+    "probabilityB": 34,
+    "probabilityC": 26,
     "winDrawLoss": "home"
   },
   {
@@ -355,18 +355,18 @@
     "awayTeam": "埃及",
     "group": "G组",
     "kickoff": "2026-06-15T23:00:00Z",
-    "predictionA": "比利时 2-0",
-    "predictionB": "比利时 1-0",
+    "predictionA": "比利时 1-0",
+    "predictionB": "比利时 2-0",
     "actualScore": null,
     "directionCorrect": null,
     "exactHit": null,
     "bettingValues": [],
     "mRulesTriggered": [],
-    "notes": "比利时胜64%，黄金一代末期但阵容仍强，埃及防守为主",
-    "predictionC": "比利时 1-1",
-    "probabilityA": 38,
-    "probabilityB": 32,
-    "probabilityC": 31,
+    "notes": "v13模型：ELO差170，埃及DEFENSIVE体系→平局28%。Poisson Top3：比利时1-0(21%)、比利时2-0(16%)、平局0-0(13%)。predA改为1-0（最可能），predB改为2-0，predC改为平局0-0（13%>原1-1的10%）。比利时黄金一代末期但德布劳内+卢卡库仍具威胁；埃及低位防守+Bounou级守门=进球偏少",
+    "predictionC": "平局 0-0",
+    "probabilityA": 40,
+    "probabilityB": 33,
+    "probabilityC": 27,
     "winDrawLoss": "home"
   },
   {
@@ -376,7 +376,7 @@
     "group": "H组",
     "kickoff": "2026-06-16T02:00:00Z",
     "predictionA": "沙特 0-1",
-    "predictionB": "沙特 1-2",
+    "predictionB": "平局 0-0",
     "actualScore": null,
     "directionCorrect": null,
     "exactHit": null,
@@ -389,13 +389,13 @@
       }
     ],
     "mRulesTriggered": [
-      "M2"
+      "M2", "M8a"
     ],
-    "notes": "乌拉圭占优，双方低位防守→进球偏少",
-    "predictionC": "沙特 1-1",
+    "notes": "v13模型（M8a触发）：ELO差135（<150），乌拉圭DEFENSIVE体系，drawProb=29%（M8a底线29%，刚好贴近）。Poisson Top3：沙特0-1(20%)、平局0-0(16%)、沙特0-2(12%)。predB从1-2改为平局0-0（16%vs原1-2的7%），predC从1-1改为0-2（12%vs原1-1的12%，但方向更一致）。乌拉圭整体优势但双防守体系→低进球，Under 2.5仍为最佳博彩",
+    "predictionC": "沙特 0-2",
     "probabilityA": 40,
-    "probabilityB": 31,
-    "probabilityC": 29,
+    "probabilityB": 33,
+    "probabilityC": 27,
     "winDrawLoss": "away"
   },
   {
