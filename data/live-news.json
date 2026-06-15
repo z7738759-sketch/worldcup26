@@ -1,5 +1,53 @@
 [
   {
+    "id": 33,
+    "type": "pre-match",
+    "team": "挪威",
+    "timestamp": "2026-06-15T14:00:00+08:00",
+    "source": "ESPN / Opta / Squawka 赛前情报",
+    "title": "1021挪威 vs 伊拉克 · Haaland+Sørloth双中锋 · 本届最大差距比赛之一",
+    "content": "挪威资格赛8战8胜、4.6球/场（有史以来欧洲最高均值），Haaland贡献16个资格赛进球（欧洲第二名8球的2倍）。Sørloth本赛季西甲13球（马竞）。双中锋同时处于巅峰——与瑞典Gyökeres+Isak的场景完全相同（5-1突尼斯）。伊拉克40年后重返世界杯（1986年以来首次），是最后一支（第48支）出线的球队，通过21场资格赛+洲际附加赛才出线。M7极强触发：40年缺席→首场崩溃风险+20%。模型预测挪威3-0最可能，Over 2.5@-180高价值。",
+    "impactLevel": "high",
+    "impactNote": "v15预研：双前锋bonus正式首次测试。λHome修正为3.5（原2.509），Over 2.5概率≈70%。挪威胜率92%+。ELO差195（挪威1855-伊拉克1660）。",
+    "relatedMatches": [1021]
+  },
+  {
+    "id": 32,
+    "type": "pre-match",
+    "team": "乌拉圭",
+    "timestamp": "2026-06-15T13:30:00+08:00",
+    "source": "ESPN / Sports Mole 赛前情报",
+    "title": "⚠️ 乌拉圭重大缺阵！阿劳霍+吉门内斯（双CB）+德阿拉斯卡埃塔均存疑",
+    "content": "乌拉圭在迎战沙特阿拉伯前遭遇严重伤病危机：Ronald Araújo（巴萨主力中卫）和José María Giménez（马竞首发中卫）均因伤很可能缺席首场，de Arrascaeta（创造核心/进攻中场）同样存疑，Viña（左后卫）和Cáceres（备用中卫）也缺席。沙特除Nawaf Al-Aqidi外全员可用，Salem Al-Dawsari领衔。原预测方向=乌拉圭小胜，双CB缺阵后实际上是均势。Under 2.5进球仍为最佳博彩（双队进攻均受影响）。",
+    "impactLevel": "high",
+    "impactNote": "1015沙特vs乌拉圭方向从'乌拉圭小胜'变为真正的硬币博弈。平局概率从30%→34%，沙特胜率从28%→38%。Under 2.5@-115仍有价值。",
+    "relatedMatches": [1015]
+  },
+  {
+    "id": 31,
+    "type": "pre-match",
+    "team": "比利时",
+    "timestamp": "2026-06-15T13:00:00+08:00",
+    "source": "ESPN / Sports Mole 赛前情报",
+    "title": "1014比利时 vs 埃及 · 卢卡库体能不足+萨拉赫腿筋伤→低进球场景强化",
+    "content": "比利时历史最佳射手Lukaku整赛季受伤，体能状态不足，预计非首发或有限出场。埃及萨拉赫34岁生日当天出战，但赛季末腿筋伤病未完全恢复，状态打折。双方核心前锋均受影响，低进球（1-0或1-1）场景概率上升。比利时近13场不败，De Bruyne是其最后一届世界杯，中场质量仍极高。比利时1-0是最可能结果。",
+    "impactLevel": "medium",
+    "impactNote": "predA=1-0更有把握，萨拉赫定点反击威胁降低后predB=平局1-1概率小幅下降。比利时仍是强大热门。",
+    "relatedMatches": [1014]
+  },
+  {
+    "id": 30,
+    "type": "pre-match",
+    "team": "西班牙",
+    "timestamp": "2026-06-15T12:30:00+08:00",
+    "source": "Rotowire / Sports Mole 赛前情报",
+    "title": "1013西班牙 vs 佛得角 · Yamal+Nico Williams预计不首发！攻击力有所下降",
+    "content": "西班牙双翼核心Lamine Yamal和Nico Williams因伤病均预计首发坐板凳，按需出场。首发前锋线改为Ferran Torres+Alex Baena+Oyarzabal，攻击力下降约15%。中场Rodri+Pedri+Fabian全员可战，控球质量仍高。佛得角历史首届世界杯（M6触发），全员可用，Ryan Mendes（36岁，佛得角历史最佳射手）首发。西班牙仍是压倒性热门，但Over 3.5进球@-200的赔率吸引力下降。",
+    "impactLevel": "medium",
+    "impactNote": "西班牙λHome从4.1下调至约3.3-3.5。3-0或3-1比4-0更可能，but predA=3-0仍合理。Over 3.5风险上升（关键进攻双人不首发）。",
+    "relatedMatches": [1013]
+  },
+  {
     "id": 29,
     "type": "result",
     "team": "瑞典",
