@@ -1,6 +1,8 @@
 import { getTodayMatches } from '@/lib/football-api'
 import { getAllPredictions } from '@/lib/predictions'
 
+export const dynamic = 'force-dynamic'
+
 export async function GET() {
   const apiMatches = await getTodayMatches()
   if (apiMatches.length > 0) return Response.json({ matches: apiMatches, source: 'api' })
