@@ -1,4 +1,4 @@
-import { getAllPredictions, getAccuracyStats } from '@/lib/predictions'
+import { getAllPredictions, getAccuracyStats, parsePredGoals } from '@/lib/predictions'
 
 function StatCard({ value, label, color, sub }: { value: string; label: string; color: string; sub?: string }) {
   return (
@@ -67,13 +67,22 @@ export default function AccuracyPage() {
                 }}>
                   比分{p.exactHit ? '🎯' : p.directionCorrect ? '✅' : '❌'}
                 </span>
-                <span style={{
-                  fontSize: 11, fontWeight: 700, padding: '3px 10px', borderRadius: 9999, flexShrink: 0,
-                  background: (p as unknown as Record<string,unknown>).totalGoalsDirectionCorrect ? '#1a2d45' : '#3d1f1f',
-                  color: (p as unknown as Record<string,unknown>).totalGoalsDirectionCorrect ? '#f5a623' : '#6b7f96',
-                }}>
-                  ⚽ {(p as unknown as Record<string,unknown>).totalGoalsPrediction as string || '—'} {(p as unknown as Record<string,unknown>).totalGoalsDirectionCorrect ? '✅' : p.actualScore ? '❌' : '—'}
-                </span>
+                {(() => {
+                  if (!p.actualScore || !p.predictionA) return null
+                  const predTotal = parsePredGoals(p.predictionA)
+                  if (predTotal === null) return null
+                  const [hg, ag] = p.actualScore.split('-').map(Number)
+                  const hit = (hg + ag) === predTotal
+                  return (
+                    <span style={{
+                      fontSize: 11, fontWeight: 700, padding: '3px 10px', borderRadius: 9999, flexShrink: 0,
+                      background: hit ? '#1a2d45' : '#3d1f1f',
+                      color: hit ? '#f5a623' : '#6b7f96',
+                    }}>
+                      ⚽ {predTotal}球 {hit ? '✅' : '❌'}
+                    </span>
+                  )
+                })()}
               </div>
             </div>
           ))}

@@ -52,11 +52,18 @@ export function getStandingsFromPredictions() {
   }))
 }
 
+// 从预测文本解析总进球数（predictionA 的主场+客场进球之和）
+export function parsePredGoals(pred: string): number | null {
+  const m = pred.match(/(\d+)\s*[-–—]\s*(\d+)/)
+  if (!m) return null
+  return parseInt(m[1]) + parseInt(m[2])
+}
+
 export function getAccuracyStats() {
   const finished = predictionsData.filter(p => p.actualScore !== null)
   const total = finished.length
 
-  // 胜平负方向命中：基于显式 winDrawLoss，不靠3个预测覆盖不同结果
+  // 胜平负方向命中：基于显式 winDrawLoss
   const scoreDirectionHits = finished.filter(p => {
     if (!p.actualScore || !p.winDrawLoss) return false
     const [hg, ag] = p.actualScore.split('-').map(Number)
@@ -64,11 +71,10 @@ export function getAccuracyStats() {
     return p.winDrawLoss === actual
   }).length
 
-  // 比分类：精确命中 — A/B/C任一完全匹配实际比分
+  // 比分类：A/B/C任一精确匹配
   const scoreExactHits = finished.filter(p => {
     if (!p.actualScore) return false
-    const preds = [p.predictionA, p.predictionB, p.predictionC]
-    return preds.some(pred => {
+    return [p.predictionA, p.predictionB, p.predictionC].some(pred => {
       if (!pred) return false
       const m = pred.match(/(\d+)\s*[-–—]\s*(\d+)/)
       if (!m) return false
@@ -76,20 +82,13 @@ export function getAccuracyStats() {
     })
   }).length
 
-  // 总进球类：预测值与实际精确匹配（格式 "X球"，取predictionA的进球总数）
+  // 总进球：从 predictionA 动态推导，不依赖任何存储字段
   const totalGoalsHits = finished.filter(p => {
-    if (!p.actualScore) return false
-    const ext = p as unknown as Record<string, unknown>
-    const stored = ext.totalGoalsPrediction as string | undefined
-    if (stored) {
-      const predNum = parseInt(stored)
-      if (!isNaN(predNum)) {
-        const [hg, ag] = p.actualScore.split('-').map(Number)
-        return (hg + ag) === predNum
-      }
-    }
-    const tg = ext.totalGoalsDirectionCorrect
-    return tg === true
+    if (!p.actualScore || !p.predictionA) return false
+    const predTotal = parsePredGoals(p.predictionA)
+    if (predTotal === null) return false
+    const [hg, ag] = p.actualScore.split('-').map(Number)
+    return (hg + ag) === predTotal
   }).length
 
   return {

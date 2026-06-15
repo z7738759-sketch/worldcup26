@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { getAllPredictions, getAccuracyStats } from '@/lib/predictions'
+import { getAllPredictions, getAccuracyStats, parsePredGoals } from '@/lib/predictions'
 import { getFlagUrl } from '@/lib/match-utils'
 
 export const revalidate = 60
@@ -170,21 +170,18 @@ export default function HomePage() {
                       <span style={{ fontWeight: 700, color: p.predictionC === p.actualScore ? '#4ade80' : '#8899aa', textDecoration: p.predictionC === p.actualScore ? 'none' : 'line-through' }}>{p.predictionC}</span>
                     </div>
 
-                    {/* 总进球对比 */}
+                    {/* 总进球对比：从 predictionA 动态推导，不显示区间 */}
                     {(() => {
-                      if (!p.actualScore) return null
-                      const ext = p as unknown as Record<string, unknown>
-                      const pred = ext.totalGoalsPrediction as string | undefined
-                      if (!pred) return null
-                      const predNum = parseInt(pred)
-                      if (isNaN(predNum)) return null
+                      if (!p.actualScore || !p.predictionA) return null
+                      const predTotal = parsePredGoals(p.predictionA)
+                      if (predTotal === null) return null
                       const [hg, ag] = p.actualScore.split('-').map(Number)
                       const actualTotal = hg + ag
-                      const hit = actualTotal === predNum
+                      const hit = actualTotal === predTotal
                       return (
                         <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap', fontSize: 'clamp(10px, 1.3vw, 12px)', marginTop: 8, paddingTop: 8, borderTop: '1px dashed #1e3a5f' }}>
                           <span style={{ color: '#6b7f96' }}>⚽ 总进球</span>
-                          <span style={{ color: '#f5a623', fontWeight: 700 }}>预测{pred}</span>
+                          <span style={{ color: '#f5a623', fontWeight: 700 }}>预测{predTotal}球</span>
                           <span style={{ color: '#3d5470' }}>→ 实际</span>
                           <strong style={{ color: hit ? '#4ade80' : '#ef4444' }}>{actualTotal}球 {hit ? '✅' : '❌'}</strong>
                         </div>
