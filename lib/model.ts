@@ -450,8 +450,10 @@ export function computeModelOutput(
   else if (eloDiff < -80)  { lambdaAway *= 1.04; lambdaHome *= 0.96 }
 
   // 防守体系压低进球
-  if (DEFENSIVE_TEAMS.has(homeTeam)) lambdaAway *= 0.85
-  if (DEFENSIVE_TEAMS.has(awayTeam)) lambdaHome *= 0.85
+  // M9 (v14 2026-06-15): ELO差≥80时强队更能突破防守体系，惩罚从×0.85降至×0.92
+  // 验证：瑞典(ELO差+80)半场2-1突尼斯，×0.85把λHome压至0.65，严重低估Gyökeres+Isak双锋
+  if (DEFENSIVE_TEAMS.has(homeTeam)) lambdaAway *= (eloDiff <= -80 ? 0.92 : 0.85)
+  if (DEFENSIVE_TEAMS.has(awayTeam)) lambdaHome *= (eloDiff >= 80 ? 0.92 : 0.85)
 
   // M7: 长期缺席球队首场进攻效率大幅降低（土耳其0-2→修正v5：0.90→0.85）
   if (LONG_ABSENCE.has(homeTeam)) lambdaHome *= 0.85
