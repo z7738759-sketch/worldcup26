@@ -233,16 +233,16 @@
     "kickoff": "2026-06-14T23:00:00Z",
     "predictionA": "科特迪瓦 1-1",
     "predictionB": "科特迪瓦 0-1",
-    "actualScore": "0-0",
-    "directionCorrect": true,
-    "exactHit": false,
+    "actualScore": "1-0",
+    "directionCorrect": false,
+    "exactHit": true,
     "totalGoalsDirectionCorrect": false,
     "bettingValues": [
       {
         "stars": 3,
         "name": "平局",
         "odds": "+180",
-        "hit": true
+        "hit": false
       }
     ],
     "mRulesTriggered": [
@@ -257,7 +257,7 @@
       "🟡 厄瓜多尔瓦伦西亚(队长/前锋)：小伤存疑但预期可上场",
       "✅ 厄瓜多尔：2年不败，防守体系成熟稳健"
     ],
-    "notes": "终场0-0！平局命中（winDrawLoss=draw ✅）。双方防线极度稳固，厄瓜多尔边柱两次遇险（John Yeboah+Alan Minda均中横梁）。哈勒缺席+厄瓜多尔19场不败→进球率为0，完全验证M2防守体系预判。总进球0球超出预测区间1-2，totalGoalsDirectionCorrect=false。平局+180博彩价值命中✅",
+    "notes": "ESPN事后核实：1-0科特迪瓦（Amad Diallo 90'绝杀）。原始记录0-0为查询过早（赛前报道混入），实际比赛前85分钟确实0-0但Amad Diallo补时绝杀。predC=科特迪瓦1-0完全命中✅！但方向预测=平局，实际=主队胜，方向错误❌。平局+180未命中❌。教训：防守体系≠必然平局，需考虑90分钟内任何时刻的绝杀进球。",
     "predictionC": "科特迪瓦 1-0",
     "probabilityA": 35,
     "probabilityB": 33,
