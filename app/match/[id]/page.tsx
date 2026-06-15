@@ -33,6 +33,11 @@ function formLabel(form: number): string {
   return '状态一般'
 }
 
+export async function generateStaticParams() {
+  const { getAllPredictions } = await import('@/lib/predictions')
+  return getAllPredictions().map(p => ({ id: String(p.matchId) }))
+}
+
 export default async function MatchDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
   const matchId = Number(id)
