@@ -587,7 +587,11 @@
     "winDrawLoss": "home",
     "lambdaHome": 1.423,
     "lambdaAway": 0.285,
-    "totalGoalsPrediction": "1球"
+    "totalGoalsPrediction": "1球",
+    "actualScore": "2-2",
+    "directionCorrect": false,
+    "exactHit": false,
+    "totalGoalsDirectionCorrect": false
   },
   {
     "matchId": 1019,

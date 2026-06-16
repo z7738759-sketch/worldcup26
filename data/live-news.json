@@ -1,5 +1,17 @@
 [
   {
+    "id": 37,
+    "type": "result",
+    "team": "伊朗",
+    "timestamp": "2026-06-16T09:30:00+08:00",
+    "source": "ESPN · STATUS_FULL_TIME",
+    "title": "伊朗2-2新西兰终场 · 爆冷平局！ELO差50场景下M8a再次验证",
+    "content": "伊朗被世界排名远低于自己的新西兰逼成2-2平局！预测伊朗主场获胜，方向❌。双方各进2球，总进球4球（predA=1球/predB=2球均未命中）。ELO差仅50（伊朗1760 vs 新西兰1710），M8a规则应触发（ELO<80→平局底线33%），但predA/B仍预测伊朗获胜——模型执行层面未将winDrawLoss改为draw，导致方向误判。2-2结果表明新西兰进攻能力和伊朗防守漏洞均被严重低估。",
+    "impactLevel": "high",
+    "impactNote": "关键教训：ELO差<80时winDrawLoss应强制设为draw（不仅predB含平局场景）。新ELO：伊朗1760-2=1758，新西兰1710+2=1712。G组：伊朗1分，新西兰1分。",
+    "relatedMatches": [1018]
+  },
+  {
     "id": 36,
     "type": "result",
     "team": "沙特",
