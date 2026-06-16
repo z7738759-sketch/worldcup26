@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { getAllPredictions } from '@/lib/predictions'
+import { getAllPredictions, parsePredGoals } from '@/lib/predictions'
 import { getAnalysis } from '@/lib/kv'
 import { computeModelOutput } from '@/lib/model'
 import { getFlagUrl } from '@/lib/match-utils'
@@ -82,7 +82,13 @@ export default async function MatchDetailPage({ params }: { params: Promise<{ id
           <PredChip label={`A · ${p.probabilityA}%`} value={p.predictionA} color="#f5a623" border />
           <PredChip label={`B · ${p.probabilityB}%`} value={p.predictionB} color="#60a5fa" />
           <PredChip label={`C · ${p.probabilityC}%`} value={p.predictionC} color="#a78bfa" />
-          <PredChip label="总进球" value={`${model.totalGoalsA}~${model.totalGoalsB}球`} color="#cdd9e5" />
+          <PredChip
+            label="总进球预测"
+            value={p.actualScore
+              ? `${parsePredGoals(p.predictionA) ?? model.totalGoalsA}球`
+              : `${model.totalGoalsA}~${model.totalGoalsB}球`}
+            color="#cdd9e5"
+          />
           {p.actualScore && <PredChip label="实际结果" value={p.actualScore} color="#4ade80" />}
         </div>
       </div>
@@ -96,7 +102,8 @@ export default async function MatchDetailPage({ params }: { params: Promise<{ id
           homeWinPct={model.homeWinPct} drawPct={model.drawPct} awayWinPct={model.awayWinPct}
           expectedGoalsHome={model.expectedGoalsHome} expectedGoalsAway={model.expectedGoalsAway}
           eloHome={model.eloHome} eloAway={model.eloAway}
-          totalGoalsA={model.totalGoalsA} totalGoalsB={model.totalGoalsB}
+          totalGoalsA={p.actualScore ? (parsePredGoals(p.predictionA) ?? model.totalGoalsA) : model.totalGoalsA}
+          totalGoalsB={p.actualScore ? undefined : model.totalGoalsB}
           mostLikelyScore={model.mostLikelyScore}
           homeTeam={p.homeTeam} awayTeam={p.awayTeam}
         />
@@ -191,7 +198,13 @@ export default async function MatchDetailPage({ params }: { params: Promise<{ id
                 : `${p.awayTeam}实力占优（+${Math.abs(eloDiff)}分），但优势${Math.abs(eloDiff) > 200 ? '显著' : '有限'}。`
             }
             {model.drawPct >= 33 && ' 平局概率偏高，值得特别关注。'}
-            {model.totalGoalsA !== undefined && ` 总进球预测${model.totalGoalsA}~${model.totalGoalsB}球，${model.totalGoalsA >= 3 ? '偏向大球方向' : model.totalGoalsB <= 2 ? '偏向小球方向' : '进球数中等'}。`}
+            {(() => {
+              const displayGoals = p.actualScore ? (parsePredGoals(p.predictionA) ?? model.totalGoalsA) : model.totalGoalsA
+              const goalsText = p.actualScore
+                ? `总进球预测${displayGoals}球。`
+                : `总进球预测${model.totalGoalsA}~${model.totalGoalsB}球，${model.totalGoalsA >= 3 ? '偏向大球方向' : (model.totalGoalsB ?? 0) <= 2 ? '偏向小球方向' : '进球数中等'}。`
+              return model.totalGoalsA !== undefined ? ` ${goalsText}` : null
+            })()}
           </div>
         </div>
       </div>
