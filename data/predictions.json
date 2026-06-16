@@ -530,14 +530,7 @@
     "winDrawLoss": "home",
     "lambdaHome": 1.788,
     "lambdaAway": 0.812,
-    "totalGoalsPrediction": "1球",
-    "upsetAlert": {
-      "possible": true,
-      "underdog": "塞内加尔",
-      "factors": ["球员", "历史H2H"],
-      "referenceScore": "塞内加尔 1-0",
-      "logic": "马内（34岁）在大赛中的单次爆发力不可低估——2022非洲杯决赛他带领塞内加尔捧杯，大赛经验极为丰富。塞内加尔库利巴利防线扎实，擅长低位5-4-1阵型打定点反击。法国姆巴佩若首场保持惯常的等待节奏，塞内加尔一旦先进球可能拖入防守反击泥潭。此概率约15-18%，不低但远非主流场景。"
-    }
+    "totalGoalsPrediction": "1球"
   },
   {
     "matchId": 1017,
@@ -569,14 +562,7 @@
     "winDrawLoss": "home",
     "lambdaHome": 1.127,
     "lambdaAway": 0.72,
-    "totalGoalsPrediction": "1球",
-    "upsetAlert": {
-      "possible": true,
-      "underdog": "克罗地亚",
-      "factors": ["历史H2H", "教练战术", "资本异动"],
-      "referenceScore": "克罗地亚 1-0",
-      "logic": "2018年世界杯半决赛克罗地亚2-1逆转英格兰，Modric（38岁）拥有大赛最高级别的执行经验。英格兰世界杯首场历来保守（2018/2022均如此），克罗地亚5-3-2低位防守可有效压制Bellingham+Saka体系。若Sharp资金有异动流向克罗地亚+270平局方向，意味着庄家感知到真实爆冷风险。克罗地亚拿下1分甚至3分概率被市场低估。"
-    }
+    "totalGoalsPrediction": "1球"
   },
   {
     "matchId": 1018,
@@ -670,7 +656,14 @@
     "winDrawLoss": "home",
     "lambdaHome": 3.987,
     "lambdaAway": 1,
-    "totalGoalsPrediction": "3球"
+    "totalGoalsPrediction": "3球",
+    "upsetAlert": {
+      "possible": true,
+      "underdog": "刚果DR",
+      "factors": ["首届参赛", "战术", "资本异动"],
+      "referenceScore": "刚果DR 1-0",
+      "logic": "刚果DR是本届世界杯首次参赛球队（M6规则触发）。ELO差306但M6+首届参赛组合历史上反复验证平局甚至爆冷（卡塔尔1-1瑞士/佛得角0-0西班牙）。刚果DR拥有非洲最高水准的后防，若采用极端低位防守并在定点球抓住葡萄牙中后卫身前漏洞，存在打出1-0爆冷的可能。此概率约8%，极少数场景，但M6权重+首届大赛的不可预测性使其值得标注。"
+    }
   },
   {
     "matchId": 1021,

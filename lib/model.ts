@@ -80,6 +80,20 @@ const WUXING_MAP: Record<string, 'wood' | 'fire' | 'earth' | 'metal' | 'water'> 
 // 根因：v10的0.55 floor在cap之前，cap把0.605压回0.495（低于floor），导致预测漏掉"X-1"场景
 const FIRST_TIMERS = new Set(['库拉索', '佛得角', '刚果DR'])
 
+// M11: 双顶级前锋bonus（v15新增）
+// 瑞典5-1突尼斯验证：Gyökeres+Isak双锋合砍4球，M9×0.92仍低估3球
+// 挪威Haaland+Sørloth双锋体系同类型，λ×1.25修正
+const DOUBLE_STRIKERS = new Set<string>([
+  '挪威',  // Haaland(91球) + Sørloth(38球) 双顶级中锋
+  '瑞典',  // Gyökeres + Isak，5-1突尼斯已验证
+])
+
+// M12: 双翼核心缺席 → 进攻λ减半（v15新增）
+// 西班牙0-0佛得角验证：Yamal+Williams双翼均缺席首发→实际0球，M8b×0.85-0.92远不足
+// 使用前需逐场手动填入（赛后清空），比M8b更极端的情形
+const DUAL_WINGER_ABSENT_HOME = new Set<string>([])
+const DUAL_WINGER_ABSENT_AWAY = new Set<string>([])
+
 // M7: 长期缺席重返（>15年未进世界杯）
 // 首场爆冷风险+15%：长期缺席球队表现往往低于ELO预期
 // 土耳其（2002→2026，24年）0-2输给澳大利亚验证
@@ -376,22 +390,19 @@ export function computeModelOutput(
   const absDiff = Math.abs(eloDiff)
   let drawBase = 0.28 - absDiff * 0.00022
 
-  // 反推改进v5：ELO差<100的接近比赛，平局被系统性低估
-  // 根因：3/3方向错误全在ELO<100区间（加拿大1-1/澳大利亚2-0/卡塔尔1-1）
-  // 真实世界杯：ELO差距<100的比赛平局率约31%，模型原值仅25-28%
+  // 平局概率额外加成（仅真正势均力敌时生效）
+  // M8a v15修正：原ELO<150强制底线过宽→导致瑞典/澳大利亚/韩国/科特迪瓦4场全被拉成平局
+  // 世界杯数据：ELO差80-150的比赛强队胜率仍有55-60%，不应强制平局底线
   if (absDiff < 50) {
-    drawBase += 0.05  // 势均力敌：平局是常态不是意外
-  } else if (absDiff < 100) {
-    drawBase += 0.03  // 轻微差距：平局概率不应低于28%
+    drawBase += 0.05  // 极度均衡：平局是常态
+  } else if (absDiff < 80) {
+    drawBase += 0.03  // 轻微差距：小幅平局加成
   }
 
-  // M8a: 接近比赛平局强制底线（v13 2026-06-15新增，11场验证）
-  // 荷兰(ELO差65)2-2日本、加拿大(ELO差31)1-1波黑均在此区间被低估
-  // 世界杯ELO差<150的比赛平局率真实约29-33%，模型需要强制底线
-  // 注：与上方的+0.03/+0.05叠加使用，底线确保最终不低于该值
-  if (absDiff < 50)       drawBase = Math.max(drawBase, 0.33)
-  else if (absDiff < 100) drawBase = Math.max(drawBase, 0.31)
-  else if (absDiff < 150) drawBase = Math.max(drawBase, 0.29)
+  // M8a: 强制平局底线仅保留ELO<80（真正难分高下）
+  // 收窄理由：15场复盘，4场被错误拉成平局底线（瑞典5-1/澳大利亚2-0/韩国2-1/科特迪瓦1-0）
+  // ELO差80-150的比赛，强队有真实优势，不应强制底线
+  if (absDiff < 80) drawBase = Math.max(drawBase, 0.33)
 
   // M8b: 核心创造者缺席 → 平局加成（荷兰2-2：失去德容+西蒙斯→2次领先2次被追）
   if (CREATOR_ABSENT_HOME.has(homeTeam)) drawBase += 0.08
@@ -455,6 +466,16 @@ export function computeModelOutput(
   if (DEFENSIVE_TEAMS.has(homeTeam)) lambdaAway *= (eloDiff <= -80 ? 0.92 : 0.85)
   if (DEFENSIVE_TEAMS.has(awayTeam)) lambdaHome *= (eloDiff >= 80 ? 0.92 : 0.85)
 
+  // M11: 双顶级前锋bonus（v15新增，瑞典5-1突尼斯验证）
+  // Gyökeres+Isak/Haaland+Sørloth双锋体系：λ×1.25，覆盖M9的×0.92压制效果
+  if (DOUBLE_STRIKERS.has(homeTeam)) lambdaHome *= 1.25
+  if (DOUBLE_STRIKERS.has(awayTeam)) lambdaAway *= 1.25
+
+  // M12: 双翼核心缺席（v15新增，西班牙0-0佛得角验证）
+  // Yamal+Williams均缺席→0球，比M8b中场缺席更极端，直接压至×0.45
+  if (DUAL_WINGER_ABSENT_HOME.has(homeTeam)) lambdaHome *= 0.45
+  if (DUAL_WINGER_ABSENT_AWAY.has(awayTeam)) lambdaAway *= 0.45
+
   // M7: 长期缺席球队首场进攻效率大幅降低（土耳其0-2→修正v5：0.90→0.85）
   if (LONG_ABSENCE.has(homeTeam)) lambdaHome *= 0.85
   if (LONG_ABSENCE.has(awayTeam)) lambdaAway *= 0.85
@@ -483,11 +504,12 @@ export function computeModelOutput(
     lambdaHome *= scale
     lambdaAway *= scale
   }
-  // 进球上限（v12：ELO差>350时放宽至7.0，德国7-1验证5.0严重不足）
-  // ELO差>350的极端对决（如德国vs库拉索364差）：强队实际可打进7球
-  // 一般对决保持5.0上限，避免普通比赛出现不合理的高进球预测
+  // 进球上限（v15：分三档，德国8球+瑞典6球验证旧值不足）
+  // ELO差>350（德国364差）→ cap=9.0
+  // ELO差250-350（强队对中等队）→ cap=7.0
+  // ELO差<250（常规比赛）→ cap=5.0
   const eloDiffAbs = Math.abs(eloDiff)
-  const totalCap = eloDiffAbs > 350 ? 7.0 : 5.0
+  const totalCap = eloDiffAbs > 350 ? 9.0 : eloDiffAbs > 250 ? 7.0 : 5.0
   const totalAfter = lambdaHome + lambdaAway
   if (totalAfter > totalCap) {
     const capScale = totalCap / totalAfter
