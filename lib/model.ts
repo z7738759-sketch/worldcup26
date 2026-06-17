@@ -77,8 +77,8 @@ const WUXING_MAP: Record<string, 'wood' | 'fire' | 'earth' | 'metal' | 'water'> 
 // 首届参赛（历史首积分情绪 + 进球情绪加成）
 // 德国4-1库拉索验证：首届参赛队即使面对ELO差364的强队也能进球（Comenencia 21'）
 // v11规则：cap后再应用floor=1.0（防止cap把floor踩穿），期望进球数=1球，符合实际
-// 根因：v10的0.55 floor在cap之前，cap把0.605压回0.495（低于floor），导致预测漏掉"X-1"场景
-const FIRST_TIMERS = new Set(['库拉索', '佛得角', '刚果DR'])
+// v16新增：约旦（3-1奥地利实际进1球✅，1球底线正确）、乌兹别克斯坦（首届WC参赛）
+const FIRST_TIMERS = new Set(['库拉索', '佛得角', '刚果DR', '约旦', '乌兹别克斯坦'])
 
 // M11: 双顶级前锋bonus（v15新增）
 // 瑞典5-1突尼斯验证：Gyökeres+Isak双锋合砍4球，M9×0.92仍低估3球
@@ -97,7 +97,8 @@ const DUAL_WINGER_ABSENT_AWAY = new Set<string>([])
 // M7: 长期缺席重返（>15年未进世界杯）
 // 首场爆冷风险+15%：长期缺席球队表现往往低于ELO预期
 // 土耳其（2002→2026，24年）0-2输给澳大利亚验证
-const LONG_ABSENCE = new Set(['土耳其'])
+// v16新增奥地利（1998→2026，28年缺席）：3-1约旦赢了但进球本应更多，M7不应压制主场强队λ
+const LONG_ABSENCE = new Set(['土耳其', '奥地利'])
 
 // 赛前热身赛状态（2026年5-6月友谊赛结果）
 // 正值=状态好于预期，负值=状态差于预期
@@ -387,8 +388,10 @@ export function computeModelOutput(
   ))
 
   // === 平局概率 ===
+  // v16校准：2026年WC实际平局率7/20=35%，远高于旧基准0.28（历史均值28%）
+  // 将基准从0.28提至0.32，修复系统性低估平局的核心问题（9/9错误中6个是把平局叫成赢球）
   const absDiff = Math.abs(eloDiff)
-  let drawBase = 0.28 - absDiff * 0.00022
+  let drawBase = 0.32 - absDiff * 0.00025
 
   // 平局概率额外加成（仅真正势均力敌时生效）
   // M8a v15修正：原ELO<150强制底线过宽→导致瑞典/澳大利亚/韩国/科特迪瓦4场全被拉成平局
@@ -476,9 +479,11 @@ export function computeModelOutput(
   if (DUAL_WINGER_ABSENT_HOME.has(homeTeam)) lambdaHome *= 0.45
   if (DUAL_WINGER_ABSENT_AWAY.has(awayTeam)) lambdaAway *= 0.45
 
-  // M7: 长期缺席球队首场进攻效率大幅降低（土耳其0-2→修正v5：0.90→0.85）
-  if (LONG_ABSENCE.has(homeTeam)) lambdaHome *= 0.85
-  if (LONG_ABSENCE.has(awayTeam)) lambdaAway *= 0.85
+  // M7: 长期缺席球队首场进攻效率降低
+  // v16修正：只在"劣势方"身上生效（土耳其=客队弱势→λ压制✅；奥地利=主场强队ELO差185→错误压制3-1变1-0❌）
+  // 规则：long-absent主队ELO差<100时压制（不是强大主场），long-absent客队ELO差>-100时压制
+  if (LONG_ABSENCE.has(homeTeam) && eloDiff < 100) lambdaHome *= 0.85
+  if (LONG_ABSENCE.has(awayTeam) && eloDiff > -100) lambdaAway *= 0.85
 
   // 团队专项校正（反推校验后写入model-state.json，每场结束自动更新）
   const homeAdj = TEAM_ADJ[homeTeam]

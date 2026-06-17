@@ -725,15 +725,16 @@
     "kickoff": "2026-06-17T04:00:00Z",
     "predictionA": "奥地利 1-0",
     "predictionB": "平局 0-0",
-    "actualScore": null,
-    "directionCorrect": null,
-    "exactHit": null,
+    "actualScore": "3-1",
+    "directionCorrect": true,
+    "exactHit": false,
+    "totalGoalsDirectionCorrect": false,
     "bettingValues": [
       {
         "stars": 2,
         "name": "奥地利获胜",
         "odds": "-200",
-        "hit": null
+        "hit": true
       }
     ],
     "mRulesTriggered": ["M6", "M7"],
