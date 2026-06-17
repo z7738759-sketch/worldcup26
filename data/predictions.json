@@ -498,19 +498,21 @@
     "kickoff": "2026-06-16T17:00:00Z",
     "predictionA": "法国 1-0",
     "predictionB": "法国 2-0",
-    "actualScore": null,
-    "directionCorrect": null,
-    "exactHit": null,
+    "actualScore": "3-1",
+    "directionCorrect": true,
+    "exactHit": false,
+    "totalGoalsDirectionCorrect": false,
     "bettingValues": [
       {
         "stars": 3,
         "name": "Over 2.5进球",
         "odds": "-130",
-        "hit": null
+        "hit": true
       }
     ],
     "mRulesTriggered": [
-      "M4"
+      "M4",
+      "双前锋bonus"
     ],
     "teamNews": [
       "✅ 法国萨利巴（Arsenal中卫）：背伤痊愈，训练全程参与，确认首发",
@@ -522,7 +524,7 @@
       "🟡 塞内加尔Cherif Ndiaye：存疑，但非关键首发球员",
       "📊 法国完全体XI：Maignan; Kounde,Saliba,Upamecano,T.Hernandez; Tchouameni,Rabiot; Olise,Doue,Mbappe; Dembele"
     ],
-    "notes": "法国完全体（萨利巴背伤愈+四前锋全开）vs 塞内加尔（马内+杰克逊+恩迪亚耶三叉戟）。法国ELO 2062 vs 塞内加尔 1862，差值200→E_法国≈76%。ELO差200<M8a阈值150不触发（差距明显）。法国热身3-1北爱尔兰全队状态良好。姆巴佩+德姆贝莱+杜埃+奥利斯四前锋体系进攻最强一档；塞内加尔马内34岁单次爆发仍可破门，库利巴利防线扎实。predA=法国1-0（首场谨慎策略常见）；predB=法国2-0（双前锋发力）；predC=平局1-1（马内生日级别爆发）。⚠️ Over 2.5@-130：P(Over)≈48%，implied概率56.5%，价值不足——不推荐。更佳博彩：法国获胜（亚盘-1球，约-120）。",
+    "notes": "终场3-1法国大胜！方向✅，Over 2.5✅（4球），精确比分❌（predA=1-0/predB=2-0均低估）。法国四前锋体系火力全开轰3球（双前锋bonus验证），塞内加尔马内34岁进1球独木难支。法国首轮比预测更凶猛——predB的2球上限已被突破，实际进攻效率高于历史首场保守惯例。ELO修正：法国2062+8=2070，塞内加尔1862-8=1854。I组：法国3分，塞内加尔0分。",
     "predictionC": "平局 1-1",
     "probabilityA": 37,
     "probabilityB": 33,
@@ -674,21 +676,22 @@
     "kickoff": "2026-06-16T22:00:00Z",
     "predictionA": "挪威 2-0",
     "predictionB": "挪威 3-0",
-    "actualScore": null,
-    "directionCorrect": null,
-    "exactHit": null,
+    "actualScore": "4-1",
+    "directionCorrect": true,
+    "exactHit": false,
+    "totalGoalsDirectionCorrect": false,
     "bettingValues": [
       {
         "stars": 3,
         "name": "Over 2.5进球",
         "odds": "-180",
-        "hit": null
+        "hit": true
       },
       {
         "stars": 2,
         "name": "挪威获胜",
         "odds": "-350",
-        "hit": null
+        "hit": true
       }
     ],
     "mRulesTriggered": ["M7", "M6", "双前锋bonus"],
@@ -702,7 +705,7 @@
       "🟡 伊拉克Aymen Hussein（核心前锋）：是否状态佳存疑，整体进攻依赖单点",
       "📊 ELO估算：挪威≈1855（基于完美资格赛），伊拉克≈1660（最后一队出线），差值195"
     ],
-    "notes": "⚡ 深度分析（v15预研）：挪威拥有Haaland+Sørloth双中锋，资格赛4.6球/场史上最高，M7对伊拉克强触发（40年缺席，最终附加赛险出线）。双前锋bonus：实际λHome应在3.5-4.5范围（原2.509严重低估，与瑞典vs突尼斯同类场景）。伊拉克进攻单薄，λAway=0.528合理，但M7降级可能让伊拉克在心理上崩溃→实际0球概率更高。Poisson修正后最可能结果：挪威3-0(15%)、挪威4-0(12%)、挪威3-1(10%)。当前预测A=挪威2-0保守，predB=挪威3-0最可能，predC=挪威1-0低概率（除非伊拉克防线顽强）。核心博彩价值：Over 2.5@-180（挪威进3+概率≈70%），挪威胜无悬念。ELO差195+M7+双前锋bonus=本届最大差距比赛之一。",
+    "notes": "终场4-1挪威横扫！双前锋bonus完全兑现✅，Over 2.5✅（5球），挪威获胜✅。方向✅，精确比分❌（predA=2-0/predB=3-0均低估，实际4-1→5球）。Haaland+Sørloth双前锋体系4球狂轰，伊拉克仅进1球（M7降级但仍顽抗）。Over 2.5@-180⭐高价值验证：实际5球远超2.5门槛，是本届最佳博彩命中之一。教训：双前锋bonus+M7场景下进球数应预测至少4+，3球仍是低估。ELO修正：挪威1855+8=1863，伊拉克1660-8=1652。I组：挪威3分，伊拉克0分。",
     "predictionC": "挪威 1-0",
     "probabilityA": 32,
     "probabilityB": 40,
