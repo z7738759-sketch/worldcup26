@@ -1,5 +1,17 @@
 [
   {
+    "id": 41,
+    "type": "preview",
+    "team": "系统",
+    "timestamp": "2026-06-17T16:00:00+08:00",
+    "source": "模型 v15",
+    "title": "预测修正：1020葡萄牙/1017英格兰（M6+M8a规则执行）",
+    "content": "两处预测已依据规则修正。①葡萄牙vs刚果DR（1020）：M6规则要求predB必须为平局，原predB「葡萄牙3-1」违规，已改为「平局1-1」（刚果DR首届λA=1.0，有进球能力），predC改为「葡萄牙4-1」；predA「葡萄牙3-0」保留。②英格兰vs克罗地亚（1017）：M8a规则ELO差75<80强制winDrawLoss=draw，predA与predB互换，predA改为「平局0-0」，predB改为「英格兰1-0」，平局+270博彩价值维持。",
+    "impactLevel": "medium",
+    "impactNote": "M6（首届参赛）和M8a（ELO差<80）是已验证的系统性规则，确保predB覆盖高概率异常场景。",
+    "relatedMatches": [1020, 1017]
+  },
+  {
     "id": 40,
     "type": "result",
     "team": "阿根廷",

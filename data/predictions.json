@@ -540,8 +540,8 @@
     "awayTeam": "克罗地亚",
     "group": "L组",
     "kickoff": "2026-06-17T20:00:00Z",
-    "predictionA": "英格兰 1-0",
-    "predictionB": "平局 0-0",
+    "predictionA": "平局 0-0",
+    "predictionB": "英格兰 1-0",
     "actualScore": null,
     "directionCorrect": null,
     "exactHit": null,
@@ -554,14 +554,15 @@
       }
     ],
     "mRulesTriggered": [
-      "M2"
+      "M2",
+      "M8a"
     ],
-    "notes": "平局+270有价值：巴尔干低位防守+英格兰首场保守规律",
+    "notes": "M8a修正（2026-06-17）：ELO差=75<80，强制winDrawLoss=draw。M2触发（亚盘平局升至32%）。克罗地亚巴尔干低位防守+英格兰首场保守规律，平局+270有价值。predA=0-0主预测，predB=英格兰1-0次选，predC=1-1进攻性平局。",
     "predictionC": "平局 1-1",
-    "probabilityA": 38,
-    "probabilityB": 34,
+    "probabilityA": 34,
+    "probabilityB": 38,
     "probabilityC": 28,
-    "winDrawLoss": "home",
+    "winDrawLoss": "draw",
     "lambdaHome": 1.127,
     "lambdaAway": 0.72,
     "totalGoalsPrediction": "1球"
@@ -637,7 +638,7 @@
     "group": "K组",
     "kickoff": "2026-06-17T17:00:00Z",
     "predictionA": "葡萄牙 3-0",
-    "predictionB": "葡萄牙 3-1",
+    "predictionB": "平局 1-1",
     "actualScore": null,
     "directionCorrect": null,
     "exactHit": null,
@@ -652,8 +653,8 @@
     "mRulesTriggered": [
       "M6"
     ],
-    "notes": "v10模型：刚果DR首届参赛λaway底线0.55，进球概率≈37%。葡萄牙进攻强劲(λ≈4.5)，但B/C预测纳入刚果DR进球。ELO差306，葡萄牙胜概率82%。",
-    "predictionC": "葡萄牙 4-0",
+    "notes": "M6修正（2026-06-17）：刚果DR首届参赛，M6强制平局进predB。predA=3-0为主预测（λH=3.987），predB=1-1为M6平局场景（λA=1.0，刚果DR有进球能力）。ELO差306，葡萄牙胜率82%但M6必须纳入平局。",
+    "predictionC": "葡萄牙 4-1",
     "probabilityA": 33,
     "probabilityB": 33,
     "probabilityC": 34,
