@@ -542,22 +542,23 @@
     "kickoff": "2026-06-17T20:00:00Z",
     "predictionA": "平局 0-0",
     "predictionB": "英格兰 1-0",
-    "actualScore": null,
-    "directionCorrect": null,
-    "exactHit": null,
+    "actualScore": "4-2",
+    "directionCorrect": false,
+    "exactHit": false,
+    "totalGoalsDirectionCorrect": false,
     "bettingValues": [
       {
         "stars": 3,
         "name": "平局",
         "odds": "+270",
-        "hit": null
+        "hit": false
       }
     ],
     "mRulesTriggered": [
       "M2",
       "M8a"
     ],
-    "notes": "M8a修正（2026-06-17）：ELO差=75<80，强制winDrawLoss=draw。M2触发（亚盘平局升至32%）。克罗地亚巴尔干低位防守+英格兰首场保守规律，平局+270有价值。predA=0-0主预测，predB=英格兰1-0次选，predC=1-1进攻性平局。",
+    "notes": "终场4-2英格兰大胜！凯恩2球（本届首球），6球总进球（预测1球，严重低估）。M8a规则失效：ELO差75但英格兰完全碾压——凯恩+萨卡+福登完整阵容是历史级黄金11人，ELO未能反映近期表现差距。winDrawLoss=draw预测❌（英格兰4-2大胜）。平局+270❌未命中。教训：①M8a ELO<80强制平局在一方拥有现役顶级阵容完整性时应有例外；②克罗地亚后M16老化明显，防守体系较2018大幅下滑（被4球）；③凯恩首场4球序列打开，英格兰进攻上限比预期高得多。L组：英格兰3分，克罗地亚0分（与加纳1-0巴拿马同日）。ELO修正：英格兰1999+13=2012，克罗地亚1924-13=1911。",
     "predictionC": "平局 1-1",
     "probabilityA": 34,
     "probabilityB": 38,
@@ -639,21 +640,22 @@
     "kickoff": "2026-06-17T17:00:00Z",
     "predictionA": "葡萄牙 3-0",
     "predictionB": "平局 1-1",
-    "actualScore": null,
-    "directionCorrect": null,
-    "exactHit": null,
+    "actualScore": "1-1",
+    "directionCorrect": false,
+    "exactHit": true,
+    "totalGoalsDirectionCorrect": false,
     "bettingValues": [
       {
         "stars": 2,
         "name": "比分市场3-0",
         "odds": "+500",
-        "hit": null
+        "hit": false
       }
     ],
     "mRulesTriggered": [
       "M6"
     ],
-    "notes": "M6修正（2026-06-17）：刚果DR首届参赛，M6强制平局进predB。predA=3-0为主预测（λH=3.987），predB=1-1为M6平局场景（λA=1.0，刚果DR有进球能力）。ELO差306，葡萄牙胜率82%但M6必须纳入平局。",
+    "notes": "终场1-1平局！M6规则第三次验证✅（刚果DR首届参赛+ELO大差距→平局predB精确命中）。predB「平局1-1」精确命中✅！C.罗全场未能破门，刚果DR极端低位防守完美执行，甚至获得宝贵平局积分（K组首届参赛首积分！）。方向预测❌（预测葡萄牙胜，实际平局），比分市场3-0@+500❌。M6三连验证（卡塔尔1-1瑞士/佛得角0-0西班牙/刚果DR1-1葡萄牙）确立M6规则为本届最重要分析框架。K组：葡萄牙1分，刚果DR惊奇1分。ELO修正：葡萄牙1986-11=1975，刚果DR1700+11=1711。",
     "predictionC": "葡萄牙 4-1",
     "probabilityA": 33,
     "probabilityB": 33,
@@ -799,15 +801,16 @@
     "kickoff": "2026-06-17T23:00:00Z",
     "predictionA": "平局 1-1",
     "predictionB": "巴拿马 1-0",
-    "actualScore": null,
-    "directionCorrect": null,
-    "exactHit": null,
+    "actualScore": "1-0",
+    "directionCorrect": false,
+    "exactHit": true,
+    "totalGoalsDirectionCorrect": true,
     "bettingValues": [
       {
         "stars": 2,
         "name": "平局",
         "odds": "+220",
-        "hit": null
+        "hit": false
       }
     ],
     "mRulesTriggered": ["M8a", "M8b"],
@@ -820,7 +823,7 @@
       "📊 Opta超级电脑：巴拿马45.2%胜率 vs 加纳29.6%！巴拿马被模型认为是更强一方",
       "⚠️ M8b触发：Partey缺席=加纳核心中场断层，攻击端无法获得充足组织支持"
     ],
-    "notes": "M8a强触发：ELO差仅50（加纳1740 vs 巴拿马1690），平局底线33%。同时Partey（加纳核心后腰）缺席首场=M8b触发，加纳中场组织能力大幅下滑。Opta超级电脑给出巴拿马45.2%胜率（高于加纳），与ELO预测相反——加纳近期状态糟糕（5场1胜）。predA=平局1-1（M8a主要场景，双方均能进球）；predB=巴拿马1-0（爆冷：Opta验证+Partey缺席+Panama不败资格赛）；predC=加纳1-0（若双前锋Semenyo+Inaki Williams发挥在Partey缺席情况下仍能定胜负）。winDrawLoss强制改为draw（M8a规则，ELO差50）。平局+220有价值（P≈35%，implied约31%，略有正期望）。",
+    "notes": "终场1-0加纳！predC「加纳1-0」精确命中✅！Caleb Yirenkyi晚期进球定胜负。M8a平局预测失效（ELO差50，强制平局，但加纳获胜）。Opta预测巴拿马45%也完全错误。Partey缺席但Semenyo+Inaki Williams双前锋进攻创造力弥补中场断层——个人质量压过均势系数。总进球1球命中✅（totalGoalsDirectionCorrect=true）。平局+220❌。教训：M8a ELO<80强制平局在一方拥有明显个人攻击优势（双前锋欧洲顶联首发级别）时需降低权重。ELO修正：加纳1740+14=1754，巴拿马1690-14=1676。L组：英格兰3分，加纳3分！克罗地亚0分，巴拿马0分。",
     "predictionC": "加纳 1-0",
     "probabilityA": 38,
     "probabilityB": 33,
@@ -829,5 +832,129 @@
     "lambdaHome": 1.1,
     "lambdaAway": 0.9,
     "totalGoalsPrediction": "1球"
+  },
+  {
+    "matchId": 1025,
+    "homeTeam": "捷克",
+    "awayTeam": "南非",
+    "group": "A组",
+    "kickoff": "2026-06-18T16:00:00Z",
+    "predictionA": "捷克 2-0",
+    "predictionB": "捷克 1-0",
+    "predictionC": "平局 1-1",
+    "actualScore": null,
+    "directionCorrect": null,
+    "exactHit": null,
+    "probabilityA": 38,
+    "probabilityB": 34,
+    "probabilityC": 28,
+    "winDrawLoss": "home",
+    "lambdaHome": 1.75,
+    "lambdaAway": 0.65,
+    "totalGoalsPrediction": "2球",
+    "bettingValues": [],
+    "mRulesTriggered": [],
+    "teamNews": [
+      "✅ 捷克：ELO 1800，欧洲稳定球队，需首场补分（第1轮1-2负韩国）",
+      "✅ 南非：ELO 1640，第1轮0-2负墨西哥，攻击端暴露严重问题",
+      "💥 双方首场均落败，本场是A组存亡之战（输方几乎出局）",
+      "📊 ELO差160：捷克胜率约67%，平局约22%，南非胜率约11%"
+    ],
+    "notes": "A组第2轮存亡战：捷克（0分）vs 南非（0分），双方均首轮落败（捷克1-2韩国，南非0-2墨西哥）。ELO差160，捷克明显更强，且有巴拉格（Barak）+赛勒斯（Schick）等欧洲经验球员。南非0-2负墨西哥暴露进攻端短板，捷克虽败于韩国仍展现欧洲水准。M8a不触发（ELO差160>150）。predA=捷克2-0（主流场景）；predB=捷克1-0（南非低位顽守到90'）；predC=平局1-1（双方求保争平局出线，情绪复杂）。"
+  },
+  {
+    "matchId": 1026,
+    "homeTeam": "瑞士",
+    "awayTeam": "波黑",
+    "group": "B组",
+    "kickoff": "2026-06-18T19:00:00Z",
+    "predictionA": "瑞士 1-0",
+    "predictionB": "平局 1-1",
+    "predictionC": "瑞士 2-0",
+    "actualScore": null,
+    "directionCorrect": null,
+    "exactHit": null,
+    "probabilityA": 38,
+    "probabilityB": 32,
+    "probabilityC": 30,
+    "winDrawLoss": "home",
+    "lambdaHome": 1.45,
+    "lambdaAway": 0.88,
+    "totalGoalsPrediction": "1球",
+    "bettingValues": [],
+    "mRulesTriggered": ["M8a"],
+    "teamNews": [
+      "✅ 瑞士Xhaka（Bayer Leverkusen/中场核心）：确认首发，传控组织关键",
+      "✅ 瑞士：第1轮1-1卡塔尔（M6触发），防守稳健，进攻偶发",
+      "✅ 波黑：第1轮1-1加拿大，展现顽强防守",
+      "📊 ELO差106：M8a触发（<150），平局底线约29-32%"
+    ],
+    "notes": "B组第2轮：瑞士（1分）vs 波黑（1分），双方均首轮平局。ELO差106触发M8a（<150→平局底线约31%）。瑞士防守+Xhaka中场控制是主要优势；波黑首轮展现团队防守纪律，1-1加拿大显示其非轻松猎物。B组四队全1分（瑞士/卡塔尔/加拿大/波黑），本场和加拿大vs卡塔尔决定B组走向。predA=瑞士1-0（Xhaka中场控制+瑞士防反破门）；predB=平局1-1（M8a强触发，两队均势）；predC=瑞士2-0（若波黑开场被压制放开空间）。"
+  },
+  {
+    "matchId": 1027,
+    "homeTeam": "加拿大",
+    "awayTeam": "卡塔尔",
+    "group": "B组",
+    "kickoff": "2026-06-18T22:00:00Z",
+    "predictionA": "加拿大 2-0",
+    "predictionB": "加拿大 1-0",
+    "predictionC": "平局 1-1",
+    "actualScore": null,
+    "directionCorrect": null,
+    "exactHit": null,
+    "probabilityA": 38,
+    "probabilityB": 34,
+    "probabilityC": 28,
+    "winDrawLoss": "home",
+    "lambdaHome": 1.85,
+    "lambdaAway": 0.9,
+    "totalGoalsPrediction": "2球",
+    "bettingValues": [],
+    "mRulesTriggered": ["M8a"],
+    "teamNews": [
+      "✅ 加拿大：主场BC Place（温哥华），主场球迷优势极强",
+      "✅ 加拿大Davies（拜仁/左翼）+Larin（前锋）：进攻线有欧洲一流球员",
+      "🟡 卡塔尔：第1轮1-1瑞士（M6触发，首届非真正首届），防守顽强",
+      "📊 ELO差115：M8a触发（<150），平局底线约29%；但加拿大主场优势+需要胜分"
+    ],
+    "notes": "B组第2轮：加拿大（1分）vs 卡塔尔（1分）。加拿大在温哥华BC Place主场作战，主场优势显著（北美球迷全力支持）。ELO差115触发M8a但加拿大主场驱动力应克服均势。卡塔尔第1轮M6触发平局（1-1瑞士）后防守体系已被验证，但本场面对更强主场压迫能否再次守住？predA=加拿大2-0（主场激励下打开进攻）；predB=加拿大1-0（窄胜保险，卡塔尔防守到最后失守）；predC=平局1-1（M8a保险场景，卡塔尔低位再次顽守90'）。"
+  },
+  {
+    "matchId": 1028,
+    "homeTeam": "墨西哥",
+    "awayTeam": "韩国",
+    "group": "A组",
+    "kickoff": "2026-06-19T01:00:00Z",
+    "predictionA": "平局 1-1",
+    "predictionB": "墨西哥 1-0",
+    "predictionC": "韩国 1-0",
+    "actualScore": null,
+    "directionCorrect": null,
+    "exactHit": null,
+    "probabilityA": 39,
+    "probabilityB": 33,
+    "probabilityC": 28,
+    "winDrawLoss": "draw",
+    "lambdaHome": 1.35,
+    "lambdaAway": 0.98,
+    "totalGoalsPrediction": "1球",
+    "bettingValues": [
+      {
+        "stars": 2,
+        "name": "平局",
+        "odds": "+220",
+        "hit": null
+      }
+    ],
+    "mRulesTriggered": ["M8a", "ASIA"],
+    "teamNews": [
+      "✅ 墨西哥主场：瓜达拉哈拉Estadio Akron，主场优势极大",
+      "✅ 墨西哥：第1轮2-0击败南非，状态良好，Raúl Jiménez进球",
+      "✅ 韩国Son Heung-min（热刺/队长）：本赛季19球+12助，状态顶峰",
+      "✅ 韩国：第1轮2-1逆转捷克（ASIA逆境力），Lee Kang-in传球精准",
+      "📊 ELO差68（墨西哥1913-韩国1845）：M8a强触发（<80），winDrawLoss强制=draw"
+    ],
+    "notes": "A组第2轮天王山对决：双方均首轮3分（墨西哥2-0南非，韩国2-1捷克），本场决定A组第一归属。ELO差仅68触发M8a强制（<80→winDrawLoss=draw）。ASIA规则：韩国Son Heung-min本届进入顶峰状态，2-1逆转捷克展现本届亚洲球队韧性。墨西哥主场瓜达拉哈拉是其传统优势——墨西哥在Estadio Akron历史战绩优秀。predA=平局1-1（M8a+两队均不想冒险争最大风险，积分均可保持前两）；predB=墨西哥1-0（主场优势，Mexican wave全场支持，Son被限制住时）；predC=韩国1-0（ASIA爆冷，Son单挑定胜负，复制2-1捷克的逆袭势头）。平局+220有价值（P≈39%>implied 31%）。"
   }
 ]
