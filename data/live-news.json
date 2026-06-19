@@ -1,5 +1,65 @@
 [
   {
+    "id": 50,
+    "type": "result",
+    "team": "墨西哥",
+    "timestamp": "2026-06-19T09:00:00+08:00",
+    "source": "ESPN · STATUS_FULL_TIME",
+    "title": "墨西哥1-0韩国终场 · predB精确命中✅！主场压倒M8a平局预测",
+    "content": "墨西哥在Guadalajara Estadio Akron主场1-0战胜韩国！predB「墨西哥1-0」精确命中✅，总进球1球✅。M8a规则（ELO差68<80强制平局）失效——墨西哥主场压倒性球迷优势+韩国Son被全程紧盯无法发挥。平局+220❌未命中。A组：墨西哥6分锁定出线，韩国3分（小组第二存疑），捷克/南非1分。",
+    "impactLevel": "high",
+    "impactNote": "M8a再次失效：墨西哥主场Guadalajara的压倒性环境在ELO均势时可能是决定性因素——需新增主场超强效应例外条款。ELO：墨西哥1913+13=1926，韩国1845-13=1832。",
+    "relatedMatches": [1028]
+  },
+  {
+    "id": 49,
+    "type": "result",
+    "team": "加拿大",
+    "timestamp": "2026-06-19T06:00:00+08:00",
+    "source": "ESPN · STATUS_FULL_TIME",
+    "title": "加拿大6-0卡塔尔终场 · 历史级大胜！双前锋bonus+主场完美兑现",
+    "content": "加拿大在温哥华BC Place主场以6-0历史级大胜卡塔尔！Davies+Larin双前锋轰炸，完全碾压。预测2-0，实际6-0，进球差高达4球=本届迄今最大预测偏差。M8a（ELO差115触发均势）被双前锋bonus+主场完全吞噬。卡塔尔防线在主场压力下全面崩塌。B组：加拿大4分，卡塔尔1分（出局边缘）。",
+    "impactLevel": "high",
+    "impactNote": "双前锋bonus主场验证最高值：6-0=双前锋bonus+主场的理论上限。ELO：加拿大1793+11=1804，卡塔尔1678-11=1667。B组领跑争夺：加拿大4分，瑞士4分（同日4-1）。",
+    "relatedMatches": [1027]
+  },
+  {
+    "id": 48,
+    "type": "result",
+    "team": "瑞士",
+    "timestamp": "2026-06-19T03:00:00+08:00",
+    "source": "ESPN · STATUS_FULL_TIME",
+    "title": "瑞士4-1波黑终场 · Xhaka传控体系碾压M8a均势预测",
+    "content": "瑞士以4-1大胜波黑！Xhaka（Leverkusen）中场传控体系全场主导，多点进球碾压波黑防线，5球总进球（预测1球=严重低估）。M8a（ELO差106→平局底线31%）完全失效。方向✅（主场胜），精确比分❌（predA=1-0）。B组：瑞士4分（1-1+4-1），与加拿大并列领跑。",
+    "impactLevel": "medium",
+    "impactNote": "M8a细化教训：传控型核心（Xhaka级）面对缺乏高位压迫的对手时，均势预测过于保守——传控体系进球积累比单点爆发更持续。ELO：瑞士1868+11=1879，波黑1762-11=1751。",
+    "relatedMatches": [1026]
+  },
+  {
+    "id": 47,
+    "type": "result",
+    "team": "捷克",
+    "timestamp": "2026-06-19T00:00:00+08:00",
+    "source": "ESPN · STATUS_FULL_TIME",
+    "title": "捷克1-1南非终场 · predC精确命中✅！存亡战双败队平局",
+    "content": "捷克1-1南非！predC「平局1-1」精确命中✅。双方均首轮落败（捷克1-2负韩国，南非0-2负墨西哥），存亡战心理保守因素压过ELO差160的实力差距。方向❌（预测捷克胜）。总进球2球✅命中预测。A组局势：墨西哥首发（今晚1-0韩国），韩国3分第二，捷克/南非1分命悬一线。",
+    "impactLevel": "high",
+    "impactNote": "存亡战双败队平局规律验证：M11候选规则——双方均首轮落败的存亡战中，平局概率应上调15-20%（无论ELO差距）。ELO：捷克1800-7=1793，南非1640+7=1647。",
+    "relatedMatches": [1025]
+  },
+  {
+    "id": 46,
+    "type": "result",
+    "team": "哥伦比亚",
+    "timestamp": "2026-06-18T10:00:00+08:00",
+    "source": "ESPN · STATUS_FULL_TIME",
+    "title": "哥伦比亚3-1乌兹别克斯坦终场 · Díaz突破M6防线！方向✅",
+    "content": "哥伦比亚3-1击败乌兹别克斯坦！Luis Díaz(65')、Muñoz(40')、Campaz(90+9')进球，Fayzullayev(60')代表乌兹别克斯坦扳回1球。M6规则触发（乌兹别克斯坦首届参赛→predB=平局1-1），但Díaz（利物浦左翼）速度突破了Khusanov（曼城CB）主导的防守体系，M6平局预测未兑现。方向✅（主场胜），总进球4球>预测2球。K组：哥伦比亚3分，乌兹别克斯坦0分（葡萄牙/刚果DR各1分）。",
+    "impactLevel": "medium",
+    "impactNote": "M6规则例外：当进攻方拥有欧洲顶联世界级边锋（Díaz级别）时，M6平局预测效力降低，首届参赛防守体系被突破风险高。ELO：哥伦比亚1871+9=1880，乌兹别克斯坦1710-9=1701。",
+    "relatedMatches": [1023]
+  },
+  {
     "id": 45,
     "type": "result",
     "team": "加纳",
