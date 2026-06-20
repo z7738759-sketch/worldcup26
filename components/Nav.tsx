@@ -7,6 +7,7 @@ const links = [
   { href: '/match', label: '比赛' },
   { href: '/preview', label: '赛前' },
   { href: '/standings', label: '积分' },
+  { href: '/charts', label: '图表' },
 ]
 
 export default function Nav() {
