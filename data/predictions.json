@@ -976,9 +976,10 @@
     "predictionA": "平局 1-1",
     "predictionB": "美国 2-1",
     "predictionC": "美国 0-1",
-    "actualScore": null,
-    "directionCorrect": null,
-    "exactHit": null,
+    "actualScore": "2-0",
+    "directionCorrect": false,
+    "exactHit": false,
+    "totalGoalsDirectionCorrect": true,
     "probabilityA": 36,
     "probabilityB": 35,
     "probabilityC": 29,
@@ -997,7 +998,7 @@
       "📊 ELO差47（美国1858-澳大利亚1811）：M8a最强触发（<50→drawProb=33%）",
       "💥 D组第一争夺战！两队均首轮3分，本场决定D组积分榜头名"
     ],
-    "notes": "D组关键战：美国vs澳大利亚，两队均首轮3分。ELO差47触发M8a最强档（<50→winDrawLoss=draw，drawProb=33%）。美国attackBoost+0.15（4-1巴拉圭） vs 澳大利亚attackBoost+0.12+formBonus+0.08（2-0土耳其），双方均有进攻火力。双方互有强攻，预计高强度对决。predA=平局1-1（M8a最可能，双方互攻互进）；predB=美国2-1（Pulisic+Reyna主导+主场优势）；predC=澳大利亚0-1（Irankunda速度反击，Australia upset，1-0窄胜）。"
+    "notes": "美国2-0澳大利亚！M8a规则（ELO差47强制平局）彻底失效——Pulisic主导进攻，澳大利亚Irankunda被压制。方向❌（预测平局），精确比分❌（predB=2-1最近差一球），总进球2球=预测✅。D组：美国6分头名出线，澳大利亚3分，巴拉圭3分，土耳其0分出局。美国本届连续两场进攻火力验证attackBoost+0.15准确性（4-1+2-0共6球）。ELO：美国1858+14=1872，澳大利亚1811-14=1797。"
   },
   {
     "matchId": 1030,
@@ -1008,9 +1009,10 @@
     "predictionA": "苏格兰 0-1",
     "predictionB": "平局 0-0",
     "predictionC": "苏格兰 0-2",
-    "actualScore": null,
-    "directionCorrect": null,
-    "exactHit": null,
+    "actualScore": "0-1",
+    "directionCorrect": true,
+    "exactHit": true,
+    "totalGoalsDirectionCorrect": true,
     "probabilityA": 40,
     "probabilityB": 30,
     "probabilityC": 30,
@@ -1028,7 +1030,7 @@
       "🛡️ 摩洛哥defenseBoost+0.1低防反体系，苏格兰善打低位防守",
       "💡 双方均偏防守风格→低进球场景高（predB=0-0是真实结果之一）"
     ],
-    "notes": "C组第2轮：苏格兰（3分）vs 摩洛哥（1分）。摩洛哥ELO优势93分（1910>1817），需要胜分追积分；苏格兰3分可接受平局。摩洛哥defenseBoost体系+ELO优势=winDrawLoss=away（摩洛哥略偏热门）。M8a（ELO差93，<150→drawProb=31%）使平局有相当概率。predA=苏格兰0-1（摩洛哥需进球，苏格兰防守疲软最终失守→en-Nesyri或Hakimi助攻定胜）；predB=平局0-0（苏格兰完美防守+摩洛哥低效进攻→双防守体系0-0）；predC=苏格兰0-2（摩洛哥找到苏格兰防线两个漏洞，压制性胜利）。"
+    "notes": "摩洛哥1-0苏格兰！predA「苏格兰0-1」精确命中✅！方向✅（预测away摩洛哥胜）。En-Nesyri进球定胜负，苏格兰攻势被defenseBoost防线完全堵截。低进球窄胜场景完美实现，总进球1球=预测✅。C组：巴西4分，摩洛哥4分，苏格兰3分，海地0分——C组极度胶着。教训：摩洛哥低防体系+ELO优势=winDrawLoss=away预测正确，predA比分精确命中。ELO：苏格兰1817-12=1805，摩洛哥1910+12=1922。"
   },
   {
     "matchId": 1031,
@@ -1039,9 +1041,10 @@
     "predictionA": "巴西 4-0",
     "predictionB": "巴西 5-0",
     "predictionC": "巴西 4-1",
-    "actualScore": null,
-    "directionCorrect": null,
-    "exactHit": null,
+    "actualScore": "3-0",
+    "directionCorrect": true,
+    "exactHit": false,
+    "totalGoalsDirectionCorrect": false,
     "probabilityA": 36,
     "probabilityB": 33,
     "probabilityC": 31,
@@ -1060,7 +1063,7 @@
       "📊 ELO差454（巴西2075-海地1621）：极端差距（超过德国7-1库拉索场景的364差）",
       "💥 cap=7.0（ELO差>350规则），λHome=4.8"
     ],
-    "notes": "C组第2轮大差距比赛：巴西（1分）vs 海地（0分）。ELO差454创本届最大差距（超过德国vs库拉索的364→7-1）。巴西可能将本场视为找回进球状态的机会（首轮1-1摩洛哥，进球欲望未满）。海地第2场M7效应减弱（已适应大赛节奏），但整体实力差距悬殊。cap=7.0（ELO>350规则）。predA=巴西4-0（Vinicius+Endrick全开，巴西追求大胜证明实力）；predB=巴西5-0（巴西复仇式大爆发，找回进球状态）；predC=巴西4-1（海地通过set piece或防守失误偶然进1球，λA≈0.8）。"
+    "notes": "巴西3-0海地！方向✅（主场胜），精确比分❌（predA=4-0，实际3-0，少1球）。Vinicius找回进球状态，Endrick首届世界杯进球。总进球3球<预测4球——巴西进球被轻微高估，cap=7.0在ELO差454场景下仍稍高。海地0球：λA=0.8设定方向正确（无进球），predC=4-1未命中。C组：巴西4分，摩洛哥4分，苏格兰3分，海地0分出局。ELO：巴西2075+2=2077，海地1621-2=1619。"
   },
   {
     "matchId": 1032,
@@ -1071,9 +1074,10 @@
     "predictionA": "平局 1-1",
     "predictionB": "土耳其 2-1",
     "predictionC": "土耳其 0-1",
-    "actualScore": null,
-    "directionCorrect": null,
-    "exactHit": null,
+    "actualScore": "0-1",
+    "directionCorrect": false,
+    "exactHit": true,
+    "totalGoalsDirectionCorrect": false,
     "probabilityA": 36,
     "probabilityB": 37,
     "probabilityC": 27,
@@ -1086,7 +1090,7 @@
         "stars": 2,
         "name": "土耳其获胜",
         "odds": "-120",
-        "hit": null
+        "hit": false
       }
     ],
     "mRulesTriggered": ["M8a"],
@@ -1098,6 +1102,113 @@
       "📊 ELO差72（土耳其1822-巴拉圭1750）：M8a触发（<80→winDrawLoss=draw）",
       "💥 US和Australia均已3分，D组存亡战开放式进攻预计总进球2-3球"
     ],
-    "notes": "D组存亡战：土耳其（0分）vs 巴拉圭（0分），双方均首轮惨败（土耳其0-2/巴拉圭1-4）。ELO差72触发M8a（<80→winDrawLoss=draw）。两队MUST WIN心态可能推动开放式进攻，总进球预期高于保守防守对决。土耳其Calhanoglu需要修复首轮崩塌，巴拉圭防守漏洞亟待修补。predA=平局1-1（M8a+双方各进一球的混乱存亡战）；predB=土耳其2-1（Calhanoglu发力+巴拉圭防线继续暴露漏洞）；predC=土耳其0-1（巴拉圭先进球蜷缩守门，土耳其焦急无解）。土耳其-120获胜略有价值（ELO差72+主场）。"
+    "notes": "巴拉圭1-0土耳其！predC「土耳其0-1」精确命中✅！方向❌（预测平局，实际客队胜）。巴拉圭首轮1-4大败后神奇反弹，先进球后低位守门成功。土耳其Calhanoglu焦急进攻无果，Calhanoglu体系在存亡战压力下崩溃。M8a（ELO差72强制平局）失效——巴拉圭存亡战反弹动力胜过均势系数。土耳其-120❌。总进球1球<预测2球（低进球正确）。D组：美国6分，澳大利亚3分，巴拉圭3分，土耳其0分出局。教训：双方0分存亡战中，首轮惨败队的心理反弹会突破M8a平局预测。ELO：土耳其1822-19=1803，巴拉圭1750+19=1769。"
+  },
+  {
+    "matchId": 1033,
+    "homeTeam": "荷兰",
+    "awayTeam": "瑞典",
+    "group": "F组",
+    "kickoff": "2026-06-20T17:00:00Z",
+    "predictionA": "平局 1-1",
+    "predictionB": "荷兰 2-1",
+    "predictionC": "荷兰 1-2",
+    "actualScore": null,
+    "directionCorrect": null,
+    "exactHit": null,
+    "probabilityA": 37,
+    "probabilityB": 35,
+    "probabilityC": 28,
+    "winDrawLoss": "draw",
+    "lambdaHome": 1.45,
+    "lambdaAway": 1.6,
+    "totalGoalsPrediction": "2球",
+    "bettingValues": [
+      {
+        "stars": 2,
+        "name": "平局",
+        "odds": "+175",
+        "hit": null
+      }
+    ],
+    "mRulesTriggered": ["M8a", "M8b", "双前锋bonus"],
+    "teamNews": [
+      "❌ 荷兰德容（核心后腰/巴萨）：伤缺，全届很可能缺席——中场传导中枢消失",
+      "❌ 荷兰西蒙斯（创造型中场）：已退出国家队，缺席本届",
+      "✅ 荷兰加克波(Liverpool)+萨默维尔：首轮2-2日本贡献进球，进攻线仍有质量",
+      "✅ 瑞典Gyökeres（Arsenal前锋）：首轮5-1突尼斯双响，状态顶峰",
+      "✅ 瑞典Isak（Newcastle前锋）：首轮进球，双前锋体系验证强力",
+      "📊 ELO差100（荷兰1963-瑞典1863）：M8a触发（<150→drawProb≈31%）",
+      "💥 F组：瑞典3分领跑，荷兰1分需要追积分（日本同分1分）"
+    ],
+    "notes": "F组第2轮：荷兰（1分）vs 瑞典（3分）。M8a触发（ELO差100<150→drawProb=31%）+M8b（荷兰德容+西蒙斯双缺→中场创造力折扣+6-8%）→综合drawProb≈37-39%。瑞典双前锋bonus（Gyökeres+Isak），首轮5-1验证进攻火力，作为客队λAway约1.6（高于均值）。荷兰需要胜分但中场核心缺阵限制创造力。predA=平局1-1（M8a+M8b最可能）；predB=荷兰2-1（荷兰需要3分，主场激励+Gakpo双响）；predC=荷兰1-2（Gyökeres客场爆发，瑞典upset，F组领跑锁定）。平局+175有博彩价值（P≈37%）。"
+  },
+  {
+    "matchId": 1034,
+    "homeTeam": "德国",
+    "awayTeam": "科特迪瓦",
+    "group": "E组",
+    "kickoff": "2026-06-20T20:00:00Z",
+    "predictionA": "德国 2-0",
+    "predictionB": "平局 1-1",
+    "predictionC": "德国 3-1",
+    "actualScore": null,
+    "directionCorrect": null,
+    "exactHit": null,
+    "probabilityA": 38,
+    "probabilityB": 30,
+    "probabilityC": 32,
+    "winDrawLoss": "home",
+    "lambdaHome": 1.9,
+    "lambdaAway": 0.9,
+    "totalGoalsPrediction": "2球",
+    "bettingValues": [
+      {
+        "stars": 2,
+        "name": "德国获胜",
+        "odds": "-160",
+        "hit": null
+      }
+    ],
+    "mRulesTriggered": [],
+    "teamNews": [
+      "✅ 德国穆西亚拉+哈弗茨+维尔茨：三核心确认首发，首轮7-1库拉索贡献多球",
+      "✅ 科特迪瓦Amad Diallo（曼联/左翼）：首轮90'绝杀进球，状态正佳",
+      "🛡️ 科特迪瓦defenseBoost+0.1：首轮1-0击败19场不败的厄瓜多尔，防守极强",
+      "📊 ELO差151（德国2002-科特迪瓦1851）：临界M8a（151>150，不触发但极接近）",
+      "💥 E组第一之争！德国3分，科特迪瓦3分，两队均首轮3分"
+    ],
+    "notes": "E组第一之争！德国（3分）vs 科特迪瓦（3分）。ELO差151刚过M8a门槛（不触发），但drawProb约28%不可忽视。德国7-1大胜库拉索（ELO差398），本次对手科特迪瓦（ELO 1851+defenseBoost）防守远强于库拉索——λHome降至1.9。科特迪瓦1-0击败厄瓜多尔（19场不败防线），Amad Diallo反击能力已验证。两队均3分，均可接受平局，但头名签位更有利。predA=德国2-0（主导全场，科特迪瓦防线被穿透两次）；predB=平局1-1（Amad Diallo定点反击破门，德国仅进1球）；predC=德国3-1（德国多前锋全开，科特迪瓦进反击1球）。德国-160博彩价值一般（科特迪瓦防守比库拉索强得多）。"
+  },
+  {
+    "matchId": 1035,
+    "homeTeam": "厄瓜多尔",
+    "awayTeam": "库拉索",
+    "group": "E组",
+    "kickoff": "2026-06-21T00:00:00Z",
+    "predictionA": "厄瓜多尔 2-0",
+    "predictionB": "平局 1-1",
+    "predictionC": "厄瓜多尔 1-0",
+    "actualScore": null,
+    "directionCorrect": null,
+    "exactHit": null,
+    "probabilityA": 40,
+    "probabilityB": 30,
+    "probabilityC": 30,
+    "winDrawLoss": "home",
+    "lambdaHome": 2.0,
+    "lambdaAway": 1.0,
+    "totalGoalsPrediction": "2球",
+    "bettingValues": [],
+    "mRulesTriggered": ["M6", "M11"],
+    "teamNews": [
+      "⚠️ 厄瓜多尔：首轮0-1负科特迪瓦（90'绝杀），0分必须赢",
+      "✅ 厄瓜多尔Enner Valencia（37岁队长）：仍是进攻核心，定点球威胁",
+      "🛡️ 厄瓜多尔DEFENSIVE_TEAMS（defenseBoost+0.08）：必须主动进攻，体系将被迫改变",
+      "⚠️ 库拉索：首轮1-7惨败德国，但首届世界杯情绪+M6规则仍触发",
+      "📊 ELO差177（厄瓜多尔1779-库拉索1602）：M8a不触发（>150）",
+      "💥 M11：双方0分存亡战——本届规律：predC精确命中率2/2（1025捷克/南非，1032土耳其/巴拉圭）"
+    ],
+    "notes": "E组存亡战：厄瓜多尔（0分）vs 库拉索（0分），双方均首轮落败。M6（库拉索首届参赛）+M11（双方0分存亡战）双触发。本届0-0双方存亡战predC命中率2/2（1025平局1-1，1032客队0-1），predC场景概率高于ELO单独预测。厄瓜多尔DEFENSIVE_TEAMS被迫主动进攻（0分必须赢），进攻效率提升但防守漏洞增加。库拉索FIRST_TIMERS floor=1.0（λAway=1.0，即使7-1也有进球能力）。predA=厄瓜多尔2-0（must-win解锁进攻，干净胜利）；predB=平局1-1（M6+M11：库拉索进1球，厄瓜多尔保守难进多球）；predC=厄瓜多尔1-0（DEFENSIVE_TEAMS典型窄胜，Valencia定点球绝杀）。注意：M11规律建议predC权重高于表面概率，实际可能最接近预测C场景。"
   }
 ]

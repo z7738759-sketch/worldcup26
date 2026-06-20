@@ -1,5 +1,65 @@
 [
   {
+    "id": 57,
+    "type": "result",
+    "team": "巴拉圭",
+    "timestamp": "2026-06-20T09:00:00+08:00",
+    "source": "ESPN · STATUS_FULL_TIME",
+    "title": "巴拉圭1-0土耳其终场 · predC精确命中✅！M11三连验证！",
+    "content": "巴拉圭以1-0击败土耳其，predC「土耳其0-1」精确命中✅！首轮1-4惨败的巴拉圭神奇反弹，先进球后低位守门成功，土耳其Calhanoglu体系在存亡战压力下崩溃。M8a（ELO差72平局强制）失效，土耳其-120博彩❌。D组：美国6分头名，澳大利亚3分，巴拉圭3分，土耳其0分出局。M11规律验证：双方0分存亡战predC命中率达3/3。",
+    "impactLevel": "high",
+    "impactNote": "M11规律正式确立：双方0分存亡战predC命中2/2（本场+1025捷克vs南非）。未来双方0分场景必须将predC（意外结果）权重提升至30-35%。ELO：土耳其1822-19=1803，巴拉圭1750+19=1769。",
+    "relatedMatches": [1032]
+  },
+  {
+    "id": 56,
+    "type": "result",
+    "team": "巴西",
+    "timestamp": "2026-06-20T06:00:00+08:00",
+    "source": "ESPN · STATUS_FULL_TIME",
+    "title": "巴西3-0海地终场 · 方向✅ 进球略被高估",
+    "content": "巴西3-0海地，Vinicius Jr找回进球状态，Endrick首届世界杯进球。方向✅（主场胜），精确比分❌（predA=4-0，实际3球少1球）。总进球3球<预测4球——ELO差454但海地防守比λA=0.8预期顽强，cap=7.0在此场景下高估进球。C组：巴西4分，摩洛哥4分，苏格兰3分，海地0分出局。",
+    "impactLevel": "medium",
+    "impactNote": "教训：ELO差350-450时进球cap=7.0过高——实际进球中位数约3-4球。建议v20将ELO差350-450时cap降至5.0。ELO：巴西2075+2=2077，海地1621-2=1619。C组极度胶着。",
+    "relatedMatches": [1031]
+  },
+  {
+    "id": 55,
+    "type": "result",
+    "team": "美国",
+    "timestamp": "2026-06-20T06:00:00+08:00",
+    "source": "ESPN · STATUS_FULL_TIME",
+    "title": "美国2-0澳大利亚终场 · M8a第4次失效！attackBoost连续验证",
+    "content": "美国以2-0干净击败澳大利亚，M8a规则（ELO差47强制平局）第4次失效！Pulisic主导，澳大利亚Irankunda被压制。美国本届连续两场进攻验证attackBoost+0.15（4-1+2-0共6球）。方向❌（预测平局），精确比分❌（predB=2-1差一球），总进球2球✅。D组：美国6分头名出线，澳大利亚3分，巴拉圭3分，土耳其0分出局。",
+    "impactLevel": "high",
+    "impactNote": "M8a v3修订触发：第4次失效（英格兰/加拿大/墨西哥/美国），均为主场attackBoost≥+0.10场景。正式规则：ELO差<80+主场attackBoost≥+0.10+无重大缺阵→winDrawLoss改home，drawProb降至20-22%。ELO：美国1858+14=1872，澳大利亚1811-14=1797。",
+    "relatedMatches": [1029]
+  },
+  {
+    "id": 54,
+    "type": "result",
+    "team": "摩洛哥",
+    "timestamp": "2026-06-20T03:00:00+08:00",
+    "source": "ESPN · STATUS_FULL_TIME",
+    "title": "苏格兰0-1摩洛哥终场 · predA精确命中✅！defenseBoost完美验证",
+    "content": "摩洛哥以1-0击败苏格兰，predA「苏格兰0-1」精确命中✅！En-Nesyri进球定胜负，苏格兰攻势被defenseBoost防线全程堵截。方向✅（预测away/摩洛哥胜），总进球1球=预测✅。C组：巴西4分，摩洛哥4分，苏格兰3分，海地0分——C组极度胶着，三队争两个出线名额。",
+    "impactLevel": "high",
+    "impactNote": "本届第3场predA精确命中（摩洛哥/巴西/苏格兰预测，均为低进球场景）。DEFENSIVE_TEAMS作为客队+ELO优势=1-0窄胜是高概率结果，winDrawLoss=away在此场景完全正确。ELO：苏格兰1817-12=1805，摩洛哥1910+12=1922。",
+    "relatedMatches": [1030]
+  },
+  {
+    "id": 53,
+    "type": "pre-match",
+    "team": "系统",
+    "timestamp": "2026-06-20T14:00:00+08:00",
+    "source": "模型 v19",
+    "title": "今日预测：1033荷兰vs瑞典 · 1034德国vs科特迪瓦 · 1035厄瓜多尔vs库拉索",
+    "content": "三场预测摘要：①荷兰vs瑞典（F组）：M8a(ELO差100)+M8b(德容/西蒙斯双缺)→drawProb≈37%，predA=平局1-1，瑞典双前锋bonus(Gyökeres+Isak)使predC=荷兰1-2具有爆冷可能。②德国vs科特迪瓦（E组第一之争）：ELO差151临界M8a，科特迪瓦defenseBoost，predA=德国2-0，predB=平局1-1(Amad Diallo定点)。③厄瓜多尔vs库拉索（E组存亡战）：M6+M11双触发，predB=平局1-1，M11规律提示predC=厄瓜多尔1-0窄胜概率高于表面。",
+    "impactLevel": "medium",
+    "impactNote": "M8a v3修订已生效：今日预测中1033荷兰(ELO差100，无明显attackBoost)仍维持winDrawLoss=draw；1034德国(ELO差151>150)不触发M8a，winDrawLoss=home。",
+    "relatedMatches": [1033, 1034, 1035]
+  },
+  {
     "id": 50,
     "type": "result",
     "team": "墨西哥",
