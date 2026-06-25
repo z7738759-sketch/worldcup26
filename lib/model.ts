@@ -388,24 +388,22 @@ export function computeModelOutput(
   ))
 
   // === 平局概率 ===
-  // v16校准：2026年WC实际平局率7/20=35%，远高于旧基准0.28（历史均值28%）
-  // 将基准从0.28提至0.32，修复系统性低估平局的核心问题（9/9错误中6个是把平局叫成赢球）
+  // v22校准：基于2026年WC54场实测分段统计，替代旧线性公式
+  // 分段依据（54场实测）：
+  //   ELO 0-50:   6场, 实测平局17% → base 0.27（样本小，保守）
+  //   ELO 50-100: 6场, 实测平局33% → base 0.33
+  //   ELO 100-150:14场, 实测平局21% → base 0.22（强队赢率79%，旧模型此处过保守）
+  //   ELO 150-200:11场, 实测平局36% → base 0.36（摆大巴高发区，旧模型严重低估）
+  //   ELO 200-300:11场, 实测平局27% → base 0.27
+  //   ELO 300+:   6场, 实测平局17% → base 0.17（强队主导）
   const absDiff = Math.abs(eloDiff)
-  let drawBase = 0.32 - absDiff * 0.00025
-
-  // 平局概率额外加成（仅真正势均力敌时生效）
-  // M8a v15修正：原ELO<150强制底线过宽→导致瑞典/澳大利亚/韩国/科特迪瓦4场全被拉成平局
-  // 世界杯数据：ELO差80-150的比赛强队胜率仍有55-60%，不应强制平局底线
-  if (absDiff < 50) {
-    drawBase += 0.05  // 极度均衡：平局是常态
-  } else if (absDiff < 80) {
-    drawBase += 0.03  // 轻微差距：小幅平局加成
-  }
-
-  // M8a: 强制平局底线仅保留ELO<80（真正难分高下）
-  // 收窄理由：15场复盘，4场被错误拉成平局底线（瑞典5-1/澳大利亚2-0/韩国2-1/科特迪瓦1-0）
-  // ELO差80-150的比赛，强队有真实优势，不应强制底线
-  if (absDiff < 80) drawBase = Math.max(drawBase, 0.33)
+  let drawBase: number
+  if (absDiff < 50)       drawBase = 0.27
+  else if (absDiff < 100) drawBase = 0.33
+  else if (absDiff < 150) drawBase = 0.22
+  else if (absDiff < 200) drawBase = 0.36  // 摆大巴高发区
+  else if (absDiff < 300) drawBase = 0.27
+  else                    drawBase = 0.17
 
   // M8b: 核心创造者缺席 → 平局加成（荷兰2-2：失去德容+西蒙斯→2次领先2次被追）
   if (CREATOR_ABSENT_HOME.has(homeTeam)) drawBase += 0.08
@@ -435,9 +433,6 @@ export function computeModelOutput(
   // v9: 所有额外平局加成总和上限12%（防堆叠失控）
   const extraDrawBoost = Math.min(0.12, marketDrawBoost + newsDrawBoost)
   drawBase += extraDrawBoost
-
-  // 差距悬殊时平局概率下降
-  if (absDiff > 300) drawBase = Math.max(0.10, drawBase - 0.10)
 
   const drawProb = Math.max(0.12, Math.min(0.42, drawBase))
 
