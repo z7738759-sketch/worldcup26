@@ -1,6 +1,5 @@
 import predictionsData from '@/data/predictions.json'
 import type { Prediction } from './types'
-import { computeModelOutput } from './model'
 
 export function getAllPredictions(): Prediction[] {
   return predictionsData as Prediction[]
@@ -80,15 +79,17 @@ export function getAccuracyStats() {
     return `${m[1]}-${m[2]}` === p.actualScore
   }).length
 
-  // 总进球：用泊松模型计算的A/B任一命中即算中（与分数字符串解析独立）
+  // 总进球大小球方向：读 totalGoalsPrediction（v21多因子模型结果）
+  // ≥3球=预测Over 2.5，≤2球=预测Under 2.5；判断方向是否与实际一致
   const totalGoalsHits = finished.filter(p => {
-    if (!p.actualScore) return false
+    if (!p.actualScore || !p.totalGoalsPrediction) return false
     const [hg, ag] = p.actualScore.split('-').map(Number)
     const actualTotal = hg + ag
-    const model = computeModelOutput(p.homeTeam, p.awayTeam, p.kickoff, {
-      predictionA: p.predictionA, predictionB: p.predictionB
-    })
-    return actualTotal === model.totalGoalsA || actualTotal === model.totalGoalsB
+    const m = (p.totalGoalsPrediction as string).match(/(\d+)/)
+    if (!m) return false
+    const predOver = parseInt(m[1]) > 2   // ≥3球=Over 2.5
+    const actualOver = actualTotal > 2.5
+    return predOver === actualOver
   }).length
 
   return {
