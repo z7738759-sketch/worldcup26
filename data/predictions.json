@@ -627,7 +627,10 @@
     "upsetAlert": {
       "possible": true,
       "underdog": "阿尔及利亚",
-      "factors": ["战术", "球员"],
+      "factors": [
+        "战术",
+        "球员"
+      ],
       "referenceScore": "阿尔及利亚 1-0",
       "logic": "阿尔及利亚Bennacer（AC Milan核心后腰）+Atal（防守右路锁链）构建了非洲最严密的中场防线之一。若阿尔及利亚采用极端低位防守5-4-1、利用定点球得分（Belaili/Mahrez级别球员），并在梅西体能管理轮换节点打反击，有能力造成平局甚至更多。历史教训：2022年卡塔尔，Cameroon 1-0 Brazil——大赛中弱队低位防守+定点球打爆强队并非天方夜谭。概率约12%，但赔率可能在+1200附近，期望值存在。"
     }
@@ -667,7 +670,11 @@
     "upsetAlert": {
       "possible": true,
       "underdog": "刚果DR",
-      "factors": ["首届参赛", "战术", "资本异动"],
+      "factors": [
+        "首届参赛",
+        "战术",
+        "资本异动"
+      ],
       "referenceScore": "刚果DR 1-0",
       "logic": "刚果DR是本届世界杯首次参赛球队（M6规则触发）。ELO差306但M6+首届参赛组合历史上反复验证平局甚至爆冷（卡塔尔1-1瑞士/佛得角0-0西班牙）。刚果DR拥有非洲最高水准的后防，若采用极端低位防守并在定点球抓住葡萄牙中后卫身前漏洞，存在打出1-0爆冷的可能。此概率约8%，极少数场景，但M6权重+首届大赛的不可预测性使其值得标注。"
     }
@@ -698,7 +705,11 @@
         "hit": true
       }
     ],
-    "mRulesTriggered": ["M7", "M6", "双前锋bonus"],
+    "mRulesTriggered": [
+      "M7",
+      "M6",
+      "双前锋bonus"
+    ],
     "teamNews": [
       "✅ 挪威Haaland（曼城/世界顶级中锋）：资格赛16球（欧洲最多2倍），状态顶峰，确认首发",
       "✅ 挪威Sørloth（马竞前锋）：本赛季西甲13球，第二中锋同样爆发，确认首发",
@@ -739,7 +750,10 @@
         "hit": true
       }
     ],
-    "mRulesTriggered": ["M6", "M7"],
+    "mRulesTriggered": [
+      "M6",
+      "M7"
+    ],
     "teamNews": [
       "❌ 奥地利Baumgartner（10号/创造核心）：伤退出阵，全锦标赛缺席",
       "🟡 奥地利Alaba（首发CB）：从长期膝伤复出，友谊赛提前换下存疑，状态存风险",
@@ -774,8 +788,10 @@
     "exactHit": false,
     "totalGoalsDirectionCorrect": false,
     "bettingValues": [],
-    "mRulesTriggered": ["M6"],
-    "notes": "终场3-1哥伦比亚胜！方向✅（predA主队胜方向命中），精确比分❌（predA=2-0，实际3-1）。Luis Díaz(65')、Muñoz(40')、Campaz(90+9')进球，Fayzullayev(60')代表乌兹别克斯坦扳回1球。M6规则触发（乌兹别克斯坦首届参赛→平局predB），但Díaz速度突破了Khusanov（曼城CB）主导的低位防守体系。总进球4球>预测2球，进球被低估。K组Round1：哥伦比亚3分，乌兹别克斯坦0分。ELO：哥伦比亚1871+9=1880，乌兹别克斯坦1710-9=1701。",
+    "mRulesTriggered": [
+      "M6"
+    ],
+    "notes": "哥伦比亚是本届实力较强的CONMEBOL球队，Luis Díaz+James Rodríguez攻击组合威胁大。但乌兹别克斯坦首届参赛（M6），Cannavaro执教→必然主打防守体系，Khusanov（曼城CB）是乌兹别克斯坦防守支柱。M6规则：首届参赛+差距大→平局必进predB（卡塔尔/佛得角/刚果DR历史验证）。predA=哥伦比亚2-0（Díaz主导，乌兹防守疲软）；predB=1-1平局（M6强触发，Cannavaro防守战术+偶然进球）；predC=哥伦比亚1-0（窄胜，乌兹防守顽强）。ELO差161属于M8a临界（150-200区间），drawProb约29%+M6上调→接近32%。",
     "teamNews": [
       "✅ 哥伦比亚Luis Díaz（利物浦左翼）：赛季巅峰，最具威胁的进攻点，确认首发",
       "✅ 哥伦比亚James Rodríguez（老将/创造核心）：状态良好，确认首发",
@@ -785,7 +801,6 @@
       "🟡 乌兹别克斯坦：热身赛0-2负加拿大，1-2负荷兰；攻击力存疑但防守有组织",
       "📊 哥伦比亚ELO 1871 vs 乌兹别克斯坦1710，差值161→E_哥伦比亚≈72%"
     ],
-    "notes": "哥伦比亚是本届实力较强的CONMEBOL球队，Luis Díaz+James Rodríguez攻击组合威胁大。但乌兹别克斯坦首届参赛（M6），Cannavaro执教→必然主打防守体系，Khusanov（曼城CB）是乌兹别克斯坦防守支柱。M6规则：首届参赛+差距大→平局必进predB（卡塔尔/佛得角/刚果DR历史验证）。predA=哥伦比亚2-0（Díaz主导，乌兹防守疲软）；predB=1-1平局（M6强触发，Cannavaro防守战术+偶然进球）；predC=哥伦比亚1-0（窄胜，乌兹防守顽强）。ELO差161属于M8a临界（150-200区间），drawProb约29%+M6上调→接近32%。",
     "predictionC": "哥伦比亚 1-0",
     "probabilityA": 40,
     "probabilityB": 32,
@@ -815,7 +830,10 @@
         "hit": false
       }
     ],
-    "mRulesTriggered": ["M8a", "M8b"],
+    "mRulesTriggered": [
+      "M8a",
+      "M8b"
+    ],
     "teamNews": [
       "❌ 加纳Partey（阿森纳后腰/队长级）：未参加首场！Ghana最重要的中场球员缺席，中场组织完全重建",
       "✅ 加纳Semenyo（布伦特福德）+Inaki Williams（毕尔巴鄂）：双前锋攻击线仍有威胁",
@@ -848,7 +866,7 @@
     "directionCorrect": false,
     "exactHit": true,
     "totalGoalsDirectionCorrect": true,
-    "notes": "1-1平局！predC「平局1-1」精确命中✅！方向预测❌（predA=捷克2-0主队胜，实际平局）。捷克ELO差160的存亡战被南非顽强逼平——双方均首轮落败，存亡战平局心态加剧了保守打法。总进球2球=预测2球✅。A组：捷克1分，南非1分（均1分出局边缘）。教训：双方均首轮落败的存亡战中，平局信号被严重低估——比ELO差更强的心理保守因素主导比赛。ELO：捷克1800-7=1793，南非1640+7=1647。",
+    "notes": "A组第2轮存亡战：捷克（0分）vs 南非（0分），双方均首轮落败（捷克1-2韩国，南非0-2墨西哥）。ELO差160，捷克明显更强，且有巴拉格（Barak）+赛勒斯（Schick）等欧洲经验球员。南非0-2负墨西哥暴露进攻端短板，捷克虽败于韩国仍展现欧洲水准。M8a不触发（ELO差160>150）。predA=捷克2-0（主流场景）；predB=捷克1-0（南非低位顽守到90'）；predC=平局1-1（双方求保争平局出线，情绪复杂）。",
     "probabilityA": 38,
     "probabilityB": 34,
     "probabilityC": 28,
@@ -863,8 +881,7 @@
       "✅ 南非：ELO 1640，第1轮0-2负墨西哥，攻击端暴露严重问题",
       "💥 双方首场均落败，本场是A组存亡之战（输方几乎出局）",
       "📊 ELO差160：捷克胜率约67%，平局约22%，南非胜率约11%"
-    ],
-    "notes": "A组第2轮存亡战：捷克（0分）vs 南非（0分），双方均首轮落败（捷克1-2韩国，南非0-2墨西哥）。ELO差160，捷克明显更强，且有巴拉格（Barak）+赛勒斯（Schick）等欧洲经验球员。南非0-2负墨西哥暴露进攻端短板，捷克虽败于韩国仍展现欧洲水准。M8a不触发（ELO差160>150）。predA=捷克2-0（主流场景）；predB=捷克1-0（南非低位顽守到90'）；predC=平局1-1（双方求保争平局出线，情绪复杂）。"
+    ]
   },
   {
     "matchId": 1026,
@@ -879,7 +896,7 @@
     "directionCorrect": true,
     "exactHit": false,
     "totalGoalsDirectionCorrect": false,
-    "notes": "瑞士4-1大胜波黑！方向✅（主场胜命中），精确比分❌（predA=1-0，实际4-1=5球）。M8a触发（ELO差106→平局底线31%）但未能限制瑞士进攻——Xhaka传控+多点进球体系碾压波黑防线。总进球5球远超预测1球，本日最大进球低估之一。B组：瑞士4分（1分+3分），加拿大4分（1分+3分）；波黑1分，卡塔尔1分。教训：M8a在一方传控能力极强时（瑞士Xhaka中场控制）平局预测偏保守，进攻质量差距仍可碾压均势系数。ELO：瑞士1868+11=1879，波黑1762-11=1751。",
+    "notes": "B组第2轮：瑞士（1分）vs 波黑（1分），双方均首轮平局。ELO差106触发M8a（<150→平局底线约31%）。瑞士防守+Xhaka中场控制是主要优势；波黑首轮展现团队防守纪律，1-1加拿大显示其非轻松猎物。B组四队全1分（瑞士/卡塔尔/加拿大/波黑），本场和加拿大vs卡塔尔决定B组走向。predA=瑞士1-0（Xhaka中场控制+瑞士防反破门）；predB=平局1-1（M8a强触发，两队均势）；predC=瑞士2-0（若波黑开场被压制放开空间）。",
     "probabilityA": 38,
     "probabilityB": 32,
     "probabilityC": 30,
@@ -888,14 +905,15 @@
     "lambdaAway": 0.88,
     "totalGoalsPrediction": "1球",
     "bettingValues": [],
-    "mRulesTriggered": ["M8a"],
+    "mRulesTriggered": [
+      "M8a"
+    ],
     "teamNews": [
       "✅ 瑞士Xhaka（Bayer Leverkusen/中场核心）：确认首发，传控组织关键",
       "✅ 瑞士：第1轮1-1卡塔尔（M6触发），防守稳健，进攻偶发",
       "✅ 波黑：第1轮1-1加拿大，展现顽强防守",
       "📊 ELO差106：M8a触发（<150），平局底线约29-32%"
-    ],
-    "notes": "B组第2轮：瑞士（1分）vs 波黑（1分），双方均首轮平局。ELO差106触发M8a（<150→平局底线约31%）。瑞士防守+Xhaka中场控制是主要优势；波黑首轮展现团队防守纪律，1-1加拿大显示其非轻松猎物。B组四队全1分（瑞士/卡塔尔/加拿大/波黑），本场和加拿大vs卡塔尔决定B组走向。predA=瑞士1-0（Xhaka中场控制+瑞士防反破门）；predB=平局1-1（M8a强触发，两队均势）；predC=瑞士2-0（若波黑开场被压制放开空间）。"
+    ]
   },
   {
     "matchId": 1027,
@@ -910,7 +928,7 @@
     "directionCorrect": true,
     "exactHit": false,
     "totalGoalsDirectionCorrect": false,
-    "notes": "加拿大6-0历史级大胜！BC Place主场爆发，Davies+Larin双前锋轰炸彻底碾压卡塔尔。方向✅（主场胜），精确比分❌（predA=2-0，实际6-0）。双前锋bonus触发（Davies拜仁+Larin）+主场优势=单边碾压，总进球6球创本轮最大进球差。M8a（ELO差115触发）预测平局场景完全被双前锋bonus压制。B组：加拿大4分，卡塔尔1分，瑞士4分（同时段4-1波黑）。教训：M8a在主场双前锋bonus叠加时完全失效——Davies级别的速度+Larin头球组合对弱客队可产生历史级进球差。ELO：加拿大1793+11=1804，卡塔尔1678-11=1667。",
+    "notes": "B组第2轮：加拿大（1分）vs 卡塔尔（1分）。加拿大在温哥华BC Place主场作战，主场优势显著（北美球迷全力支持）。ELO差115触发M8a但加拿大主场驱动力应克服均势。卡塔尔第1轮M6触发平局（1-1瑞士）后防守体系已被验证，但本场面对更强主场压迫能否再次守住？predA=加拿大2-0（主场激励下打开进攻）；predB=加拿大1-0（窄胜保险，卡塔尔防守到最后失守）；predC=平局1-1（M8a保险场景，卡塔尔低位再次顽守90'）。",
     "probabilityA": 38,
     "probabilityB": 34,
     "probabilityC": 28,
@@ -919,14 +937,15 @@
     "lambdaAway": 0.9,
     "totalGoalsPrediction": "2球",
     "bettingValues": [],
-    "mRulesTriggered": ["M8a"],
+    "mRulesTriggered": [
+      "M8a"
+    ],
     "teamNews": [
       "✅ 加拿大：主场BC Place（温哥华），主场球迷优势极强",
       "✅ 加拿大Davies（拜仁/左翼）+Larin（前锋）：进攻线有欧洲一流球员",
       "🟡 卡塔尔：第1轮1-1瑞士（M6触发，首届非真正首届），防守顽强",
       "📊 ELO差115：M8a触发（<150），平局底线约29%；但加拿大主场优势+需要胜分"
-    ],
-    "notes": "B组第2轮：加拿大（1分）vs 卡塔尔（1分）。加拿大在温哥华BC Place主场作战，主场优势显著（北美球迷全力支持）。ELO差115触发M8a但加拿大主场驱动力应克服均势。卡塔尔第1轮M6触发平局（1-1瑞士）后防守体系已被验证，但本场面对更强主场压迫能否再次守住？predA=加拿大2-0（主场激励下打开进攻）；predB=加拿大1-0（窄胜保险，卡塔尔防守到最后失守）；predC=平局1-1（M8a保险场景，卡塔尔低位再次顽守90'）。"
+    ]
   },
   {
     "matchId": 1028,
@@ -941,7 +960,7 @@
     "directionCorrect": false,
     "exactHit": true,
     "totalGoalsDirectionCorrect": true,
-    "notes": "墨西哥1-0韩国！predB「墨西哥1-0」精确命中✅！总进球1球=预测1球✅。M8a规则（ELO差68<80强制平局winDrawLoss=draw）再次失效——墨西哥Guadalajara主场压倒性球迷优势+韩国Son被紧盯防住，墨西哥窄胜。方向预测❌（predA=平局1-1，实际主场胜）。平局+220❌。ASIA规则Son未能突破主场防线。A组：墨西哥6分（领跑锁定出线），韩国3分（小组第二存疑），捷克1分，南非1分。教训：墨西哥主场Guadalajara的压倒性主场效应在ELO均势时可能是决定性因素——M8a ELO<80需要增加主场权重例外条款。ELO：墨西哥1913+13=1926，韩国1845-13=1832。",
+    "notes": "A组第2轮天王山对决：双方均首轮3分（墨西哥2-0南非，韩国2-1捷克），本场决定A组第一归属。ELO差仅68触发M8a强制（<80→winDrawLoss=draw）。ASIA规则：韩国Son Heung-min本届进入顶峰状态，2-1逆转捷克展现本届亚洲球队韧性。墨西哥主场瓜达拉哈拉是其传统优势——墨西哥在Estadio Akron历史战绩优秀。predA=平局1-1（M8a+两队均不想冒险争最大风险，积分均可保持前两）；predB=墨西哥1-0（主场优势，Mexican wave全场支持，Son被限制住时）；predC=韩国1-0（ASIA爆冷，Son单挑定胜负，复制2-1捷克的逆袭势头）。平局+220有价值（P≈39%>implied 31%）。",
     "probabilityA": 39,
     "probabilityB": 33,
     "probabilityC": 28,
@@ -957,15 +976,17 @@
         "hit": false
       }
     ],
-    "mRulesTriggered": ["M8a", "ASIA"],
+    "mRulesTriggered": [
+      "M8a",
+      "ASIA"
+    ],
     "teamNews": [
       "✅ 墨西哥主场：瓜达拉哈拉Estadio Akron，主场优势极大",
       "✅ 墨西哥：第1轮2-0击败南非，状态良好，Raúl Jiménez进球",
       "✅ 韩国Son Heung-min（热刺/队长）：本赛季19球+12助，状态顶峰",
       "✅ 韩国：第1轮2-1逆转捷克（ASIA逆境力），Lee Kang-in传球精准",
       "📊 ELO差68（墨西哥1913-韩国1845）：M8a强触发（<80），winDrawLoss强制=draw"
-    ],
-    "notes": "A组第2轮天王山对决：双方均首轮3分（墨西哥2-0南非，韩国2-1捷克），本场决定A组第一归属。ELO差仅68触发M8a强制（<80→winDrawLoss=draw）。ASIA规则：韩国Son Heung-min本届进入顶峰状态，2-1逆转捷克展现本届亚洲球队韧性。墨西哥主场瓜达拉哈拉是其传统优势——墨西哥在Estadio Akron历史战绩优秀。predA=平局1-1（M8a+两队均不想冒险争最大风险，积分均可保持前两）；predB=墨西哥1-0（主场优势，Mexican wave全场支持，Son被限制住时）；predC=韩国1-0（ASIA爆冷，Son单挑定胜负，复制2-1捷克的逆袭势头）。平局+220有价值（P≈39%>implied 31%）。"
+    ]
   },
   {
     "matchId": 1029,
@@ -988,7 +1009,9 @@
     "lambdaAway": 1.56,
     "totalGoalsPrediction": "2球",
     "bettingValues": [],
-    "mRulesTriggered": ["M8a"],
+    "mRulesTriggered": [
+      "M8a"
+    ],
     "teamNews": [
       "✅ 美国Pulisic（切尔西/队长）：第1轮4-1大胜建功，确认首发",
       "✅ 美国Gio Reyna（多特/10号）：首轮出色发挥，创造力关键",
@@ -1021,7 +1044,9 @@
     "lambdaAway": 1.45,
     "totalGoalsPrediction": "1球",
     "bettingValues": [],
-    "mRulesTriggered": ["M8a"],
+    "mRulesTriggered": [
+      "M8a"
+    ],
     "teamNews": [
       "✅ 摩洛哥：1-1巴西（首轮），防守巩固，Hakimi+En-Nesyri稳定出战",
       "✅ 苏格兰：1-0海地（首轮），靠守反成功，McTominay+Adams领衔",
@@ -1093,7 +1118,9 @@
         "hit": false
       }
     ],
-    "mRulesTriggered": ["M8a"],
+    "mRulesTriggered": [
+      "M8a"
+    ],
     "teamNews": [
       "🟡 土耳其：0-2大败于澳大利亚（首轮），士气受挫，formBonus-0.05",
       "✅ 土耳其Calhanoglu（国际米兰/核心中场）：确认首发，需要找回状态",
@@ -1113,9 +1140,9 @@
     "predictionA": "平局 1-1",
     "predictionB": "荷兰 2-1",
     "predictionC": "荷兰 1-2",
-    "actualScore": null,
-    "directionCorrect": null,
-    "exactHit": null,
+    "actualScore": "5-1",
+    "directionCorrect": false,
+    "exactHit": false,
     "probabilityA": 37,
     "probabilityB": 35,
     "probabilityC": 28,
@@ -1128,10 +1155,14 @@
         "stars": 2,
         "name": "平局",
         "odds": "+175",
-        "hit": null
+        "hit": false
       }
     ],
-    "mRulesTriggered": ["M8a", "M8b", "双前锋bonus"],
+    "mRulesTriggered": [
+      "M8a",
+      "M8b",
+      "双前锋bonus"
+    ],
     "teamNews": [
       "❌ 荷兰德容（核心后腰/巴萨）：伤缺，全届很可能缺席——中场传导中枢消失",
       "❌ 荷兰西蒙斯（创造型中场）：已退出国家队，缺席本届",
@@ -1141,7 +1172,8 @@
       "📊 ELO差100（荷兰1963-瑞典1863）：M8a触发（<150→drawProb≈31%）",
       "💥 F组：瑞典3分领跑，荷兰1分需要追积分（日本同分1分）"
     ],
-    "notes": "F组第2轮：荷兰（1分）vs 瑞典（3分）。M8a触发（ELO差100<150→drawProb=31%）+M8b（荷兰德容+西蒙斯双缺→中场创造力折扣+6-8%）→综合drawProb≈37-39%。瑞典双前锋bonus（Gyökeres+Isak），首轮5-1验证进攻火力，作为客队λAway约1.6（高于均值）。荷兰需要胜分但中场核心缺阵限制创造力。predA=平局1-1（M8a+M8b最可能）；predB=荷兰2-1（荷兰需要3分，主场激励+Gakpo双响）；predC=荷兰1-2（Gyökeres客场爆发，瑞典upset，F组领跑锁定）。平局+175有博彩价值（P≈37%）。"
+    "notes": "荷兰5-1瑞典！双前锋bonus再次爆发（加克波2球+萨默维尔）。M8a（ELO差100）+M8b（德容缺席）预测平局完全失效——首轮2-2日本的创造力危机已被克服，Brobbey出色填补中路进球点。瑞典双前锋（Gyökeres+Isak）被荷兰防线压制，防反无效。方向❌（预测draw，实际home胜），精确❌，平局+175❌。教训：M8b在荷兰需要赢球压力+瑞典客场时创造力折扣失效，进攻组合弥补中场缺阵。ELO：荷兰1963+12=1975，瑞典1863-12=1851。F组：荷兰4pts，日本4pts，瑞典3pts，突尼斯0pts。",
+    "totalGoalsDirectionCorrect": false
   },
   {
     "matchId": 1034,
@@ -1152,9 +1184,9 @@
     "predictionA": "德国 2-0",
     "predictionB": "平局 1-1",
     "predictionC": "德国 3-1",
-    "actualScore": null,
-    "directionCorrect": null,
-    "exactHit": null,
+    "actualScore": "2-1",
+    "directionCorrect": true,
+    "exactHit": false,
     "probabilityA": 38,
     "probabilityB": 30,
     "probabilityC": 32,
@@ -1167,7 +1199,7 @@
         "stars": 2,
         "name": "德国获胜",
         "odds": "-160",
-        "hit": null
+        "hit": false
       }
     ],
     "mRulesTriggered": [],
@@ -1178,7 +1210,8 @@
       "📊 ELO差151（德国2002-科特迪瓦1851）：临界M8a（151>150，不触发但极接近）",
       "💥 E组第一之争！德国3分，科特迪瓦3分，两队均首轮3分"
     ],
-    "notes": "E组第一之争！德国（3分）vs 科特迪瓦（3分）。ELO差151刚过M8a门槛（不触发），但drawProb约28%不可忽视。德国7-1大胜库拉索（ELO差398），本次对手科特迪瓦（ELO 1851+defenseBoost）防守远强于库拉索——λHome降至1.9。科特迪瓦1-0击败厄瓜多尔（19场不败防线），Amad Diallo反击能力已验证。两队均3分，均可接受平局，但头名签位更有利。predA=德国2-0（主导全场，科特迪瓦防线被穿透两次）；predB=平局1-1（Amad Diallo定点反击破门，德国仅进1球）；predC=德国3-1（德国多前锋全开，科特迪瓦进反击1球）。德国-160博彩价值一般（科特迪瓦防守比库拉索强得多）。"
+    "notes": "德国2-1科特迪瓦！方向✅（主场胜），精确❌（predA=2-0，实际2-1）。Undav两球，Kessié扳回一球。E组第一之争德国胜出，科特迪瓦仍有希望出线（3pts）。总进球3球>预测2球。教训：科特迪瓦Amad Diallo反击能力未被完全压制，1球是现实结果。ELO：德国2002+9=2011，科特迪瓦1851-9=1842。E组：德国6pts锁定第一，科特迪瓦3pts，厄瓜多尔1pt，库拉索1pt。",
+    "totalGoalsDirectionCorrect": false
   },
   {
     "matchId": 1035,
@@ -1189,18 +1222,21 @@
     "predictionA": "厄瓜多尔 2-0",
     "predictionB": "平局 1-1",
     "predictionC": "厄瓜多尔 1-0",
-    "actualScore": null,
-    "directionCorrect": null,
-    "exactHit": null,
+    "actualScore": "0-0",
+    "directionCorrect": false,
+    "exactHit": false,
     "probabilityA": 40,
     "probabilityB": 30,
     "probabilityC": 30,
     "winDrawLoss": "home",
-    "lambdaHome": 2.0,
-    "lambdaAway": 1.0,
+    "lambdaHome": 2,
+    "lambdaAway": 1,
     "totalGoalsPrediction": "2球",
     "bettingValues": [],
-    "mRulesTriggered": ["M6", "M11"],
+    "mRulesTriggered": [
+      "M6",
+      "M11"
+    ],
     "teamNews": [
       "⚠️ 厄瓜多尔：首轮0-1负科特迪瓦（90'绝杀），0分必须赢",
       "✅ 厄瓜多尔Enner Valencia（37岁队长）：仍是进攻核心，定点球威胁",
@@ -1209,7 +1245,8 @@
       "📊 ELO差177（厄瓜多尔1779-库拉索1602）：M8a不触发（>150）",
       "💥 M11：双方0分存亡战——本届规律：predC精确命中率2/2（1025捷克/南非，1032土耳其/巴拉圭）"
     ],
-    "notes": "E组存亡战：厄瓜多尔（0分）vs 库拉索（0分），双方均首轮落败。M6（库拉索首届参赛）+M11（双方0分存亡战）双触发。本届0-0双方存亡战predC命中率2/2（1025平局1-1，1032客队0-1），predC场景概率高于ELO单独预测。厄瓜多尔DEFENSIVE_TEAMS被迫主动进攻（0分必须赢），进攻效率提升但防守漏洞增加。库拉索FIRST_TIMERS floor=1.0（λAway=1.0，即使7-1也有进球能力）。predA=厄瓜多尔2-0（must-win解锁进攻，干净胜利）；predB=平局1-1（M6+M11：库拉索进1球，厄瓜多尔保守难进多球）；predC=厄瓜多尔1-0（DEFENSIVE_TEAMS典型窄胜，Valencia定点球绝杀）。注意：M11规律建议predC权重高于表面概率，实际可能最接近预测C场景。"
+    "notes": "厄瓜多尔0-0库拉索！M11触发（双方均0分存亡战）预测predC=厄1-0，但实际0-0平局。Eloy Room（库拉索门将）创世界杯90分钟扑救纪录（15次！），完全封死厄瓜多尔进攻。方向❌（预测home胜，实际平局），精确❌（predB=平局1-1最近，但0-0非1-1），总进球0<预测2❌。教训：M6（库拉索首届）+M11（存亡战）在超级门神表现下产生0-0——FIRST_TIMERS情绪价值不仅体现进攻而可能激发极端防守（Eloy Room15次扑救）。ELO：厄瓜多尔1779-8=1771，库拉索1602+8=1610。E组：德国6pts，科特迪瓦3pts，厄瓜多尔1pt，库拉索1pt。",
+    "totalGoalsDirectionCorrect": false
   },
   {
     "matchId": 1036,
@@ -1220,10 +1257,10 @@
     "predictionA": "平局 1-1",
     "predictionB": "日本 2-1",
     "predictionC": "日本 1-0",
-    "actualScore": null,
-    "directionCorrect": null,
-    "exactHit": null,
-    "totalGoalsDirectionCorrect": null,
+    "actualScore": "4-0",
+    "directionCorrect": false,
+    "exactHit": false,
+    "totalGoalsDirectionCorrect": false,
     "probabilityA": 37,
     "probabilityB": 35,
     "probabilityC": 28,
@@ -1232,7 +1269,10 @@
     "lambdaAway": 0.85,
     "totalGoalsPrediction": "2球",
     "bettingValues": [],
-    "mRulesTriggered": ["M8a", "ASIA"],
+    "mRulesTriggered": [
+      "M8a",
+      "ASIA"
+    ],
     "teamNews": [
       "❌ 日本远藤航（队长/核心后腰）：脚伤退出国家队，全届缺席",
       "❌ 日本三笘薰（最强边锋）：伤缺本届世界杯",
@@ -1243,7 +1283,7 @@
       "📊 ELO差139（日本1898-突尼斯1759）：M8a触发（<150→drawProb=29%）",
       "💥 F组积分：瑞典3pts, 日本1pt, 荷兰1pt, 突尼斯0pt——突尼斯必须赢/平"
     ],
-    "notes": "F组第2轮：日本（1分）vs 突尼斯（0分）。M8a触发（ELO差139<150→drawProb≈29%），但突尼斯1-5大败后心理阴影可能使其采取更低位防守→双方进球减少。ASIA规则：日本逆境力在2-2荷兰中再次验证，落后追平的能力超出ELO预期。日本远藤/三笘双缺但久保+中村+镰田三角组合已验证可进球。突尼斯必须赢，故不会死守，但1-5打击→攻守两端均可能失衡。predA=平局1-1（M8a+双方均需积分的紧张对决）；predB=日本2-1（ASIA逆境力+突尼斯防线在压力下漏球）；predC=日本1-0（低球窄胜，突尼斯心理阴影→无力进多球）。"
+    "notes": "日本4-0大胜突尼斯！方向❌（predA=平局1-1，M8a强制，实际home大胜），精确❌，总进球4球>预测2球❌。久保建英+中村敬斗+镰田大地三角组合火力全开，ASIA规则逆境力在顺风场景下转化为进攻狂欢——突尼斯1-5瑞典后防线彻底崩溃。M8a（ELO差139）在日本进攻完整性+突尼斯心理阴影叠加下完全失效。教训：突尼斯已确认DEFENSIVE_TEAMS失守体系在心理创伤后会崩塌——首轮大败后下一场面对类似实力对手防线更脆弱。ELO：日本1898+10=1908，突尼斯1759-10=1749。F组：日本4pts，荷兰4pts，瑞典3pts，突尼斯0pts。"
   },
   {
     "matchId": 1037,
@@ -1254,10 +1294,10 @@
     "predictionA": "西班牙 2-0",
     "predictionB": "平局 1-1",
     "predictionC": "西班牙 1-0",
-    "actualScore": null,
-    "directionCorrect": null,
-    "exactHit": null,
-    "totalGoalsDirectionCorrect": null,
+    "actualScore": "0-4",
+    "directionCorrect": true,
+    "exactHit": false,
+    "totalGoalsDirectionCorrect": false,
     "probabilityA": 40,
     "probabilityB": 28,
     "probabilityC": 32,
@@ -1270,10 +1310,12 @@
         "stars": 2,
         "name": "西班牙获胜",
         "odds": "-220",
-        "hit": null
+        "hit": true
       }
     ],
-    "mRulesTriggered": ["M8b"],
+    "mRulesTriggered": [
+      "M8b"
+    ],
     "teamNews": [
       "🟡 西班牙Yamal（左翼/最大威胁）：首轮伤病缺席首发，本轮是否恢复是最大变量",
       "🟡 西班牙Nico Williams（右翼）：同样首轮非首发，本轮状态待确认",
@@ -1283,7 +1325,7 @@
       "📊 ELO差262（西班牙2018-沙特1756）：西班牙压倒性大热门",
       "💥 H组四队全1分——西班牙必须赢，否则H组出线形势极度复杂"
     ],
-    "notes": "H组第2轮：沙特（1分）vs 西班牙（1分）。ELO差262，西班牙是大热门。关键变量：Yamal+Nico Williams是否首发——首轮双翼缺席导致0-0奇耻大辱，本轮若恢复将彻底改变攻击面貌（M8b_v2：攻击双翼恢复=进攻提升25-30%，λAway从1.2升至1.9）。沙特1-1乌拉圭表现比预期好，低位防守有效性已验证，Salem进球证明反击能力。predA=西班牙2-0（Yamal/Nico Williams恢复+报复性进攻，沙特防线难挡）；predB=平局1-1（双翼再次非首发→进攻受限，沙特防守+定点反击）；predC=西班牙1-0（双翼恢复但沙特防守顽强，1球定胜负）。最关键赛前情报：Yamal首发状态。"
+    "notes": "西班牙4-0大胜沙特！方向✅（away=西班牙胜），精确❌（predA=西班牙2-0，实际4-0）。Yamal复出首发彻底改变西班牙进攻面貌，4球狂轰报复首轮0-0奇耻大辱。predA=2-0被低估，实际double+2球。西班牙-220博彩✅（值得买）。总进球4球>预测2球❌。教训：Yamal复出+复仇心态=进球数严重低估，M8b（双翼缺席惩罚）恢复后不仅取消λ折扣，还增加报复性进球动力。ELO：西班牙2018+6=2024，沙特1756-6=1750。H组：西班牙4pts，佛得角2pts，沙特1pt，乌拉圭1pt。"
   },
   {
     "matchId": 1038,
@@ -1294,10 +1336,10 @@
     "predictionA": "比利时 2-0",
     "predictionB": "比利时 2-1",
     "predictionC": "平局 1-1",
-    "actualScore": null,
-    "directionCorrect": null,
-    "exactHit": null,
-    "totalGoalsDirectionCorrect": null,
+    "actualScore": "0-0",
+    "directionCorrect": false,
+    "exactHit": false,
+    "totalGoalsDirectionCorrect": false,
     "probabilityA": 38,
     "probabilityB": 34,
     "probabilityC": 28,
@@ -1316,7 +1358,7 @@
       "📊 ELO差185（比利时1943-伊朗1758）：比利时明显更强，无M8a（>150）",
       "💥 G组：比利时/埃及/伊朗/新西兰全部1分，本场与埃及vs新西兰同时进行"
     ],
-    "notes": "G组第2轮：伊朗（1分）vs 比利时（1分）。比利时ELO差185，进攻阵容完整，De Bruyne+Doku组合速度+创造力极强。伊朗2-2新西兰已暴露防线严重漏洞（ELO差仅50被追平2球），本场面对比利时更强攻击力，很难守住。M8a不触发（ELO差185>150）。卢卡库若首发将进一步提升比利时进球效率。predA=比利时2-0（伊朗防线暴露，De Bruyne+Doku两球，卢卡库参与）；predB=比利时2-1（伊朗反击/定点进1球，比利时仍赢）；predC=平局1-1（伊朗低位死守收缩，比利时效率不足）。G组走向：若比利时赢，比利时4分压力最大；埃及vs新西兰同时决定其他出线席位。"
+    "notes": "伊朗0-0比利时！方向❌（预测away比利时胜，实际平局），精确❌（predC=平局1-1最近但0-0非精确），总进球0<预测2❌。比利时进攻在伊朗极端低位防守面前完全受阻——De Bruyne+Doku创造力被5-4-1防守工事中和。伊朗首轮2-2新西兰暴露的进攻漏洞在本场转变为极端防守策略，完全不同的战术面貌。教训：ELO差185在极端低位防守（5-4-1完全收缩）下无效——伊朗此前2-2新西兰是开放性比赛，本场战术切换至纯防守模式。G组：比利时1pt，埃及1pt，伊朗2pts，新西兰1pt。ELO：比利时1943-8=1935，伊朗1758+8=1766。"
   },
   {
     "matchId": 1039,
@@ -1327,10 +1369,10 @@
     "predictionA": "乌拉圭 0-1",
     "predictionB": "平局 1-1",
     "predictionC": "平局 0-0",
-    "actualScore": null,
-    "directionCorrect": null,
-    "exactHit": null,
-    "totalGoalsDirectionCorrect": null,
+    "actualScore": "2-2",
+    "directionCorrect": true,
+    "exactHit": false,
+    "totalGoalsDirectionCorrect": false,
     "probabilityA": 35,
     "probabilityB": 37,
     "probabilityC": 28,
@@ -1343,10 +1385,12 @@
         "stars": 3,
         "name": "平局",
         "odds": "+200",
-        "hit": null
+        "hit": true
       }
     ],
-    "mRulesTriggered": ["M6"],
+    "mRulesTriggered": [
+      "M6"
+    ],
     "teamNews": [
       "⚠️ 佛得角：首届世界杯（M6规则强触发！），首轮0-0西班牙（ELO差350！）展示超强防守",
       "✅ 佛得角Ryan Mendes（36岁/22球历史最多/队长）：确认首发，定点球威胁",
@@ -1357,7 +1401,7 @@
       "📊 ELO差187（乌拉圭1879-佛得角1692）：乌拉圭理论更强",
       "💥 M6最强触发：佛得角首届+ELO差187+0-0西班牙验证防守=本届最强平局候选"
     ],
-    "notes": "H组第2轮：佛得角（1分）vs 乌拉圭（1分）。M6规则最强触发场景之一：佛得角首届世界杯+首轮0-0西班牙（ELO差350！三场M6最大验证）=防守能力极强。乌拉圭双CB（Araújo+Giménez）仍可能缺席，de Arrascaeta存疑，进攻创造力严重受限（1-1沙特已暴露）。ELO差187在M6面前权重大幅下降。predA=乌拉圭0-1（窄胜，若CB恢复+Núñez进球定胜负）；predB=平局1-1（M6最强触发！佛得角定点球+乌拉圭防线漏洞=1-1）；predC=平局0-0（佛得角死守+乌拉圭缺阵→双方均无进球）。平局+200有博彩价值（M6历史3/3验证，P≈37%>implied 33%）。"
+    "notes": "佛得角2-2乌拉圭！方向✅（预测draw，实际2-2平局），精确❌（predB=平局1-1，实际2-2，总进球被低估），平局+200✅命中！M6规则第四次触发平局验证（卡塔尔/佛得角/刚果DR/佛得角再次）。双方均进2球，乌拉圭双CB缺阵防线漏洞让佛得角进球，佛得角防守依然扎实但无法全程零封。总进球4球>预测1球❌（低估双方进球能力）。教训：平局+200✅博彩价值准确，但进球数1球预测严重不足——M6平局场景进球数应从1球调整为2-3球（双方互进非0-0或1-1）。ELO：佛得角1692+8=1700，乌拉圭1879-8=1871。H组：西班牙4pts，佛得角2pts，沙特1pt，乌拉圭2pts。"
   },
   {
     "matchId": 1040,
@@ -1368,10 +1412,10 @@
     "predictionA": "平局 1-1",
     "predictionB": "埃及 2-1",
     "predictionC": "平局 0-0",
-    "actualScore": null,
-    "directionCorrect": null,
-    "exactHit": null,
-    "totalGoalsDirectionCorrect": null,
+    "actualScore": "3-1",
+    "directionCorrect": false,
+    "exactHit": false,
+    "totalGoalsDirectionCorrect": false,
     "probabilityA": 38,
     "probabilityB": 34,
     "probabilityC": 28,
@@ -1380,7 +1424,9 @@
     "lambdaAway": 0.95,
     "totalGoalsPrediction": "2球",
     "bettingValues": [],
-    "mRulesTriggered": ["M8a"],
+    "mRulesTriggered": [
+      "M8a"
+    ],
     "teamNews": [
       "🟡 埃及萨拉赫（核心/34岁）：首轮腿筋伤，但84'替补进球！本轮首发状态未知",
       "✅ 埃及：1-1比利时，防守稳健，定点球有威胁",
@@ -1388,6 +1434,618 @@
       "📊 ELO差75（埃及1787-新西兰1712）：M8a强触发（<80→winDrawLoss强制draw）",
       "💥 G组四队全1分（比利时/埃及/伊朗/新西兰），本场与伊朗vs比利时同时进行"
     ],
-    "notes": "G组第2轮：埃及（1分）vs 新西兰（1分）。M8a强触发（ELO差75<80→winDrawLoss=draw）。萨拉赫首轮替补进球，本轮首发可能性大，但腿筋状态仍是变量。新西兰2-2伊朗展示超出ELO预期的进攻能力（ELO差50仍两次追平），本场对ELO稍高的埃及面临相似均势挑战。G组四队全1分的乱局中，每场积分极为关键。M8a无例外条款触发（埃及无验证过的attackBoost≥+0.10）。predA=平局1-1（M8a最可能，萨拉赫进1球，新西兰追平）；predB=埃及2-1（萨拉赫首发+状态好，新西兰仅进1球）；predC=平局0-0（两队谨慎保守，0-0积1分对双方在G组乱局中均可接受）。"
+    "notes": "埃及3-1新西兰！方向❌（M8a预测draw，实际home胜），精确❌（predB=埃及2-1最接近），总进球4球>预测2球❌。萨拉赫首发状态回暖，3球进攻火力超出预期。M8a（ELO差75强制平局）第5次失效：主场进攻优势+萨拉赫复出=均势打破。新西兰1球=防守比首轮更脆弱。G组：比利时1pt，埃及4pts，伊朗2pts，新西兰1pt（埃及突然领跑！）。ELO：埃及1787+13=1800，新西兰1712-13=1699。"
+  },
+  {
+    "matchId": 1041,
+    "homeTeam": "阿根廷",
+    "awayTeam": "奥地利",
+    "group": "J组",
+    "kickoff": "2026-06-22T02:00:00Z",
+    "predictionA": "阿根廷 2-0",
+    "predictionB": "阿根廷 3-0",
+    "predictionC": "平局 1-1",
+    "actualScore": "2-0",
+    "directionCorrect": true,
+    "exactHit": true,
+    "totalGoalsDirectionCorrect": true,
+    "winDrawLoss": "home",
+    "lambdaHome": 2.5,
+    "lambdaAway": 0.6,
+    "totalGoalsPrediction": "2球",
+    "probabilityA": 42,
+    "probabilityB": 33,
+    "probabilityC": 25,
+    "bettingValues": [],
+    "mRulesTriggered": [],
+    "notes": "阿根廷2-0奥地利！方向✅，predA精确命中✅。梅西延续本届进球势头，奥地利R2 3-1约旦后状态好但仍无法抵挡梅西体系。总进球2球命中✅。J组：阿根廷6pts，奥地利3pts，约旦0pts（出局），阿尔及利亚0pts。ELO估算：阿根廷2151+3=2154，奥地利1873-3=1870。"
+  },
+  {
+    "matchId": 1042,
+    "homeTeam": "法国",
+    "awayTeam": "伊拉克",
+    "group": "I组",
+    "kickoff": "2026-06-22T17:00:00Z",
+    "predictionA": "法国 3-0",
+    "predictionB": "法国 4-0",
+    "predictionC": "法国 2-0",
+    "actualScore": "3-0",
+    "directionCorrect": true,
+    "exactHit": true,
+    "totalGoalsDirectionCorrect": true,
+    "winDrawLoss": "home",
+    "lambdaHome": 3.2,
+    "lambdaAway": 0.3,
+    "totalGoalsPrediction": "3球",
+    "probabilityA": 38,
+    "probabilityB": 32,
+    "probabilityC": 30,
+    "bettingValues": [],
+    "mRulesTriggered": [
+      "双前锋bonus"
+    ],
+    "notes": "法国3-0伊拉克！方向✅，predA=3-0精确命中✅。四前锋体系3球，伊拉克M7（40年缺席）+首届叠加完全崩溃。总进球3球=预测✅。I组：法国6pts，挪威3pts，伊拉克0pts，塞内加尔？。ELO：法国2070+2=2072，伊拉克1652-2=1650。"
+  },
+  {
+    "matchId": 1043,
+    "homeTeam": "挪威",
+    "awayTeam": "塞内加尔",
+    "group": "I组",
+    "kickoff": "2026-06-22T20:00:00Z",
+    "predictionA": "挪威 3-1",
+    "predictionB": "挪威 2-1",
+    "predictionC": "挪威 4-1",
+    "actualScore": "3-2",
+    "directionCorrect": true,
+    "exactHit": false,
+    "totalGoalsDirectionCorrect": false,
+    "winDrawLoss": "home",
+    "lambdaHome": 2.8,
+    "lambdaAway": 1.1,
+    "totalGoalsPrediction": "3球",
+    "probabilityA": 40,
+    "probabilityB": 33,
+    "probabilityC": 27,
+    "bettingValues": [],
+    "mRulesTriggered": [
+      "双前锋bonus"
+    ],
+    "notes": "挪威3-2塞内加尔！方向✅，精确❌（predB=2-1最近，实际3-2=5球总进球）。Haaland+Sørloth双前锋轰3球，塞内加尔马内+塔=2球反击。总进球5球>预测3球❌。教训：双前锋bonus场景进球被低估，塞内加尔进攻能力（马内34岁+Sarr）也超出预期。I组：法国6pts，挪威6pts（均出线！），塞内加尔0pts，伊拉克0pts。ELO：挪威1863+6=1869，塞内加尔1854-6=1848。"
+  },
+  {
+    "matchId": 1044,
+    "homeTeam": "约旦",
+    "awayTeam": "阿尔及利亚",
+    "group": "J组",
+    "kickoff": "2026-06-22T23:00:00Z",
+    "predictionA": "平局 1-1",
+    "predictionB": "阿尔及利亚 0-1",
+    "predictionC": "约旦 1-0",
+    "actualScore": "1-2",
+    "directionCorrect": false,
+    "exactHit": false,
+    "totalGoalsDirectionCorrect": false,
+    "winDrawLoss": "draw",
+    "lambdaHome": 0.8,
+    "lambdaAway": 1.2,
+    "totalGoalsPrediction": "2球",
+    "probabilityA": 36,
+    "probabilityB": 34,
+    "probabilityC": 30,
+    "bettingValues": [],
+    "mRulesTriggered": [
+      "M8a"
+    ],
+    "notes": "阿尔及利亚1-2约旦！方向❌（预测draw，实际away胜），精确❌（predB=客队0-1，实际1-2）。约旦首届世界杯（M6）+主场激励胜过ELO预测——Al-Naimat缺席但其他进攻点弥补。总进球3球>预测2球❌。ELO：约旦1672+14=1686，阿尔及利亚1717-14=1703。J组：阿根廷6pts，奥地利3pts，约旦3pts，阿尔及利亚0pts。"
+  },
+  {
+    "matchId": 1045,
+    "homeTeam": "葡萄牙",
+    "awayTeam": "乌兹别克斯坦",
+    "group": "K组",
+    "kickoff": "2026-06-23T17:00:00Z",
+    "predictionA": "葡萄牙 4-0",
+    "predictionB": "平局 1-1",
+    "predictionC": "葡萄牙 3-0",
+    "actualScore": "5-0",
+    "directionCorrect": true,
+    "exactHit": false,
+    "totalGoalsDirectionCorrect": false,
+    "winDrawLoss": "home",
+    "lambdaHome": 3.5,
+    "lambdaAway": 0.5,
+    "totalGoalsPrediction": "3球",
+    "probabilityA": 42,
+    "probabilityB": 28,
+    "probabilityC": 30,
+    "bettingValues": [],
+    "mRulesTriggered": [
+      "M6"
+    ],
+    "notes": "葡萄牙5-0大胜乌兹别克斯坦！方向✅，精确❌（predA=4-0，实际5-0）。C.罗首发进球+Bruno Fernandes+Leão全开，M6规则（乌兹别克斯坦首届）在葡萄牙完整体XI时完全失效（首轮1-1刚果DR是因C.罗状态差）。总进球5>预测3❌。ELO：葡萄牙1975+3=1978，乌兹别克斯坦1701-3=1698。K组：哥伦比亚6pts，葡萄牙4pts，乌兹别克斯坦0pts，刚果DR1pt。"
+  },
+  {
+    "matchId": 1046,
+    "homeTeam": "英格兰",
+    "awayTeam": "加纳",
+    "group": "L组",
+    "kickoff": "2026-06-23T20:00:00Z",
+    "predictionA": "平局 0-0",
+    "predictionB": "英格兰 1-0",
+    "predictionC": "英格兰 2-0",
+    "actualScore": "0-0",
+    "directionCorrect": false,
+    "exactHit": true,
+    "totalGoalsDirectionCorrect": false,
+    "winDrawLoss": "home",
+    "lambdaHome": 1.8,
+    "lambdaAway": 1.1,
+    "totalGoalsPrediction": "1球",
+    "probabilityA": 32,
+    "probabilityB": 36,
+    "probabilityC": 32,
+    "bettingValues": [],
+    "mRulesTriggered": [
+      "M8a"
+    ],
+    "notes": "英格兰0-0加纳！predA=平局0-0精确命中✅！方向❌（winDrawLoss=home，实际draw），ELO差约260但英格兰首发轮换（凯恩休息？）+加纳防守韧性。M8a不触发（ELO差大）但平局发生。总进球0球<预测1球❌。L组：英格兰4pts，加纳4pts，克罗地亚0pts，巴拿马0pts。ELO：英格兰2012-10=2002，加纳1754+10=1764。"
+  },
+  {
+    "matchId": 1047,
+    "homeTeam": "克罗地亚",
+    "awayTeam": "巴拿马",
+    "group": "L组",
+    "kickoff": "2026-06-23T23:00:00Z",
+    "predictionA": "克罗地亚 2-0",
+    "predictionB": "平局 1-1",
+    "predictionC": "克罗地亚 1-0",
+    "actualScore": "1-0",
+    "directionCorrect": true,
+    "exactHit": true,
+    "totalGoalsDirectionCorrect": false,
+    "winDrawLoss": "home",
+    "lambdaHome": 1.6,
+    "lambdaAway": 0.7,
+    "totalGoalsPrediction": "2球",
+    "probabilityA": 40,
+    "probabilityB": 30,
+    "probabilityC": 30,
+    "bettingValues": [],
+    "mRulesTriggered": [],
+    "notes": "克罗地亚1-0巴拿马！方向✅，predC=1-0精确命中✅。克罗地亚首轮4-2负英格兰后窄胜巴拿马，L组：英格兰4pts，加纳4pts，克罗地亚3pts，巴拿马0pts。ELO：克罗地亚1911+13=1924，巴拿马1676-13=1663。"
+  },
+  {
+    "matchId": 1048,
+    "homeTeam": "哥伦比亚",
+    "awayTeam": "刚果DR",
+    "group": "K组",
+    "kickoff": "2026-06-24T02:00:00Z",
+    "predictionA": "哥伦比亚 2-0",
+    "predictionB": "平局 1-1",
+    "predictionC": "哥伦比亚 1-0",
+    "actualScore": "1-0",
+    "directionCorrect": true,
+    "exactHit": true,
+    "totalGoalsDirectionCorrect": false,
+    "winDrawLoss": "home",
+    "lambdaHome": 2,
+    "lambdaAway": 0.7,
+    "totalGoalsPrediction": "2球",
+    "probabilityA": 40,
+    "probabilityB": 30,
+    "probabilityC": 30,
+    "bettingValues": [],
+    "mRulesTriggered": [
+      "M6"
+    ],
+    "notes": "哥伦比亚1-0刚果DR！方向✅，predC=1-0精确命中✅。M6触发（刚果DR）+哥伦比亚防守好→1-0窄胜。K组：哥伦比亚6pts，葡萄牙4pts，刚果DR1pt，乌兹别克斯坦0pts。ELO：哥伦比亚1880+5=1885，刚果DR1711-5=1706。"
+  },
+  {
+    "matchId": 1049,
+    "homeTeam": "波黑",
+    "awayTeam": "卡塔尔",
+    "group": "B组",
+    "kickoff": "2026-06-24T17:00:00Z",
+    "predictionA": "波黑 2-0",
+    "predictionB": "平局 1-1",
+    "predictionC": "波黑 3-1",
+    "actualScore": "3-1",
+    "directionCorrect": true,
+    "exactHit": true,
+    "totalGoalsDirectionCorrect": false,
+    "winDrawLoss": "home",
+    "lambdaHome": 1.8,
+    "lambdaAway": 0.8,
+    "totalGoalsPrediction": "2球",
+    "probabilityA": 38,
+    "probabilityB": 32,
+    "probabilityC": 30,
+    "bettingValues": [],
+    "mRulesTriggered": [],
+    "notes": "波黑3-1卡塔尔！方向✅，predC=波黑3-1精确命中✅。卡塔尔（首届级防守）被波黑突破3次。B组：瑞士4pts，加拿大4pts，波黑4pts，卡塔尔1pt（B组极度胶着！）。ELO：波黑1751+11=1762，卡塔尔1667-11=1656。"
+  },
+  {
+    "matchId": 1050,
+    "homeTeam": "瑞士",
+    "awayTeam": "加拿大",
+    "group": "B组",
+    "kickoff": "2026-06-24T20:00:00Z",
+    "predictionA": "平局 1-1",
+    "predictionB": "瑞士 1-0",
+    "predictionC": "加拿大 1-0",
+    "actualScore": "2-1",
+    "directionCorrect": false,
+    "exactHit": false,
+    "totalGoalsDirectionCorrect": false,
+    "winDrawLoss": "draw",
+    "lambdaHome": 1.3,
+    "lambdaAway": 1.5,
+    "totalGoalsPrediction": "2球",
+    "probabilityA": 37,
+    "probabilityB": 34,
+    "probabilityC": 29,
+    "bettingValues": [],
+    "mRulesTriggered": [
+      "M8a"
+    ],
+    "notes": "瑞士2-1加拿大！方向❌（预测draw，实际home胜），精确❌。Xhaka再次主导，加拿大Davies进1球。B组：瑞士7pts出线！加拿大4pts，波黑4pts，卡塔尔1pt。ELO：瑞士1879+10=1889，加拿大1804-10=1794。"
+  },
+  {
+    "matchId": 1051,
+    "homeTeam": "摩洛哥",
+    "awayTeam": "海地",
+    "group": "C组",
+    "kickoff": "2026-06-24T17:00:00Z",
+    "predictionA": "摩洛哥 3-0",
+    "predictionB": "摩洛哥 4-1",
+    "predictionC": "摩洛哥 2-0",
+    "actualScore": "4-2",
+    "directionCorrect": true,
+    "exactHit": false,
+    "totalGoalsDirectionCorrect": false,
+    "winDrawLoss": "home",
+    "lambdaHome": 3,
+    "lambdaAway": 0.6,
+    "totalGoalsPrediction": "3球",
+    "probabilityA": 38,
+    "probabilityB": 32,
+    "probabilityC": 30,
+    "bettingValues": [],
+    "mRulesTriggered": [],
+    "notes": "摩洛哥4-2海地！方向✅，精确❌（predB=4-1最近，实际4-2）。摩洛哥进攻打开defenseBoost体系，海地2球超出预期。总进球6>预测3❌。C组：巴西4pts，摩洛哥7pts出线！苏格兰3pts，海地0pts出局。ELO：摩洛哥1922+2=1924，海地1619-2=1617。"
+  },
+  {
+    "matchId": 1052,
+    "homeTeam": "巴西",
+    "awayTeam": "苏格兰",
+    "group": "C组",
+    "kickoff": "2026-06-24T20:00:00Z",
+    "predictionA": "巴西 3-0",
+    "predictionB": "巴西 2-0",
+    "predictionC": "巴西 2-1",
+    "actualScore": "3-0",
+    "directionCorrect": true,
+    "exactHit": true,
+    "totalGoalsDirectionCorrect": true,
+    "winDrawLoss": "home",
+    "lambdaHome": 3.5,
+    "lambdaAway": 0.5,
+    "totalGoalsPrediction": "3球",
+    "probabilityA": 40,
+    "probabilityB": 33,
+    "probabilityC": 27,
+    "bettingValues": [],
+    "mRulesTriggered": [],
+    "notes": "巴西3-0苏格兰！方向✅，predA=3-0精确命中✅！总进球3球=预测✅。Vinicius+Endrick+Rodrygo全开，苏格兰无力抵抗。C组：巴西7pts出线！摩洛哥7pts出线，苏格兰3pts，海地0pts。ELO：巴西2077+3=2080，苏格兰1805-3=1802。"
+  },
+  {
+    "matchId": 1053,
+    "homeTeam": "墨西哥",
+    "awayTeam": "捷克",
+    "group": "A组",
+    "kickoff": "2026-06-24T23:00:00Z",
+    "predictionA": "墨西哥 2-0",
+    "predictionB": "墨西哥 3-0",
+    "predictionC": "平局 1-1",
+    "actualScore": "3-0",
+    "directionCorrect": true,
+    "exactHit": true,
+    "totalGoalsDirectionCorrect": false,
+    "winDrawLoss": "home",
+    "lambdaHome": 2.2,
+    "lambdaAway": 0.9,
+    "totalGoalsPrediction": "2球",
+    "probabilityA": 40,
+    "probabilityB": 33,
+    "probabilityC": 27,
+    "bettingValues": [],
+    "mRulesTriggered": [],
+    "notes": "墨西哥3-0捷克！方向✅，predB=3-0精确命中✅。墨西哥主场6连胜世界杯，Raúl Jiménez+Lozano高效完成任务。A组：墨西哥9pts出线！韩国6pts（6/25确认？），捷克1pt，南非1pt。ELO：墨西哥1926+6=1932，捷克1793-6=1787。"
+  },
+  {
+    "matchId": 1054,
+    "homeTeam": "南非",
+    "awayTeam": "韩国",
+    "group": "A组",
+    "kickoff": "2026-06-25T02:00:00Z",
+    "predictionA": "韩国 0-2",
+    "predictionB": "平局 1-1",
+    "predictionC": "南非 1-0",
+    "actualScore": "1-0",
+    "directionCorrect": false,
+    "exactHit": true,
+    "totalGoalsDirectionCorrect": false,
+    "winDrawLoss": "away",
+    "lambdaHome": 0.7,
+    "lambdaAway": 1.8,
+    "totalGoalsPrediction": "2球",
+    "probabilityA": 40,
+    "probabilityB": 32,
+    "probabilityC": 28,
+    "bettingValues": [],
+    "mRulesTriggered": [
+      "M8a"
+    ],
+    "notes": "南非1-0韩国！方向❌（预测away韩国胜，实际home南非胜），predC=南非1-0精确命中✅！M8a（ELO差约185）预测韩国胜，但南非主场激励+Son Heung-min首发被限制→南非窄胜。ASIA规则（韩国）未能逆袭。A组：墨西哥9pts，韩国6pts（2019WC后首次两连胜→实为韩国3pts+之前3pts=6pts），南非4pts，捷克1pt。ELO估算：南非1647+13=1660，韩国1832-13=1819。"
+  },
+  {
+    "matchId": 1055,
+    "homeTeam": "科特迪瓦",
+    "awayTeam": "库拉索",
+    "group": "E组",
+    "kickoff": "2026-06-26T00:00:00Z",
+    "predictionA": "科特迪瓦 2-0",
+    "predictionB": "科特迪瓦 1-0",
+    "predictionC": "平局 1-1",
+    "actualScore": null,
+    "directionCorrect": null,
+    "exactHit": null,
+    "totalGoalsDirectionCorrect": null,
+    "winDrawLoss": "home",
+    "lambdaHome": 2.1,
+    "lambdaAway": 0.8,
+    "totalGoalsPrediction": "2球",
+    "probabilityA": 44,
+    "probabilityB": 34,
+    "probabilityC": 22,
+    "bettingValues": [],
+    "mRulesTriggered": [],
+    "teamNews": [
+      "✅ 科特迪瓦Amad Diallo（曼联）：90'绝杀首轮+R2有进球表现，攻击锋芒未减",
+      "✅ 科特迪瓦3pts，赢球锁定出线；平局仍有可能出线（取决于德国vs厄瓜多尔）",
+      "⚠️ 库拉索Eloy Room（门将）：15次扑救创纪录，本场面对更强进攻，难以复制",
+      "✅ 科特迪瓦：首轮1-0厄瓜多尔（19场不败）, R2 1-2惜败德国",
+      "📊 ELO差232（科特迪瓦1842-库拉索1610），科特迪瓦绝对热门",
+      "🎯 E组第二→打I组第二（法国/挪威中的亚军）——科特迪瓦想争高分出线"
+    ],
+    "notes": "E组末轮：科特迪瓦（3pts）vs 库拉索（1pt），同时德国vs厄瓜多尔。科特迪瓦需要胜利锁定出线，库拉索需要奇迹。ELO差232，科特迪瓦明显更强。库拉索Eloy Room神扑难以复制，Amad Diallo反击在更开放比赛中更有效。predA=科特迪瓦2-0（正常进攻打开）；predB=科特迪瓦1-0（科特迪瓦谨慎，库拉索顽守）；predC=平局1-1（库拉索奇迹+科特迪瓦进1球，1-1对科特迪瓦仍出线）。"
+  },
+  {
+    "matchId": 1056,
+    "homeTeam": "德国",
+    "awayTeam": "厄瓜多尔",
+    "group": "E组",
+    "kickoff": "2026-06-26T00:00:00Z",
+    "predictionA": "德国 3-0",
+    "predictionB": "德国 2-0",
+    "predictionC": "德国 2-1",
+    "actualScore": null,
+    "directionCorrect": null,
+    "exactHit": null,
+    "totalGoalsDirectionCorrect": null,
+    "winDrawLoss": "home",
+    "lambdaHome": 2.8,
+    "lambdaAway": 0.7,
+    "totalGoalsPrediction": "3球",
+    "probabilityA": 38,
+    "probabilityB": 35,
+    "probabilityC": 27,
+    "bettingValues": [
+      {
+        "stars": 2,
+        "name": "德国获胜",
+        "odds": "-300",
+        "hit": null
+      },
+      {
+        "stars": 3,
+        "name": "Over 2.5进球",
+        "odds": "2.70",
+        "hit": null
+      }
+    ],
+    "mRulesTriggered": [],
+    "teamNews": [
+      "✅ 德国Undav+穆西亚拉+维尔茨：三核心确认首发，本届进球机器",
+      "❌ 德国Schlotterbeck（首发CB）：踝伤赛季报销！Rüdiger或Anton替补入场",
+      "⚠️ 德国轮换预期（已出线6pts），但主力基本保留保持状态",
+      "✅ 厄瓜多尔Valencia（37岁队长）+Plata+Vite：前场仍有速度威胁",
+      "⚠️ 厄瓜多尔必须赢（1pt），主动进攻→防守空间打开",
+      "📊 ELO差240（德国2011-厄瓜多尔1771），德国绝对热门",
+      "🎯 德国后防Schlotterbeck缺席→厄瓜多尔定点球+速度反击有1球机会"
+    ],
+    "notes": "【Schlotterbeck缺阵】德国Schlotterbeck踝伤赛季报销，首发CB位置由Rüdiger/Anton填补，中卫组合稳定性略降。厄瓜多尔必须赢（1pt），被迫全力进攻→防守空间打开=德国反击机会增加，同时厄瓜多尔Valencia定点球+Plata速度对临时CB组合有1球机会。predA=德国3-0（德国轻松高效，厄瓜多尔无奈进攻失误）；predB=德国2-0（德国谨慎轮换）；predC=德国2-1（厄瓜多尔进1球，Schlotterbeck缺席小漏洞）。博彩价值：Over 2.5@2.70（厄瓜多尔必须进攻+德国反击效率+3球预测，P≈55%，隐含37%=有价值）。"
+  },
+  {
+    "matchId": 1057,
+    "homeTeam": "瑞典",
+    "awayTeam": "日本",
+    "group": "F组",
+    "kickoff": "2026-06-26T03:00:00Z",
+    "predictionA": "瑞典 2-1",
+    "predictionB": "日本 1-2",
+    "predictionC": "平局 2-2",
+    "actualScore": null,
+    "directionCorrect": null,
+    "exactHit": null,
+    "totalGoalsDirectionCorrect": null,
+    "winDrawLoss": "home",
+    "lambdaHome": 1.9,
+    "lambdaAway": 1.5,
+    "totalGoalsPrediction": "3球",
+    "probabilityA": 42,
+    "probabilityB": 35,
+    "probabilityC": 23,
+    "bettingValues": [
+      {
+        "stars": 3,
+        "name": "Over 2.5进球",
+        "odds": "-135",
+        "hit": null
+      },
+      {
+        "stars": 2,
+        "name": "瑞典获胜",
+        "odds": "+115",
+        "hit": null
+      }
+    ],
+    "mRulesTriggered": [
+      "M8a",
+      "ASIA",
+      "双前锋bonus",
+      "晋级博弈"
+    ],
+    "teamNews": [
+      "✅ 瑞典Gyökeres（Arsenal）：本届5球2场，状态顶峰，双前锋bonus触发",
+      "✅ 瑞典Isak（Newcastle）：确认首发，双前锋组合已多次验证",
+      "⚠️ 瑞典需要赢球才能出线（3pts，输球或平局可能出局）",
+      "✅ 日本久保建英+中村敬斗+镰田大地：4-0突尼斯后进攻完全激活",
+      "💥 关键晋级博弈：F组第一→打摩洛哥(ELO1924)；F组第二→打巴西(ELO2080)",
+      "🎯 日本ELO1908：对摩洛哥差-16（日本更强！），对巴西差-172（极难）→日本主动争第一",
+      "📊 ELO差57（瑞典1851-日本1908）：M8a触发，但晋级博弈压制平局动力",
+      "🟡 黄牌风险：两张黄牌停赛，需确认日本久保/镰田是否临界"
+    ],
+    "notes": "【晋级路线大修正】F组第一打摩洛哥(ELO1924)，第二打巴西(ELO2080)！日本ELO1908面对摩洛哥(-16)比面对巴西(-172)容易得多——日本不满足于平局，主动争第一。瑞典必须赢（3pts濒临出局）。两队都攻→M8a平局底线被博弈论压制，进球预期从2球升至3球。双前锋bonus（Gyökeres+Isak）vs ASIA逆境力（久保+中村）= 本届最激烈末轮对决。predA=瑞典2-1（双前锋+主场激励+日本虽攻但防线1球漏洞）；predB=日本1-2（ASIA逆境力逆转，久保+中村双响）；predC=平局2-2（激烈对攻，戏剧收场，但两队都不想要平局→概率降至23%）。博彩价值：Over 2.5@-135（两队博弈论驱动开放进攻，P≈58%）；瑞典+115（must-win+双前锋bonus，P≈42%，赔率暗示约47%，轻微低估）。"
+  },
+  {
+    "matchId": 1058,
+    "homeTeam": "荷兰",
+    "awayTeam": "突尼斯",
+    "group": "F组",
+    "kickoff": "2026-06-26T03:00:00Z",
+    "predictionA": "荷兰 3-0",
+    "predictionB": "荷兰 4-0",
+    "predictionC": "荷兰 2-0",
+    "actualScore": null,
+    "directionCorrect": null,
+    "exactHit": null,
+    "totalGoalsDirectionCorrect": null,
+    "winDrawLoss": "home",
+    "lambdaHome": 3,
+    "lambdaAway": 0.5,
+    "totalGoalsPrediction": "3球",
+    "probabilityA": 38,
+    "probabilityB": 32,
+    "probabilityC": 30,
+    "bettingValues": [
+      {
+        "stars": 2,
+        "name": "Over 2.5进球",
+        "odds": "-130",
+        "hit": null
+      }
+    ],
+    "mRulesTriggered": [],
+    "teamNews": [
+      "🟡 荷兰德容（Frenkie, 巴萨）：伤势疑似好转，预测阵容出现其名字——若首发则中场创造力大升",
+      "✅ 荷兰van Dijk（队长/利物浦CB）：确认首发，主力后防",
+      "✅ 荷兰加克波+布罗比+萨默维尔：5-1瑞典证明进攻线全面激活",
+      "❌ 突尼斯：0pts，已出局，1-5瑞典+0-4日本共失9球，防线完全崩溃",
+      "📊 F组：荷兰4pts，若赢则7pts；若日本赢瑞典（概率38%），荷兰不管输赢都出线但名次变化",
+      "🎯 荷兰F组第一→打摩洛哥(ELO1924)；F组第二→打巴西(ELO2080)",
+      "💥 荷兰也有动力赢球争第一（避开巴西）！De Jong若首发进攻大幅升级"
+    ],
+    "notes": "荷兰4pts，胜则7pts锁定第一（对摩洛哥比打巴西容易），平局可能仍出线但第一归属取决于日本vs瑞典。突尼斯已出局，防线崩溃（两场失9球）。荷兰De Jong疑似伤势好转可能首发，若出场中场创造力大升。predA=荷兰3-0（突尼斯防线崩溃+荷兰全力争第一）；predB=荷兰4-0（De Jong首发+进攻全开，对比5-1瑞典的爆发力）；predC=荷兰2-0（荷兰轮换保守，确保不受伤）。博彩价值：荷兰-500不值（赔率太低），但Over 2.5@-130有价值（突尼斯防线历史性崩溃）。"
+  },
+  {
+    "matchId": 1059,
+    "homeTeam": "澳大利亚",
+    "awayTeam": "巴拉圭",
+    "group": "D组",
+    "kickoff": "2026-06-27T02:00:00Z",
+    "predictionA": "澳大利亚 1-0",
+    "predictionB": "平局 1-1",
+    "predictionC": "澳大利亚 2-0",
+    "actualScore": null,
+    "directionCorrect": null,
+    "exactHit": null,
+    "totalGoalsDirectionCorrect": null,
+    "winDrawLoss": "home",
+    "lambdaHome": 1.4,
+    "lambdaAway": 0.8,
+    "totalGoalsPrediction": "1球",
+    "probabilityA": 42,
+    "probabilityB": 32,
+    "probabilityC": 26,
+    "bettingValues": [
+      {
+        "stars": 3,
+        "name": "澳大利亚获胜",
+        "odds": "-130",
+        "hit": null
+      },
+      {
+        "stars": 2,
+        "name": "Under 2.5进球",
+        "odds": "-140",
+        "hit": null
+      }
+    ],
+    "mRulesTriggered": [
+      "M8a v3",
+      "SUSPENSION"
+    ],
+    "teamNews": [
+      "🚫 巴拿马Almirón（10球/核心前锋/队长）：红牌停赛！本场缺席，进攻最大威胁消失",
+      "✅ 巴拉圭Enciso（曼城）+Sanabria：仍有进攻能力但失去核心组织者",
+      "❌ 澳大利亚Leckie（右翼/进攻核心）：肌肉伤缺席，损失进攻宽度",
+      "✅ 澳大利亚Irankunda（拜仁18岁）：速度爆炸，首轮进球，替补Leckie",
+      "✅ 澳大利亚attackBoost+0.12, formBonus+0.08（连续两胜2-0/2-0）",
+      "📊 ELO差28（澳大利亚1797-巴拉圭1769），M8a最强触发（<50）",
+      "💥 阿尔米隆停赛是本场最大利好澳大利亚因素——赔率可能尚未充分反映"
+    ],
+    "notes": "【阿尔米隆停赛大修正】巴拿马核心Almirón（10球，队长级）红牌停赛，进攻最大威胁消失！巴拿马从均势进攻者变为纯防守反击队，进球能力大降。澳大利亚虽Leckie缺席，但Irankunda速度优势仍在，攻击线整体优于停赛后的巴拉圭。M8a v3：ELO差28且澳大利亚有attackBoost+0.12+0.08→winDrawLoss改为home（不强制平局）。predA=澳大利亚1-0（巴拿马无核心前锋→压缩反击，澳大利亚窄胜）；predB=平局1-1（阿尔米隆替代者意外进球，澳大利亚追平或反超后紧张收场）；predC=澳大利亚2-0（Irankunda双响，巴拿马攻击端完全哑火）。博彩价值：澳大利亚-130（阿尔米隆停赛已知但赔率或未完全反映，P≈42%）；Under 2.5@-140（双方均失去核心攻击者）。"
+  },
+  {
+    "matchId": 1060,
+    "homeTeam": "美国",
+    "awayTeam": "土耳其",
+    "group": "D组",
+    "kickoff": "2026-06-27T02:00:00Z",
+    "predictionA": "美国 2-0",
+    "predictionB": "美国 3-0",
+    "predictionC": "美国 1-0",
+    "actualScore": null,
+    "directionCorrect": null,
+    "exactHit": null,
+    "totalGoalsDirectionCorrect": null,
+    "winDrawLoss": "home",
+    "lambdaHome": 2.5,
+    "lambdaAway": 0.7,
+    "totalGoalsPrediction": "2球",
+    "probabilityA": 40,
+    "probabilityB": 32,
+    "probabilityC": 28,
+    "bettingValues": [
+      {
+        "stars": 1,
+        "name": "美国获胜",
+        "odds": "-400",
+        "hit": null
+      }
+    ],
+    "mRulesTriggered": [
+      "M8a v3"
+    ],
+    "teamNews": [
+      "✅ 美国Pulisic（切尔西/队长）：6pts两连胜，但可能轮换保护体能",
+      "✅ 美国Gio Reyna（多特）：确认首发，进攻创造力",
+      "⚠️ 美国可能轻微轮换（已出线，保留体力为淘汰赛）",
+      "⚠️ 土耳其：0pts已出局，士气低落；Calhanoglu仍首发但无压力",
+      "🎯 美国D组第一→打G组第二（比利时/埃及/伊朗/新西兰之一）",
+      "📊 ELO差69（美国1872-土耳其1803），M8a v3：attackBoost≥+0.15→winDrawLoss=home"
+    ],
+    "notes": "D组末轮：美国（6pts已出线）vs 土耳其（0pts已出局）。美国轻松出线但想锁定D组第一。M8a v3：ELO差69<80但美国attackBoost+0.15≥+0.10→winDrawLoss=home（不强制draw）。土耳其已出局，士气极低，M7（24年缺席）效应在失落中持续。美国两连胜攻击动力强。predA=美国2-0；predB=美国3-0（土耳其彻底放弃防守）；predC=美国1-0（谨慎取分，不冒险）。"
   }
 ]
