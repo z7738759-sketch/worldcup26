@@ -1808,7 +1808,14 @@
     "probabilityA": 44,
     "probabilityB": 34,
     "probabilityC": 22,
-    "bettingValues": [],
+    "bettingValues": [
+      {
+        "stars": 3,
+        "name": "Over 2.5进球",
+        "odds": "-130",
+        "hit": null
+      }
+    ],
     "mRulesTriggered": [],
     "teamNews": [
       "✅ 科特迪瓦Amad Diallo（曼联）：90'绝杀首轮+R2有进球表现，攻击锋芒未减",
@@ -1818,7 +1825,7 @@
       "📊 ELO差232（科特迪瓦1842-库拉索1610），科特迪瓦绝对热门",
       "🎯 E组第二→打I组第二（法国/挪威中的亚军）——科特迪瓦想争高分出线"
     ],
-    "notes": "E组末轮：科特迪瓦（3pts）vs 库拉索（1pt），同时德国vs厄瓜多尔。科特迪瓦需要胜利锁定出线，库拉索需要奇迹。ELO差232，科特迪瓦明显更强。库拉索Eloy Room神扑难以复制，Amad Diallo反击在更开放比赛中更有效。predA=科特迪瓦2-0（正常进攻打开）；predB=科特迪瓦1-0（科特迪瓦谨慎，库拉索顽守）；predC=平局1-1（库拉索奇迹+科特迪瓦进1球，1-1对科特迪瓦仍出线）。"
+    "notes": "综合模型v21: 库拉索MUST WIN(+0.4动机)+科特迪瓦防线面对绝境冲击。基础2.97+动机0.4=3.37→3球Over"
   },
   {
     "matchId": 1056,
@@ -1836,21 +1843,21 @@
     "winDrawLoss": "home",
     "lambdaHome": 2.8,
     "lambdaAway": 0.7,
-    "totalGoalsPrediction": "4球",
+    "totalGoalsPrediction": "3球",
     "probabilityA": 38,
     "probabilityB": 35,
     "probabilityC": 27,
     "bettingValues": [
       {
-        "stars": 2,
-        "name": "德国获胜",
-        "odds": "-300",
-        "hit": null
-      },
-      {
         "stars": 3,
         "name": "Over 2.5进球",
         "odds": "2.70",
+        "hit": null
+      },
+      {
+        "stars": 2,
+        "name": "德国获胜",
+        "odds": "-300",
         "hit": null
       }
     ],
@@ -1864,7 +1871,7 @@
       "📊 ELO差240（德国2011-厄瓜多尔1771），德国绝对热门",
       "🎯 德国后防Schlotterbeck缺席→厄瓜多尔定点球+速度反击有1球机会"
     ],
-    "notes": "【Schlotterbeck缺阵】德国Schlotterbeck踝伤赛季报销，首发CB位置由Rüdiger/Anton填补，中卫组合稳定性略降。厄瓜多尔必须赢（1pt），被迫全力进攻→防守空间打开=德国反击机会增加，同时厄瓜多尔Valencia定点球+Plata速度对临时CB组合有1球机会。predA=德国3-0（德国轻松高效，厄瓜多尔无奈进攻失误）；predB=德国2-0（德国谨慎轮换）；predC=德国2-1（厄瓜多尔进1球，Schlotterbeck缺席小漏洞）。博彩价值：Over 2.5@2.70（厄瓜多尔必须进攻+德国反击效率+3球预测，P≈55%，隐含37%=有价值）。"
+    "notes": "德国出线保守(-0)+厄瓜多尔存亡(+0.2)+Schlotterbeck缺阵(-0.2)+赔率Over(+0.1)=3.25→3球Over"
   },
   {
     "matchId": 1057,
@@ -1882,7 +1889,7 @@
     "winDrawLoss": "home",
     "lambdaHome": 1.9,
     "lambdaAway": 1.5,
-    "totalGoalsPrediction": "3球",
+    "totalGoalsPrediction": "5球",
     "probabilityA": 42,
     "probabilityB": 35,
     "probabilityC": 23,
@@ -1890,13 +1897,13 @@
       {
         "stars": 3,
         "name": "Over 2.5进球",
-        "odds": "-135",
+        "odds": "-200",
         "hit": null
       },
       {
-        "stars": 2,
-        "name": "瑞典获胜",
-        "odds": "+115",
+        "stars": 3,
+        "name": "Over 4.5进球",
+        "odds": "+120",
         "hit": null
       }
     ],
@@ -1916,7 +1923,7 @@
       "📊 ELO差57（瑞典1851-日本1908）：M8a触发，但晋级博弈压制平局动力",
       "🟡 黄牌风险：两张黄牌停赛，需确认日本久保/镰田是否临界"
     ],
-    "notes": "【晋级路线大修正】F组第一打摩洛哥(ELO1924)，第二打巴西(ELO2080)！日本ELO1908面对摩洛哥(-16)比面对巴西(-172)容易得多——日本不满足于平局，主动争第一。瑞典必须赢（3pts濒临出局）。两队都攻→M8a平局底线被博弈论压制，进球预期从2球升至3球。双前锋bonus（Gyökeres+Isak）vs ASIA逆境力（久保+中村）= 本届最激烈末轮对决。predA=瑞典2-1（双前锋+主场激励+日本虽攻但防线1球漏洞）；predB=日本1-2（ASIA逆境力逆转，久保+中村双响）；predC=平局2-2（激烈对攻，戏剧收场，但两队都不想要平局→概率降至23%）。博彩价值：Over 2.5@-135（两队博弈论驱动开放进攻，P≈58%）；瑞典+115（must-win+双前锋bonus，P≈42%，赔率暗示约47%，轻微低估）。"
+    "notes": "瑞典6.0均值+日本4.0均值历史最强组合。MUST WIN+争F1晋级路线(避巴西ELO差172)+达拉斯空调场→5球⚡最高信心"
   },
   {
     "matchId": 1058,
@@ -1942,7 +1949,7 @@
       {
         "stars": 2,
         "name": "Over 2.5进球",
-        "odds": "-130",
+        "odds": "-150",
         "hit": null
       }
     ],
@@ -1956,7 +1963,7 @@
       "🎯 荷兰F组第一→打摩洛哥(ELO1924)；F组第二→打巴西(ELO2080)",
       "💥 荷兰也有动力赢球争第一（避开巴西）！De Jong若首发进攻大幅升级"
     ],
-    "notes": "荷兰4pts，胜则7pts锁定第一（对摩洛哥比打巴西容易），平局可能仍出线但第一归属取决于日本vs瑞典。突尼斯已出局，防线崩溃（两场失9球）。荷兰De Jong疑似伤势好转可能首发，若出场中场创造力大升。predA=荷兰3-0（突尼斯防线崩溃+荷兰全力争第一）；predB=荷兰4-0（De Jong首发+进攻全开，对比5-1瑞典的爆发力）；predC=荷兰2-0（荷兰轮换保守，确保不受伤）。博彩价值：荷兰-500不值（赔率太低），但Over 2.5@-130有价值（突尼斯防线历史性崩溃）。"
+    "notes": "荷兰争F1(+0.15)但突尼斯无动力(-0.4)+荷兰3名球员各1黄需保护(-0.3)→净减至4.0球Over。比之前5球更保守"
   },
   {
     "matchId": 1059,
@@ -1974,21 +1981,21 @@
     "winDrawLoss": "home",
     "lambdaHome": 1.4,
     "lambdaAway": 0.8,
-    "totalGoalsPrediction": "2球",
+    "totalGoalsPrediction": "3球",
     "probabilityA": 42,
     "probabilityB": 32,
     "probabilityC": 26,
     "bettingValues": [
       {
-        "stars": 3,
-        "name": "澳大利亚获胜",
-        "odds": "-130",
+        "stars": 2,
+        "name": "Over 2.5进球",
+        "odds": "-115",
         "hit": null
       },
       {
         "stars": 2,
-        "name": "Under 2.5进球",
-        "odds": "-140",
+        "name": "澳大利亚获胜",
+        "odds": "-130",
         "hit": null
       }
     ],
@@ -2005,7 +2012,7 @@
       "📊 ELO差28（澳大利亚1797-巴拉圭1769），M8a最强触发（<50）",
       "💥 阿尔米隆停赛是本场最大利好澳大利亚因素——赔率可能尚未充分反映"
     ],
-    "notes": "【阿尔米隆停赛大修正】巴拿马核心Almirón（10球，队长级）红牌停赛，进攻最大威胁消失！巴拿马从均势进攻者变为纯防守反击队，进球能力大降。澳大利亚虽Leckie缺席，但Irankunda速度优势仍在，攻击线整体优于停赛后的巴拉圭。M8a v3：ELO差28且澳大利亚有attackBoost+0.12+0.08→winDrawLoss改为home（不强制平局）。predA=澳大利亚1-0（巴拿马无核心前锋→压缩反击，澳大利亚窄胜）；predB=平局1-1（阿尔米隆替代者意外进球，澳大利亚追平或反超后紧张收场）；predC=澳大利亚2-0（Irankunda双响，巴拿马攻击端完全哑火）。博彩价值：澳大利亚-130（阿尔米隆停赛已知但赔率或未完全反映，P≈42%）；Under 2.5@-140（双方均失去核心攻击者）。"
+    "notes": "【关键翻转】双存亡战+0.6>Almiron停赛-0.4，净+0.2→2.61→3球Over 2.5。第三名wildcardF分析：巴拉圭3pts风险大需全力攻"
   },
   {
     "matchId": 1060,
@@ -2023,15 +2030,15 @@
     "winDrawLoss": "home",
     "lambdaHome": 2.5,
     "lambdaAway": 0.7,
-    "totalGoalsPrediction": "3球",
+    "totalGoalsPrediction": "2球",
     "probabilityA": 40,
     "probabilityB": 32,
     "probabilityC": 28,
     "bettingValues": [
       {
-        "stars": 1,
-        "name": "美国获胜",
-        "odds": "-400",
+        "stars": 3,
+        "name": "Under 2.5进球",
+        "odds": "-140",
         "hit": null
       }
     ],
@@ -2046,6 +2053,6 @@
       "🎯 美国D组第一→打G组第二（比利时/埃及/伊朗/新西兰之一）",
       "📊 ELO差69（美国1872-土耳其1803），M8a v3：attackBoost≥+0.15→winDrawLoss=home"
     ],
-    "notes": "D组末轮：美国（6pts已出线）vs 土耳其（0pts已出局）。美国轻松出线但想锁定D组第一。M8a v3：ELO差69<80但美国attackBoost+0.15≥+0.10→winDrawLoss=home（不强制draw）。土耳其已出局，士气极低，M7（24年缺席）效应在失落中持续。美国两连胜攻击动力强。predA=美国2-0；predB=美国3-0（土耳其彻底放弃防守）；predC=美国1-0（谨慎取分，不冒险）。"
+    "notes": "【关键翻转】美国D1锁定大轮换(-0.5)+土耳其0pts无动力(-0.4)→1.71→2球Under 2.5。垃圾时间场次典型特征"
   }
 ]
