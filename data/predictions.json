@@ -1797,10 +1797,10 @@
     "predictionA": "科特迪瓦 2-0",
     "predictionB": "科特迪瓦 1-0",
     "predictionC": "平局 1-1",
-    "actualScore": null,
-    "directionCorrect": null,
-    "exactHit": null,
-    "totalGoalsDirectionCorrect": null,
+    "actualScore": "2-0",
+    "directionCorrect": true,
+    "exactHit": true,
+    "totalGoalsDirectionCorrect": false,
     "winDrawLoss": "home",
     "lambdaHome": 2.1,
     "lambdaAway": 0.8,
@@ -1813,7 +1813,7 @@
         "stars": 3,
         "name": "Over 2.5进球",
         "odds": "-130",
-        "hit": null
+        "hit": false
       }
     ],
     "mRulesTriggered": [],
@@ -1825,7 +1825,7 @@
       "📊 ELO差232（科特迪瓦1842-库拉索1610），科特迪瓦绝对热门",
       "🎯 E组第二→打I组第二（法国/挪威中的亚军）——科特迪瓦想争高分出线"
     ],
-    "notes": "综合模型v21: 库拉索MUST WIN(+0.4动机)+科特迪瓦防线面对绝境冲击。基础2.97+动机0.4=3.37→3球Over"
+    "notes": "科特迪瓦2-0库拉索！predA精确命中✅！Amad Diallo主导，Eloy Room这次无法复制15次扑救的奇迹。科特迪瓦赢球出线，库拉索首届以1分（0-0厄瓜多尔）告别。Over 2.5❌（2球不满足）。ELO：科特迪瓦1842+7=1849，库拉索1610-7=1603。E组：德国6pts，科特迪瓦6pts（抢2分），厄瓜多尔4pts，库拉索1pt。"
   },
   {
     "matchId": 1056,
@@ -1836,10 +1836,10 @@
     "predictionA": "德国 3-0",
     "predictionB": "德国 2-0",
     "predictionC": "德国 2-1",
-    "actualScore": null,
-    "directionCorrect": null,
-    "exactHit": null,
-    "totalGoalsDirectionCorrect": null,
+    "actualScore": "1-2",
+    "directionCorrect": false,
+    "exactHit": false,
+    "totalGoalsDirectionCorrect": true,
     "winDrawLoss": "home",
     "lambdaHome": 2.8,
     "lambdaAway": 0.7,
@@ -1852,13 +1852,13 @@
         "stars": 3,
         "name": "Over 2.5进球",
         "odds": "2.70",
-        "hit": null
+        "hit": true
       },
       {
         "stars": 2,
         "name": "德国获胜",
         "odds": "-300",
-        "hit": null
+        "hit": false
       }
     ],
     "mRulesTriggered": [],
@@ -1871,7 +1871,7 @@
       "📊 ELO差240（德国2011-厄瓜多尔1771），德国绝对热门",
       "🎯 德国后防Schlotterbeck缺席→厄瓜多尔定点球+速度反击有1球机会"
     ],
-    "notes": "德国出线保守(-0)+厄瓜多尔存亡(+0.2)+Schlotterbeck缺阵(-0.2)+赔率Over(+0.1)=3.25→3球Over"
+    "notes": "厄瓜多尔1-2大爆冷胜德国！方向❌（预测主场胜，实际客场胜），精确❌（无预测命中1-2）。Over 2.5✅（3球命中）。Schlotterbeck缺席导致德国后防出现漏洞，Valencia+Plata速度反击致命。德国已出线（6pts）轻微轮换是最大因素——正式淘汰赛场景不会如此。厄瓜多尔在存亡战中爆发！E组：德国6pts，科特迪瓦6pts，厄瓜多尔4pts，库拉索1pt。ELO：德国2011-26=1985，厄瓜多尔1771+26=1797。"
   },
   {
     "matchId": 1057,
@@ -1882,10 +1882,10 @@
     "predictionA": "瑞典 2-1",
     "predictionB": "日本 1-2",
     "predictionC": "平局 2-2",
-    "actualScore": null,
-    "directionCorrect": null,
-    "exactHit": null,
-    "totalGoalsDirectionCorrect": null,
+    "actualScore": "1-1",
+    "directionCorrect": false,
+    "exactHit": false,
+    "totalGoalsDirectionCorrect": false,
     "winDrawLoss": "home",
     "lambdaHome": 1.9,
     "lambdaAway": 1.5,
@@ -1898,13 +1898,13 @@
         "stars": 3,
         "name": "Over 2.5进球",
         "odds": "-200",
-        "hit": null
+        "hit": false
       },
       {
         "stars": 3,
         "name": "Over 4.5进球",
         "odds": "+120",
-        "hit": null
+        "hit": false
       }
     ],
     "mRulesTriggered": [
@@ -1923,7 +1923,7 @@
       "📊 ELO差57（瑞典1851-日本1908）：M8a触发，但晋级博弈压制平局动力",
       "🟡 黄牌风险：两张黄牌停赛，需确认日本久保/镰田是否临界"
     ],
-    "notes": "瑞典6.0均值+日本4.0均值历史最强组合。MUST WIN+争F1晋级路线(避巴西ELO差172)+达拉斯空调场→5球⚡最高信心"
+    "notes": "瑞典1-1日本！平局！方向❌（预测主场瑞典胜，实际平局），精确❌（predC=2-2最近但非1-1），Over2.5❌Over4.5❌（2球）。M8a（ELO差57）触发但双方均MUST WIN→消解平局：最终还是平局！瑞典Gyökeres先进，日本镰田大地追平。F组终了：荷兰7pts，日本7pts（均出线），瑞典4pts（第三/最好第三看排名），突尼斯0pts出局。ELO：瑞典1851+3=1854，日本1908-3=1905。教训：预测5球完全高估——双方在存亡战心理压力下反而变保守，平局2球比进攻激烈更现实。"
   },
   {
     "matchId": 1058,
@@ -1934,10 +1934,10 @@
     "predictionA": "荷兰 3-0",
     "predictionB": "荷兰 4-0",
     "predictionC": "荷兰 2-0",
-    "actualScore": null,
-    "directionCorrect": null,
-    "exactHit": null,
-    "totalGoalsDirectionCorrect": null,
+    "actualScore": "3-1",
+    "directionCorrect": true,
+    "exactHit": false,
+    "totalGoalsDirectionCorrect": true,
     "winDrawLoss": "home",
     "lambdaHome": 3,
     "lambdaAway": 0.5,
@@ -1950,7 +1950,7 @@
         "stars": 2,
         "name": "Over 2.5进球",
         "odds": "-150",
-        "hit": null
+        "hit": true
       }
     ],
     "mRulesTriggered": [],
@@ -1963,7 +1963,7 @@
       "🎯 荷兰F组第一→打摩洛哥(ELO1924)；F组第二→打巴西(ELO2080)",
       "💥 荷兰也有动力赢球争第一（避开巴西）！De Jong若首发进攻大幅升级"
     ],
-    "notes": "荷兰争F1(+0.15)但突尼斯无动力(-0.4)+荷兰3名球员各1黄需保护(-0.3)→净减至4.0球Over。比之前5球更保守"
+    "notes": "荷兰3-1突尼斯！方向✅，精确❌（predA=3-0，实际3-1），Over2.5✅（4球）。突尼斯已出局仍进1球（FIRST_TIMERS面子）。总进球4球=预测✅。F组：荷兰7pts，日本7pts。ELO：荷兰1975+7=1982，突尼斯1749-7=1742。"
   },
   {
     "matchId": 1059,
@@ -1974,10 +1974,10 @@
     "predictionA": "澳大利亚 1-0",
     "predictionB": "平局 1-1",
     "predictionC": "澳大利亚 2-0",
-    "actualScore": null,
-    "directionCorrect": null,
-    "exactHit": null,
-    "totalGoalsDirectionCorrect": null,
+    "actualScore": "0-0",
+    "directionCorrect": false,
+    "exactHit": false,
+    "totalGoalsDirectionCorrect": false,
     "winDrawLoss": "home",
     "lambdaHome": 1.4,
     "lambdaAway": 0.8,
@@ -1990,13 +1990,13 @@
         "stars": 2,
         "name": "Over 2.5进球",
         "odds": "-115",
-        "hit": null
+        "hit": false
       },
       {
         "stars": 2,
         "name": "澳大利亚获胜",
         "odds": "-130",
-        "hit": null
+        "hit": false
       }
     ],
     "mRulesTriggered": [
@@ -2012,7 +2012,7 @@
       "📊 ELO差28（澳大利亚1797-巴拉圭1769），M8a最强触发（<50）",
       "💥 阿尔米隆停赛是本场最大利好澳大利亚因素——赔率可能尚未充分反映"
     ],
-    "notes": "【关键翻转】双存亡战+0.6>Almiron停赛-0.4，净+0.2→2.61→3球Over 2.5。第三名wildcardF分析：巴拉圭3pts风险大需全力攻"
+    "notes": "澳大利亚0-0巴拉圭！方向❌（预测主场胜，实际平局），精确❌，Over2.5❌。Almiron停赛预测利好澳大利亚，但巴拉圭顽强防守+澳大利亚Leckie缺阵→双方进攻哑火。D组：美国6pts，澳大利亚5pts（第2），巴拉圭4pts（第3），土耳其？pts。ELO：澳大利亚1797-1=1796，巴拉圭1769+1=1770。教训：双存亡战时双方均采保守策略，0-0是最极端保守结果——M8a（ELO差28）在此场景完全验证平局预测。但Over 2.5在0-0场景完全相反。"
   },
   {
     "matchId": 1060,
@@ -2023,10 +2023,10 @@
     "predictionA": "美国 2-0",
     "predictionB": "美国 3-0",
     "predictionC": "美国 1-0",
-    "actualScore": null,
-    "directionCorrect": null,
-    "exactHit": null,
-    "totalGoalsDirectionCorrect": null,
+    "actualScore": "2-3",
+    "directionCorrect": false,
+    "exactHit": false,
+    "totalGoalsDirectionCorrect": false,
     "winDrawLoss": "home",
     "lambdaHome": 2.5,
     "lambdaAway": 0.7,
@@ -2039,7 +2039,7 @@
         "stars": 3,
         "name": "Under 2.5进球",
         "odds": "-140",
-        "hit": null
+        "hit": false
       }
     ],
     "mRulesTriggered": [
@@ -2053,6 +2053,391 @@
       "🎯 美国D组第一→打G组第二（比利时/埃及/伊朗/新西兰之一）",
       "📊 ELO差69（美国1872-土耳其1803），M8a v3：attackBoost≥+0.15→winDrawLoss=home"
     ],
-    "notes": "【关键翻转】美国D1锁定大轮换(-0.5)+土耳其0pts无动力(-0.4)→1.71→2球Under 2.5。垃圾时间场次典型特征"
+    "notes": "土耳其2-3大爆冷胜美国！方向❌（预测主场美国胜，实际客场土耳其胜），精确❌（无预测命中2-3），Under2.5❌（5球）。Calhanoglu vs 轮换美国——美国大幅轮换保留主力体能，土耳其0pts绝境爆发打出本届最大爆冷之一！5球总进球打脸Under2.5预测。ELO：美国1872-19=1853，土耳其1803+19=1822。D组：美国6pts，澳大利亚5pts，巴拉圭4pts，土耳其3pts（0分→3分，奇迹保级？取决于第三名通配符规则）。教训：已出线队大轮换=预测完全失效——这是模型最大盲点，需引入轮换惩罚规则。"
+  },
+  {
+    "matchId": 1061,
+    "homeTeam": "法国",
+    "awayTeam": "挪威",
+    "group": "I组",
+    "kickoff": "2026-06-26T17:00:00Z",
+    "predictionA": "法国 3-0",
+    "predictionB": "法国 2-0",
+    "predictionC": "法国 4-1",
+    "actualScore": "4-1",
+    "directionCorrect": true,
+    "exactHit": true,
+    "totalGoalsDirectionCorrect": false,
+    "winDrawLoss": "home",
+    "lambdaHome": 2.8,
+    "lambdaAway": 0.7,
+    "totalGoalsPrediction": "4球",
+    "probabilityA": 38,
+    "probabilityB": 35,
+    "probabilityC": 27,
+    "bettingValues": [],
+    "mRulesTriggered": [
+      "双前锋bonus"
+    ],
+    "teamNews": [
+      "✅ 法国四前锋全开：姆巴佩+德姆贝莱+杜埃+奥利斯确认首发",
+      "⚠️ 挪威：3pts需赢球，Haaland+Sørloth双前锋继续",
+      "📊 ELO差203（法国2072-挪威1869），法国大热门"
+    ],
+    "notes": "法国4-1挪威！predC精确命中✅（predC=法国4-1=实际4-1精确！）。德姆贝莱主导4球，挪威Haaland进1球安慰。I组：法国9pts（第一出线），挪威3pts，塞内加尔3pts（积分差决定第二），伊拉克0pts出局。ELO：法国2072+8=2080，挪威1869-8=1861。"
+  },
+  {
+    "matchId": 1062,
+    "homeTeam": "塞内加尔",
+    "awayTeam": "伊拉克",
+    "group": "I组",
+    "kickoff": "2026-06-26T17:00:00Z",
+    "predictionA": "塞内加尔 3-0",
+    "predictionB": "塞内加尔 2-0",
+    "predictionC": "塞内加尔 4-1",
+    "actualScore": "5-0",
+    "directionCorrect": true,
+    "exactHit": false,
+    "totalGoalsDirectionCorrect": false,
+    "winDrawLoss": "home",
+    "lambdaHome": 3,
+    "lambdaAway": 0.4,
+    "totalGoalsPrediction": "3球",
+    "probabilityA": 42,
+    "probabilityB": 35,
+    "probabilityC": 23,
+    "bettingValues": [],
+    "mRulesTriggered": [
+      "M7"
+    ],
+    "teamNews": [
+      "✅ 塞内加尔马内（34岁）：0分存亡战，拼死一搏",
+      "❌ 伊拉克：红牌（13分钟Rebin Sulaka）10人作战！",
+      "📊 ELO差198（塞内加尔1848-伊拉克1650）"
+    ],
+    "notes": "塞内加尔5-0伊拉克！方向✅，精确❌（实际5球，预测最高3球）。伊拉克Rebin Sulaka红牌（13分钟）10人作战崩溃。Pape Gueye双响+Sarr+Diarra+Ndiaye五人得分。I组：法国9pts，挪威3pts，塞内加尔3pts，伊拉克0pts出局。ELO：塞内加尔1848+8=1856，伊拉克1650-8=1642。教训：红牌事件是Poisson模型完全无效的因素。"
+  },
+  {
+    "matchId": 1063,
+    "homeTeam": "佛得角",
+    "awayTeam": "沙特",
+    "group": "H组",
+    "kickoff": "2026-06-26T23:00:00Z",
+    "predictionA": "佛得角 1-0",
+    "predictionB": "平局 1-1",
+    "predictionC": "沙特 0-1",
+    "actualScore": null,
+    "directionCorrect": null,
+    "exactHit": null,
+    "totalGoalsDirectionCorrect": null,
+    "winDrawLoss": "home",
+    "lambdaHome": 0.9,
+    "lambdaAway": 0.7,
+    "totalGoalsPrediction": "2球",
+    "probabilityA": 40,
+    "probabilityB": 35,
+    "probabilityC": 25,
+    "bettingValues": [],
+    "mRulesTriggered": [
+      "M8a",
+      "M6"
+    ],
+    "teamNews": [
+      "⚠️ 佛得角：首届WC（M6），2pts需赢球锁定2nd",
+      "⚠️ 沙特：1pt已基本出局",
+      "📊 ELO差：佛得角1700 vs 沙特1750，差-50，M8a触发"
+    ],
+    "notes": null
+  },
+  {
+    "matchId": 1064,
+    "homeTeam": "乌拉圭",
+    "awayTeam": "西班牙",
+    "group": "H组",
+    "kickoff": "2026-06-26T23:00:00Z",
+    "predictionA": "乌拉圭 1-0",
+    "predictionB": "平局 1-1",
+    "predictionC": "西班牙 1-2",
+    "actualScore": null,
+    "directionCorrect": null,
+    "exactHit": null,
+    "totalGoalsDirectionCorrect": null,
+    "winDrawLoss": "home",
+    "lambdaHome": 0.9,
+    "lambdaAway": 1.6,
+    "totalGoalsPrediction": "2球",
+    "probabilityA": 35,
+    "probabilityB": 33,
+    "probabilityC": 32,
+    "bettingValues": [
+      {
+        "stars": 2,
+        "name": "平局",
+        "odds": "+200",
+        "hit": null
+      }
+    ],
+    "mRulesTriggered": [
+      "M8b"
+    ],
+    "teamNews": [
+      "⚠️ 乌拉圭：2pts MUST WIN",
+      "🟡 西班牙：4pts出线，可能轮换Yamal保体力",
+      "📊 ELO差：乌拉圭1871 vs 西班牙2024，差-153"
+    ],
+    "notes": null
+  },
+  {
+    "matchId": 1065,
+    "homeTeam": "伊朗",
+    "awayTeam": "埃及",
+    "group": "G组",
+    "kickoff": "2026-06-27T03:00:00Z",
+    "predictionA": "平局 1-1",
+    "predictionB": "伊朗 2-1",
+    "predictionC": "埃及 1-2",
+    "actualScore": null,
+    "directionCorrect": null,
+    "exactHit": null,
+    "totalGoalsDirectionCorrect": null,
+    "winDrawLoss": "draw",
+    "lambdaHome": 1.2,
+    "lambdaAway": 1.6,
+    "totalGoalsPrediction": "3球",
+    "probabilityA": 37,
+    "probabilityB": 33,
+    "probabilityC": 30,
+    "bettingValues": [
+      {
+        "stars": 2,
+        "name": "埃及获胜",
+        "odds": "+130",
+        "hit": null
+      }
+    ],
+    "mRulesTriggered": [
+      "M8a"
+    ],
+    "teamNews": [
+      "⚠️ 伊朗：2pts MUST WIN",
+      "✅ 埃及萨拉赫：3-1新西兰复出爆发",
+      "📊 ELO差：伊朗1766 vs 埃及1800，差-34，M8a最强触发"
+    ],
+    "notes": null
+  },
+  {
+    "matchId": 1066,
+    "homeTeam": "比利时",
+    "awayTeam": "新西兰",
+    "group": "G组",
+    "kickoff": "2026-06-27T03:00:00Z",
+    "predictionA": "比利时 3-0",
+    "predictionB": "比利时 2-0",
+    "predictionC": "比利时 2-1",
+    "actualScore": null,
+    "directionCorrect": null,
+    "exactHit": null,
+    "totalGoalsDirectionCorrect": null,
+    "winDrawLoss": "home",
+    "lambdaHome": 2.5,
+    "lambdaAway": 0.6,
+    "totalGoalsPrediction": "3球",
+    "probabilityA": 38,
+    "probabilityB": 34,
+    "probabilityC": 28,
+    "bettingValues": [
+      {
+        "stars": 3,
+        "name": "比利时获胜",
+        "odds": "-280",
+        "hit": null
+      }
+    ],
+    "mRulesTriggered": [],
+    "teamNews": [
+      "✅ 比利时De Bruyne+Doku：MUST WIN",
+      "❌ 比利时连续两场平局（1-1埃及+0-0伊朗），本场全力投入",
+      "📊 ELO差：比利时1935 vs 新西兰1699，差236"
+    ],
+    "notes": null
+  },
+  {
+    "matchId": 1067,
+    "homeTeam": "克罗地亚",
+    "awayTeam": "加纳",
+    "group": "L组",
+    "kickoff": "2026-06-28T01:00:00Z",
+    "predictionA": "克罗地亚 2-1",
+    "predictionB": "平局 1-1",
+    "predictionC": "加纳 0-1",
+    "actualScore": null,
+    "directionCorrect": null,
+    "exactHit": null,
+    "totalGoalsDirectionCorrect": null,
+    "winDrawLoss": "home",
+    "lambdaHome": 1.8,
+    "lambdaAway": 1.3,
+    "totalGoalsPrediction": "3球",
+    "probabilityA": 40,
+    "probabilityB": 30,
+    "probabilityC": 30,
+    "bettingValues": [],
+    "mRulesTriggered": [
+      "M8a"
+    ],
+    "teamNews": [
+      "⚠️ 克罗地亚：3pts MUST WIN",
+      "🟡 加纳：4pts平局即可出线",
+      "📊 ELO差：克罗地亚1924 vs 加纳1764，差160"
+    ],
+    "notes": null
+  },
+  {
+    "matchId": 1068,
+    "homeTeam": "巴拿马",
+    "awayTeam": "英格兰",
+    "group": "L组",
+    "kickoff": "2026-06-28T01:00:00Z",
+    "predictionA": "英格兰 3-0",
+    "predictionB": "英格兰 2-0",
+    "predictionC": "英格兰 4-1",
+    "actualScore": null,
+    "directionCorrect": null,
+    "exactHit": null,
+    "totalGoalsDirectionCorrect": null,
+    "winDrawLoss": "away",
+    "lambdaHome": 0.5,
+    "lambdaAway": 2.5,
+    "totalGoalsPrediction": "3球",
+    "probabilityA": 38,
+    "probabilityB": 35,
+    "probabilityC": 27,
+    "bettingValues": [],
+    "mRulesTriggered": [],
+    "teamNews": [
+      "✅ 英格兰：4pts出线，争L组第一",
+      "❌ 巴拿马：0pts已出局",
+      "📊 ELO差：英格兰2002 vs 巴拿马1663，差339"
+    ],
+    "notes": null
+  },
+  {
+    "matchId": 1069,
+    "homeTeam": "哥伦比亚",
+    "awayTeam": "葡萄牙",
+    "group": "K组",
+    "kickoff": "2026-06-28T03:30:00Z",
+    "predictionA": "葡萄牙 2-1",
+    "predictionB": "平局 1-1",
+    "predictionC": "哥伦比亚 1-0",
+    "actualScore": null,
+    "directionCorrect": null,
+    "exactHit": null,
+    "totalGoalsDirectionCorrect": null,
+    "winDrawLoss": "away",
+    "lambdaHome": 1.3,
+    "lambdaAway": 1.9,
+    "totalGoalsPrediction": "3球",
+    "probabilityA": 38,
+    "probabilityB": 32,
+    "probabilityC": 30,
+    "bettingValues": [],
+    "mRulesTriggered": [],
+    "teamNews": [
+      "✅ 葡萄牙：4pts争K组第一，C.罗状态激活",
+      "⚠️ 哥伦比亚：6pts出线，可能轮换Díaz等主力",
+      "📊 ELO差：哥伦比亚1885 vs 葡萄牙1978，差-93"
+    ],
+    "notes": null
+  },
+  {
+    "matchId": 1070,
+    "homeTeam": "刚果DR",
+    "awayTeam": "乌兹别克斯坦",
+    "group": "K组",
+    "kickoff": "2026-06-28T03:30:00Z",
+    "predictionA": "平局 1-1",
+    "predictionB": "刚果DR 2-1",
+    "predictionC": "乌兹别克斯坦 0-1",
+    "actualScore": null,
+    "directionCorrect": null,
+    "exactHit": null,
+    "totalGoalsDirectionCorrect": null,
+    "winDrawLoss": "draw",
+    "lambdaHome": 1.1,
+    "lambdaAway": 1,
+    "totalGoalsPrediction": "2球",
+    "probabilityA": 38,
+    "probabilityB": 33,
+    "probabilityC": 29,
+    "bettingValues": [],
+    "mRulesTriggered": [
+      "M8a",
+      "M6"
+    ],
+    "teamNews": [
+      "⚠️ 刚果DR：1pt，赢球争第3名通配符",
+      "⚠️ 乌兹别克斯坦：0pts，赢球唯一希望",
+      "📊 ELO差：刚果1706 vs 乌兹1698，差8，M8a最强触发"
+    ],
+    "notes": null
+  },
+  {
+    "matchId": 1071,
+    "homeTeam": "阿尔及利亚",
+    "awayTeam": "奥地利",
+    "group": "J组",
+    "kickoff": "2026-06-28T06:00:00Z",
+    "predictionA": "奥地利 0-1",
+    "predictionB": "平局 1-1",
+    "predictionC": "奥地利 0-2",
+    "actualScore": null,
+    "directionCorrect": null,
+    "exactHit": null,
+    "totalGoalsDirectionCorrect": null,
+    "winDrawLoss": "away",
+    "lambdaHome": 0.6,
+    "lambdaAway": 1.5,
+    "totalGoalsPrediction": "2球",
+    "probabilityA": 40,
+    "probabilityB": 32,
+    "probabilityC": 28,
+    "bettingValues": [],
+    "mRulesTriggered": [],
+    "teamNews": [
+      "⚠️ 阿尔及利亚：0pts已出局",
+      "✅ 奥地利：3pts平局即可确认出线",
+      "📊 ELO差：阿尔及利亚1703 vs 奥地利1870，差-167"
+    ],
+    "notes": null
+  },
+  {
+    "matchId": 1072,
+    "homeTeam": "约旦",
+    "awayTeam": "阿根廷",
+    "group": "J组",
+    "kickoff": "2026-06-28T06:00:00Z",
+    "predictionA": "阿根廷 3-0",
+    "predictionB": "阿根廷 2-0",
+    "predictionC": "约旦 0-1",
+    "actualScore": null,
+    "directionCorrect": null,
+    "exactHit": null,
+    "totalGoalsDirectionCorrect": null,
+    "winDrawLoss": "away",
+    "lambdaHome": 0.4,
+    "lambdaAway": 2.8,
+    "totalGoalsPrediction": "3球",
+    "probabilityA": 40,
+    "probabilityB": 35,
+    "probabilityC": 25,
+    "bettingValues": [],
+    "mRulesTriggered": [],
+    "teamNews": [
+      "⚠️ 约旦：3pts需赢球确认出线",
+      "🟡 阿根廷：6pts出线，梅西可能轮换",
+      "📊 ELO差：约旦1686 vs 阿根廷2154，差-468"
+    ],
+    "notes": null
   }
 ]
