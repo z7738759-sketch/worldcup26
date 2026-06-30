@@ -2,11 +2,7 @@
   "crons": [
     {
       "path": "/api/cron/generate",
-      "schedule": "0 * * * *"
-    },
-    {
-      "path": "/api/cron/backtest?cron=1",
-      "schedule": "*/30 * * * *"
+      "schedule": "0 2 * * *"
     }
   ]
 }
